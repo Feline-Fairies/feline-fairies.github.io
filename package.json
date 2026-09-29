@@ -6,7 +6,7 @@
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy"
-},
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Feline-Fairies/feline-fairies.github.io.git"

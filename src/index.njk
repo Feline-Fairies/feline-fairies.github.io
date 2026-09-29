@@ -1,21 +1,255 @@
 ---
 layout: layouts/base.njk
-title: Home
-description: Feline Fairies is a nonprofit cat rescue serving St. Augustine, Florida and the surrounding community.
+title: Cat Rescue in St. Augustine
+description: Feline Fairies is a volunteer-run nonprofit cat rescue serving St. Augustine, Florida, helping homeless cats through rescue, foster care, adoption, and support.
 ---
 
-<section class="page-placeholder">
+
+<!-- ========================================
+     HERO
+======================================== -->
+
+<section class="home-hero">
+
+  <div class="container home-hero-grid">
+
+    <div class="home-hero-content">
+
+      <p class="section-eyebrow">
+        {{ home.hero.eyebrow }}
+      </p>
+
+      <h1>
+        {{ home.hero.title }}
+      </h1>
+
+      <p class="home-hero-text">
+        {{ home.hero.text }}
+      </p>
+
+      <div class="home-hero-actions">
+
+        <a
+          class="button button-primary"
+          href="{{ home.hero.primaryButton.url }}"
+        >
+          {{ home.hero.primaryButton.label }}
+        </a>
+
+        <a
+          class="button button-coral"
+          href="{{ home.hero.secondaryButton.url }}"
+        >
+          {{ home.hero.secondaryButton.label }}
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="home-hero-image-wrap">
+
+      <img
+        class="home-hero-image"
+        src="{{ home.hero.image }}"
+        alt="{{ home.hero.imageAlt }}"
+        width="1080"
+        height="810"
+      >
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     MISSION
+======================================== -->
+
+<section class="home-section mission-section">
+
+  <div class="container mission-grid">
+
+    <div class="mission-content">
+
+      <p class="section-eyebrow">
+        {{ home.mission.eyebrow }}
+      </p>
+
+      <h2>
+        {{ home.mission.title }}
+      </h2>
+
+      {% for paragraph in home.mission.paragraphs %}
+
+      <p>
+        {{ paragraph }}
+      </p>
+
+      {% endfor %}
+
+      <a
+        class="button button-primary mission-button"
+        href="{{ home.mission.buttonUrl }}"
+      >
+        {{ home.mission.buttonLabel }}
+      </a>
+
+    </div>
+
+
+    <div class="mission-image-wrap">
+
+      <img
+        class="mission-image"
+        src="{{ home.mission.image }}"
+        alt="{{ home.mission.imageAlt }}"
+        loading="lazy"
+      >
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     IMPACT
+======================================== -->
+
+<section class="impact-section">
 
   <div class="container">
 
-    <h1>
-      Feline Fairies
-    </h1>
+    <div class="impact-heading">
 
-    <p>
-      The reusable website foundation is working.
-      The real homepage design comes next.
-    </p>
+      <h2>
+        Our {{ previousYear }} Impact
+      </h2>
+
+    </div>
+
+
+    <div class="impact-grid">
+
+      {% for item in home.impact.items %}
+
+      <div class="impact-stat">
+
+        <strong
+          class="impact-number"
+          data-impact-number="{{ item.number }}"
+        >
+          {{ item.number }}
+        </strong>
+
+        <span>
+          {{ item.label }}
+        </span>
+
+      </div>
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     RESCUE STORY
+======================================== -->
+
+<section class="home-section rescue-story-section">
+
+  <div class="container">
+
+    <div class="rescue-story-heading">
+
+      <h2>
+        {{ home.rescueStory.title }}
+      </h2>
+
+    </div>
+
+
+    <div class="rescue-story-grid">
+
+      {% for item in home.rescueStory.items %}
+
+      <article class="story-card story-card-{{ item.accent }}">
+
+        <h3>
+          {{ item.title }}
+        </h3>
+
+        <p>
+          {{ item.text }}
+        </p>
+
+        <a
+          class="story-card-button"
+          href="{{ item.url }}"
+        >
+          {{ item.buttonLabel }}
+        </a>
+
+      </article>
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     DONATION CTA
+======================================== -->
+
+<section class="donation-cta">
+
+  <div class="container donation-cta-inner">
+
+    <div class="donation-cta-content">
+
+      <p class="section-eyebrow section-eyebrow-light">
+        {{ home.donate.eyebrow }}
+      </p>
+
+      <h2>
+        {{ home.donate.title }}
+      </h2>
+
+      <p>
+        {{ home.donate.text }}
+      </p>
+
+    </div>
+
+
+    <div class="donation-cta-action">
+
+      <a
+        class="button button-light"
+        href="{{ site.donationUrl }}"
+      >
+        {{ home.donate.buttonLabel }}
+      </a>
+
+    </div>
 
   </div>
 

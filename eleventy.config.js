@@ -4,6 +4,10 @@ export default function (eleventyConfig) {
     return new Date().getFullYear();
   });
 
+  eleventyConfig.addGlobalData("previousYear", () => {
+  return new Date().getFullYear() - 1;
+  });
+
   eleventyConfig.addPassthroughCopy({
     "src/assets": "assets"
   });

@@ -1,41 +1,77 @@
 <footer class="site-footer">
-  <div class="container footer-grid">
 
-    <div class="footer-about">
-      <p class="footer-name">
-        {{ site.legalName }}
-      </p>
+  <div class="container footer-inner">
 
-      <p>
-        {{ site.location }}
-      </p>
 
-      <p>
-        501(c)(3) nonprofit organization<br>
-        EIN: {{ site.ein }}
-      </p>
+    <div class="footer-actions">
+
+      <a
+        class="button button-primary"
+        href="/adopt/"
+      >
+        View Cats for Adoption
+      </a>
+
+      <a
+        class="button button-coral"
+        href="/get-involved/"
+      >
+        Ways to Get Involved
+      </a>
+
     </div>
+
+
+    <a
+      class="footer-logo"
+      href="/"
+      aria-label="Feline Fairies home"
+    >
+      <img
+        src="/assets/images/feline-fairies-logo.webp"
+        alt="Feline Fairies"
+      >
+    </a>
+
 
     <nav
       class="footer-navigation"
       aria-label="Footer navigation"
     >
+
       <ul>
+
         {% for item in site.navigation %}
+
         <li>
+
           <a href="{{ item.url }}">
             {{ item.label }}
           </a>
+
         </li>
+
         {% endfor %}
+
       </ul>
+
     </nav>
 
+
+    <div class="footer-legal">
+
+      <p>
+        {{ site.legalName }} is a 501(c)(3) nonprofit organization.
+        EIN: {{ site.ein }}
+      </p>
+
+      <p>
+        © {{ currentYear }} {{ site.legalName }}
+        | {{ site.location }}
+      </p>
+
+    </div>
+
   </div>
 
-  <div class="container footer-bottom">
-    <p>
-      © {{ currentYear }} {{ site.legalName }}
-    </p>
-  </div>
 </footer>

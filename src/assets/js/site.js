@@ -1,3 +1,7 @@
+/* ========================================
+   Mobile Navigation
+======================================== */
+
 const menuButton =
   document.querySelector(".mobile-menu-button");
 
@@ -9,6 +13,9 @@ const siteChrome =
 
 const navLinks =
   document.querySelectorAll(".primary-navigation a");
+
+const mobileBreakpoint =
+  1120;
 
 
 function updateMobileNavigationPosition() {
@@ -86,9 +93,13 @@ function toggleMenu() {
     navigation?.classList.contains("is-open");
 
   if (isOpen) {
+
     closeMenu();
+
   } else {
+
     openMenu();
+
   }
 
 }
@@ -136,7 +147,7 @@ window.addEventListener(
     updateMobileNavigationPosition();
 
     if (
-      window.innerWidth > 900 &&
+      window.innerWidth > mobileBreakpoint &&
       navigation?.classList.contains("is-open")
     ) {
 
@@ -164,3 +175,170 @@ if (
 
 
 updateMobileNavigationPosition();
+
+
+
+/* ========================================
+   Impact Number Animation
+======================================== */
+
+const impactNumbers =
+  document.querySelectorAll(".impact-number");
+
+
+function animateImpactNumber(element) {
+
+  if (
+    element.dataset.animated === "true"
+  ) {
+    return;
+  }
+
+
+  const finalValue =
+    element.dataset.impactNumber;
+
+
+  if (!finalValue) {
+    return;
+  }
+
+
+  element.dataset.animated =
+    "true";
+
+
+  const prefersReducedMotion =
+    window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+
+  if (prefersReducedMotion) {
+
+    element.textContent =
+      finalValue;
+
+    return;
+
+  }
+
+
+  const digitCount =
+    finalValue.length;
+
+  const duration =
+    900;
+
+  const updateInterval =
+    45;
+
+  const startTime =
+    performance.now();
+
+  let lastUpdate =
+    0;
+
+
+  function updateNumber(currentTime) {
+
+    const elapsed =
+      currentTime - startTime;
+
+
+    if (
+      currentTime - lastUpdate >=
+      updateInterval
+    ) {
+
+      let randomNumber = "";
+
+
+      for (
+        let i = 0;
+        i < digitCount;
+        i++
+      ) {
+
+        randomNumber +=
+          Math.floor(
+            Math.random() * 10
+          );
+
+      }
+
+
+      element.textContent =
+        randomNumber;
+
+      lastUpdate =
+        currentTime;
+
+    }
+
+
+    if (elapsed < duration) {
+
+      requestAnimationFrame(
+        updateNumber
+      );
+
+    } else {
+
+      element.textContent =
+        finalValue;
+
+    }
+
+  }
+
+
+  requestAnimationFrame(
+    updateNumber
+  );
+
+}
+
+
+if (impactNumbers.length) {
+
+  const impactObserver =
+    new IntersectionObserver(
+      (entries, observer) => {
+
+        entries.forEach((entry) => {
+
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+
+          animateImpactNumber(
+            entry.target
+          );
+
+
+          observer.unobserve(
+            entry.target
+          );
+
+        });
+
+      },
+      {
+        threshold: 0.4
+      }
+    );
+
+
+  impactNumbers.forEach(
+    (number) => {
+
+      impactObserver.observe(
+        number
+      );
+
+    }
+  );
+
+}

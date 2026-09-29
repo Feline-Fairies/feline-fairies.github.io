@@ -1,0 +1,82 @@
+{
+  "hero": {
+    "eyebrow": "Over 800+ cats rescued and rehomed",
+    "title": "Because Every Cat Deserves a Future Filled With Love.",
+    "text": "Feline Fairies is a volunteer-run nonprofit based in St. Augustine, Florida providing shelter, care, and second chances for homeless cats and kittens.",
+    "primaryButton": {
+      "label": "View Cats for Adoption",
+      "url": "/adopt/"
+    },
+    "secondaryButton": {
+      "label": "Ways to Get Involved",
+      "url": "/get-involved/"
+    },
+    "image": "/media/home/hero-kittens.jpg",
+    "imageAlt": "Two cats resting together"
+  },
+
+  "mission": {
+    "eyebrow": "Our Mission",
+    "title": "Rescue, Rehabilitate, and Rehome",
+    "paragraphs": [
+      "At Feline Fairies, our mission is simple: to ensure every cat has a chance at a life filled with love, safety, and dignity.",
+      "Based in St. Augustine, we're a volunteer-run rescue helping cats through rescue, foster care, adoption, socialization, and basic medical care. From tiny kittens to senior companions, we support them until they're ready for their forever families.",
+      "We believe every purr, paw, and playful leap is worth fighting for."
+    ],
+    "buttonLabel": "Learn More About Us",
+    "buttonUrl": "/about/",
+    "image": "/media/home/mission-cat.webp",
+    "imageAlt": "A rescued cat relaxing with a person"
+  },
+
+  "impact": {
+    "items": [
+      {
+        "number": "315",
+        "label": "Cats Adopted"
+      },
+      {
+        "number": "352",
+        "label": "Cats Taken Into Foster Care"
+      },
+      {
+        "number": "498",
+        "label": "Cats Spayed or Neutered"
+      }
+    ]
+  },
+
+  "rescueStory": {
+    "title": "Be Part of Their Rescue Story",
+    "items": [
+      {
+        "title": "Adopt",
+        "accent": "green",
+        "text": "Our Adoption Program matches cats and kittens with loving, committed families. Every cat receives basic medical care, love, and socialization before they're ready for their forever home.",
+        "buttonLabel": "Adopt Now",
+        "url": "/adopt/"
+      },
+      {
+        "title": "Foster",
+        "accent": "coral",
+        "text": "Our Foster Program gives cats and kittens a soft place to land before adoption. Whether you're new to fostering or experienced, we'll guide you every step of the way while they heal and grow.",
+        "buttonLabel": "Become a Foster",
+        "url": "/foster/foster_application/"
+      },
+      {
+        "title": "Volunteer",
+        "accent": "purple",
+        "text": "As a volunteer-run organization, we rely on people like you to carry out our mission. Help with events, socialization, transport, and behind-the-scenes support while making a meaningful impact.",
+        "buttonLabel": "Lend a Paw",
+        "url": "/volunteer/volunteer_application/"
+      }
+    ]
+  },
+
+  "donate": {
+    "eyebrow": "Support the Rescue",
+    "title": "Help us say yes to more cats.",
+    "text": "Donations help provide food, basic medical care, supplies, and safe housing for cats in our care.",
+    "buttonLabel": "Donate to Feline Fairies"
+  }
+}
