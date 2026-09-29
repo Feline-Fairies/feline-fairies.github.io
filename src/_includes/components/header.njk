@@ -1,0 +1,72 @@
+<header class="site-header">
+
+  <div class="container header-inner">
+
+    <a
+      class="site-logo"
+      href="/"
+      aria-label="Feline Fairies home"
+    >
+      <span class="site-logo-text">
+        Feline Fairies
+      </span>
+    </a>
+
+
+    <button
+      class="mobile-menu-button"
+      type="button"
+      aria-expanded="false"
+      aria-controls="primary-navigation"
+      aria-label="Open navigation menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+
+    <nav
+      class="primary-navigation"
+      id="primary-navigation"
+      aria-label="Primary navigation"
+    >
+
+      <ul>
+
+        {% for item in site.navigation %}
+
+        <li>
+
+          <a
+            href="{{ item.url }}"
+            {% if page.url == item.url %}
+            aria-current="page"
+            {% endif %}
+          >
+            {{ item.label }}
+          </a>
+
+        </li>
+
+        {% endfor %}
+
+      </ul>
+
+
+      {% if site.donationUrl %}
+
+      <a
+        class="button button-donate"
+        href="{{ site.donationUrl }}"
+      >
+        Donate
+      </a>
+
+      {% endif %}
+
+    </nav>
+
+  </div>
+
+</header>

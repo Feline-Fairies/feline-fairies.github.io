@@ -1,0 +1,829 @@
+/* ========================================
+   Feline Fairies
+   Base Website Styles
+======================================== */
+
+
+/* ---------- Design Tokens ---------- */
+
+:root {
+
+  --color-green-dark: #355748;
+
+  --color-green: #5f7f6c;
+
+  --color-green-light: #dfe7df;
+
+  --color-cream: #f3f4ec;
+
+  --color-white: #ffffff;
+
+  --color-text: #1f2b32;
+
+  --color-text-soft: #526069;
+
+  --color-border: #d7ddd8;
+
+  --container-width: 1200px;
+
+  --radius-small: 6px;
+
+  --radius-medium: 14px;
+
+  --mobile-nav-top: 110px;
+
+  --shadow-soft:
+    0 10px 30px
+    rgba(31, 43, 50, 0.08);
+
+}
+
+
+/* ---------- Reset ---------- */
+
+*,
+*::before,
+*::after {
+
+  box-sizing: border-box;
+
+}
+
+
+html {
+
+  scroll-behavior: smooth;
+
+}
+
+
+body {
+
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  margin: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  color:
+    var(--color-text);
+
+  background:
+    var(--color-white);
+
+  line-height: 1.6;
+
+}
+#main-content {
+
+  flex: 1;
+
+}
+
+img {
+
+  display: block;
+
+  max-width: 100%;
+
+  height: auto;
+
+}
+
+
+a {
+
+  color: inherit;
+
+}
+
+
+button,
+input,
+textarea,
+select {
+
+  font: inherit;
+
+}
+
+
+/* ---------- Accessibility ---------- */
+
+.skip-link {
+
+  position: absolute;
+
+  top: -100px;
+
+  left: 1rem;
+
+  z-index: 9999;
+
+  padding:
+    0.75rem
+    1rem;
+
+  background:
+    var(--color-text);
+
+  color:
+    var(--color-white);
+
+}
+
+
+.skip-link:focus {
+
+  top: 1rem;
+
+}
+
+
+/* ---------- Global Container ---------- */
+
+.container {
+
+  width:
+    min(
+      calc(100% - 2rem),
+      var(--container-width)
+    );
+
+  margin-inline: auto;
+
+}
+
+
+/* ---------- Site Chrome ---------- */
+
+.site-chrome {
+
+  position: relative;
+
+  z-index: 1200;
+
+}
+
+
+/* ---------- Announcement Bar ---------- */
+
+.announcement-bar {
+
+  position: relative;
+
+  z-index: 1202;
+
+  background:
+    var(--color-green-dark);
+
+  color:
+    var(--color-white);
+
+  text-align: center;
+
+  font-weight: 700;
+
+  font-size: 0.95rem;
+
+}
+
+
+.announcement-bar a {
+
+  display: block;
+
+  padding:
+    0.55rem
+    1rem;
+
+  text-decoration: none;
+
+}
+
+
+.announcement-bar a:hover,
+.announcement-bar a:focus-visible {
+
+  text-decoration: underline;
+
+}
+
+
+/* ---------- Header ---------- */
+
+.site-header {
+
+  position: relative;
+
+  z-index: 1202;
+
+  background:
+    var(--color-cream);
+
+  border-bottom:
+    1px solid
+    var(--color-border);
+
+}
+
+
+.header-inner {
+
+  min-height: 80px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 1.5rem;
+
+}
+
+
+.site-logo {
+
+  position: relative;
+
+  z-index: 1204;
+
+  text-decoration: none;
+
+  font-weight: 800;
+
+  font-size: 1.25rem;
+
+  color:
+    var(--color-text);
+
+}
+
+
+/* ---------- Desktop Navigation ---------- */
+
+.primary-navigation {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 1.5rem;
+
+}
+
+
+.primary-navigation ul {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 1.4rem;
+
+  list-style: none;
+
+  padding: 0;
+
+  margin: 0;
+
+}
+
+
+.primary-navigation a {
+
+  text-decoration: none;
+
+  font-weight: 700;
+
+  font-size: 0.95rem;
+
+}
+
+
+.primary-navigation a:hover,
+.primary-navigation a:focus-visible {
+
+  text-decoration: underline;
+
+}
+
+
+.primary-navigation [aria-current="page"] {
+
+  text-decoration: underline;
+
+}
+
+
+/* ---------- Buttons ---------- */
+
+.button {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 48px;
+
+  padding:
+    0.75rem
+    1.25rem;
+
+  border-radius:
+    var(--radius-small);
+
+  text-decoration: none;
+
+  font-weight: 700;
+
+}
+
+
+.button-donate {
+
+  background:
+    var(--color-green);
+
+  color:
+    var(--color-white);
+
+}
+
+
+/* ---------- Mobile Menu Button ---------- */
+
+.mobile-menu-button {
+
+  display: none;
+
+  position: relative;
+
+  z-index: 1204;
+
+  width: 48px;
+
+  height: 48px;
+
+  padding: 11px;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+}
+
+
+.mobile-menu-button span {
+
+  display: block;
+
+  width: 26px;
+
+  height: 2px;
+
+  margin-inline: auto;
+
+  background:
+    var(--color-text);
+
+  transform-origin: center;
+
+  transition:
+    transform 140ms ease,
+    opacity 100ms ease;
+
+}
+
+
+.mobile-menu-button span + span {
+
+  margin-top: 6px;
+
+}
+
+
+/* ---------- Temporary Homepage ---------- */
+
+.page-placeholder {
+
+  padding:
+    5rem
+    0;
+
+  text-align: center;
+
+}
+
+
+.page-placeholder h1 {
+
+  margin:
+    0
+    0
+    1rem;
+
+  font-size:
+    clamp(
+      2.3rem,
+      7vw,
+      4.5rem
+    );
+
+  line-height: 1.05;
+
+}
+
+
+.page-placeholder p {
+
+  max-width: 650px;
+
+  margin:
+    0
+    auto;
+
+  color:
+    var(--color-text-soft);
+
+  font-size: 1.1rem;
+
+}
+
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+
+  margin-top: 5rem;
+
+  padding:
+    3rem
+    0
+    1.5rem;
+
+  background:
+    var(--color-cream);
+
+  border-top:
+    1px solid
+    var(--color-border);
+
+}
+
+
+.footer-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 3rem;
+
+}
+
+
+.footer-name {
+
+  font-weight: 800;
+
+}
+
+
+.footer-navigation ul {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  list-style: none;
+
+  padding: 0;
+
+  margin: 0;
+
+  gap: 0.75rem;
+
+}
+
+
+.footer-navigation a {
+
+  text-decoration: none;
+
+}
+
+
+.footer-navigation a:hover,
+.footer-navigation a:focus-visible {
+
+  text-decoration: underline;
+
+}
+
+
+.footer-bottom {
+
+  margin-top: 2rem;
+
+  padding-top: 1.25rem;
+
+  border-top:
+    1px solid
+    var(--color-border);
+
+  color:
+    var(--color-text-soft);
+
+  font-size: 0.9rem;
+
+}
+
+
+/* ========================================
+   Mobile
+======================================== */
+
+@media (max-width: 900px) {
+
+
+  /* ---------- Persistent Mobile Chrome ---------- */
+
+  .site-chrome {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1200;
+
+  }
+
+
+  .header-inner {
+
+    min-height: 70px;
+
+  }
+
+
+  /* ---------- Hamburger ---------- */
+
+  .mobile-menu-button {
+
+    display: block;
+
+  }
+
+
+  /*
+     Turn hamburger into X
+  */
+
+  .mobile-menu-button.is-open span:nth-child(1) {
+
+    transform:
+      translateY(8px)
+      rotate(45deg);
+
+  }
+
+
+  .mobile-menu-button.is-open span:nth-child(2) {
+
+    opacity: 0;
+
+  }
+
+
+  .mobile-menu-button.is-open span:nth-child(3) {
+
+    transform:
+      translateY(-8px)
+      rotate(-45deg);
+
+  }
+
+
+  /* ---------- Mobile Navigation Panel ---------- */
+
+  .primary-navigation {
+
+    position: fixed;
+
+    top:
+      var(--mobile-nav-top);
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    height:
+      calc(
+        100dvh -
+        var(--mobile-nav-top)
+      );
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 0;
+
+    padding:
+      1rem
+      1.35rem
+      2rem;
+
+    background:
+      var(--color-white);
+
+    z-index: 1199;
+
+    overflow-y: auto;
+
+    overscroll-behavior:
+      contain;
+
+    transform:
+      translate3d(
+        100%,
+        0,
+        0
+      );
+
+    pointer-events: none;
+
+    will-change:
+      transform;
+
+    transition:
+      transform
+      140ms
+      cubic-bezier(
+        0.2,
+        0.8,
+        0.2,
+        1
+      );
+
+  }
+
+
+  .primary-navigation.is-open {
+
+    transform:
+      translate3d(
+        0,
+        0,
+        0
+      );
+
+    pointer-events: auto;
+
+  }
+
+
+  /* ---------- Mobile Menu Links ---------- */
+
+  .primary-navigation ul {
+
+    display: block;
+
+    width: 100%;
+
+    padding: 0;
+
+    margin: 0;
+
+    list-style: none;
+
+  }
+
+
+  .primary-navigation li {
+
+    border-bottom:
+      1px solid
+      var(--color-border);
+
+  }
+
+
+  .primary-navigation li a {
+
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+
+    min-height: 58px;
+
+    padding: 0;
+
+    font-size: 1.1rem;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+  }
+
+
+  .primary-navigation li a:hover,
+  .primary-navigation li a:focus-visible {
+
+    text-decoration: underline;
+
+  }
+
+
+  /* ---------- Mobile Donate ---------- */
+
+  .button-donate {
+
+    width: 100%;
+
+    min-height: 54px;
+
+    margin-top: 1.5rem;
+
+  }
+
+
+  /* ---------- Prevent Background Scroll ---------- */
+
+  body.menu-open {
+
+    overflow: hidden;
+
+  }
+
+
+  /* ---------- Mobile Footer ---------- */
+
+  .footer-grid {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .footer-navigation ul {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+}
+
+
+/* ========================================
+   Reduced Motion
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+
+    scroll-behavior: auto;
+
+  }
+
+
+  .primary-navigation,
+  .mobile-menu-button span {
+
+    transition: none;
+
+  }
+
+}

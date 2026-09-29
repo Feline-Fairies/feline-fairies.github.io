@@ -1,0 +1,9 @@
+{% if site.announcement.enabled %}
+<div class="announcement-bar">
+  <div class="container">
+    <a href="{{ site.announcement.url }}">
+      {{ site.announcement.text }}
+    </a>
+  </div>
+</div>
+{% endif %}

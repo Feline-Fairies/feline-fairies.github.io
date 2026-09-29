@@ -1,0 +1,41 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+
+    <div class="footer-about">
+      <p class="footer-name">
+        {{ site.legalName }}
+      </p>
+
+      <p>
+        {{ site.location }}
+      </p>
+
+      <p>
+        501(c)(3) nonprofit organization<br>
+        EIN: {{ site.ein }}
+      </p>
+    </div>
+
+    <nav
+      class="footer-navigation"
+      aria-label="Footer navigation"
+    >
+      <ul>
+        {% for item in site.navigation %}
+        <li>
+          <a href="{{ item.url }}">
+            {{ item.label }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+  </div>
+
+  <div class="container footer-bottom">
+    <p>
+      © {{ currentYear }} {{ site.legalName }}
+    </p>
+  </div>
+</footer>

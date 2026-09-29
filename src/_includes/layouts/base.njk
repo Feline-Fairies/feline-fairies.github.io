@@ -1,0 +1,73 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>
+    {% if title %}
+      {{ title }} | {{ site.name }}
+    {% else %}
+      {{ site.name }}
+    {% endif %}
+  </title>
+
+  {% if description %}
+  <meta
+    name="description"
+    content="{{ description }}"
+  >
+  {% endif %}
+
+  <link
+    rel="canonical"
+    href="{{ site.url }}{{ page.url }}"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/assets/css/site.css"
+  >
+
+</head>
+
+<body>
+
+  <a
+    class="skip-link"
+    href="#main-content"
+  >
+    Skip to main content
+  </a>
+
+  <div class="site-chrome">
+
+    {% include "components/announcement-bar.njk" %}
+
+    {% include "components/header.njk" %}
+
+  </div>
+
+  <main id="main-content">
+
+    {{ content | safe }}
+
+  </main>
+
+  {% include "components/footer.njk" %}
+
+  <script
+    src="/assets/js/site.js"
+    defer
+  ></script>
+
+</body>
+
+</html>

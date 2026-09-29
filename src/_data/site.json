@@ -1,0 +1,52 @@
+{
+  "name": "Feline Fairies",
+  "legalName": "Feline Fairies, Inc.",
+  "url": "https://felinefairies.com",
+  "location": "St. Augustine, Florida",
+  "ein": "87-3836140",
+
+  "phone": "",
+  "email": "",
+  "donationUrl": "https://www.paypal.com/donate/?hosted_button_id=2RHY3745ZHNSG",
+
+  "announcement": {
+    "enabled": true,
+    "text": "Help Cats in Our Community",
+    "url": "/get-involved/"
+  },
+
+  "navigation": [
+    {
+      "label": "Home",
+      "url": "/"
+    },
+    {
+      "label": "Donate",
+      "url": "/donate/"
+    },
+    {
+      "label": "Adopt",
+      "url": "/adopt/"
+    },
+    {
+      "label": "About Us",
+      "url": "/about/"
+    },
+    {
+      "label": "Get Involved",
+      "url": "/get-involved/"
+    },
+    {
+      "label": "Events",
+      "url": "/events/"
+    },
+    {
+      "label": "FAQ",
+      "url": "/faq/"
+    },
+    {
+      "label": "Contact",
+      "url": "/contact/"
+    }
+  ]
+}
