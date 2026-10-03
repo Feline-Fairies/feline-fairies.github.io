@@ -1,0 +1,57 @@
+{
+  "hero": {
+    "eyebrow": "Get involved",
+    "titleBefore": "There is room for you in",
+    "titleAccent": "their story.",
+    "text": "Feline Fairies is a foster-based rescue powered by people who give their time, their homes, and their care. Choose the path that fits you."
+  },
+
+  "paths": {
+    "eyebrow": "Ways to make a difference",
+    "items": [
+      {
+        "number": "01",
+        "label": "Open your home",
+        "title": "Foster",
+        "text": "Give a cat a safe place to settle while they wait for adoption.",
+        "linkLabel": "Apply to foster",
+        "url": "/foster/foster_application/"
+      },
+      {
+        "number": "02",
+        "label": "Give your time",
+        "title": "Volunteer",
+        "text": "Support the everyday work of a volunteer-run rescue in ways that fit your skills.",
+        "linkLabel": "Apply to volunteer",
+        "url": "/volunteer/volunteer_application/"
+      },
+      {
+        "number": "03",
+        "label": "Welcome a companion",
+        "title": "Adopt",
+        "text": "Meet cats and kittens looking for a loving home.",
+        "linkLabel": "Browse adoptable cats",
+        "url": "/adopt/"
+      },
+      {
+        "number": "04",
+        "label": "Support their care",
+        "title": "Donate",
+        "text": "Help provide food, supplies, foster needs, and basic medical care.",
+        "linkLabel": "Ways to give",
+        "url": "/donate/"
+      }
+    ]
+  },
+
+  "community": {
+    "motif": "Every helping hand matters.",
+    "eyebrow": "A community of care",
+    "title": "Small acts add up to second chances.",
+    "text": "Some people can welcome a cat home. Others can offer a few hours, help share a listing, or make a gift. Each contribution supports the work around a cat’s next chapter.",
+    "button": {
+      "label": "Ask How You Can Help",
+      "url": "/contact/"
+    }
+  }
+}

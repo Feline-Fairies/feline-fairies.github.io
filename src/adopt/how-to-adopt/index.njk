@@ -1,0 +1,154 @@
+---
+layout: layouts/base.njk
+seoTitle: How to Adopt a Cat in St. Augustine, FL | Feline Fairies
+title: How to Adopt
+description: Learn how cat adoption works with Feline Fairies in St. Augustine, Florida, from browsing available cats through application and meeting your potential companion.
+pageStyles:
+  - /assets/css/interior.css
+  - /assets/css/community.css
+---
+
+
+<!-- ========================================
+     OPENING
+======================================== -->
+
+<section
+  class="guide-open"
+  aria-labelledby="guide-title"
+>
+
+  <div class="shell guide-open__grid">
+
+    <div>
+
+      <p class="eyebrow">
+        {{ howToAdopt.hero.eyebrow }}
+      </p>
+
+      <h1 id="guide-title">
+        {{ howToAdopt.hero.title }}
+      </h1>
+
+      <p>
+        {{ howToAdopt.hero.text }}
+      </p>
+
+
+      <div class="guide-open__actions">
+
+        <a
+          class="button button--night"
+          href="{{ howToAdopt.hero.primaryButton.url }}"
+        >
+          {{ howToAdopt.hero.primaryButton.label }}
+        </a>
+
+        <a
+          class="button"
+          href="{{ howToAdopt.hero.secondaryButton.url }}"
+        >
+          {{ howToAdopt.hero.secondaryButton.label }}
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     ADOPTION STEPS
+======================================== -->
+
+<section
+  class="guide-steps"
+  aria-labelledby="guide-steps-title"
+>
+
+  <div class="shell">
+
+    <p class="eyebrow">
+      {{ howToAdopt.steps.eyebrow }}
+    </p>
+
+    <h2 id="guide-steps-title">
+      {{ howToAdopt.steps.title }}
+    </h2>
+
+
+    {% for item in howToAdopt.steps.items %}
+
+      <article class="guide-row">
+
+        <span aria-hidden="true">
+          {{ item.number }}
+        </span>
+
+        <h3>
+          {{ item.title }}
+        </h3>
+
+        <p>
+          {{ item.text }}
+        </p>
+
+      </article>
+
+    {% endfor %}
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     FINAL CTA
+======================================== -->
+
+<section
+  class="guide-end"
+  aria-labelledby="guide-end-title"
+>
+
+  <div class="shell">
+
+    <p class="eyebrow">
+      {{ howToAdopt.finish.eyebrow }}
+    </p>
+
+    <h2 id="guide-end-title">
+      {{ howToAdopt.finish.title }}
+    </h2>
+
+    <p>
+      {{ howToAdopt.finish.text }}
+    </p>
+
+
+    <div class="guide-end__actions">
+
+      <a
+        class="button"
+        href="{{ howToAdopt.finish.primaryButton.url }}"
+      >
+        {{ howToAdopt.finish.primaryButton.label }}
+      </a>
+
+      <a
+        class="button button--outline"
+        href="{{ howToAdopt.finish.secondaryButton.url }}"
+      >
+        {{ howToAdopt.finish.secondaryButton.label }}
+      </a>
+
+    </div>
+
+  </div>
+
+</section>

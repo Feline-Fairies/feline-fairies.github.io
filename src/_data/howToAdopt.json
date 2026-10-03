@@ -1,0 +1,66 @@
+{
+  "hero": {
+    "eyebrow": "The adoption guide",
+    "title": "From first look to first hello.",
+    "text": "Adoption starts with learning about the cats and sharing a little about your home. Here is a closer look at the process.",
+    "primaryButton": {
+      "label": "Browse Cats",
+      "url": "/adopt/#meet-cats"
+    },
+    "secondaryButton": {
+      "label": "Apply to Adopt",
+      "url": "/adopt/adoption_application/"
+    }
+  },
+
+  "steps": {
+    "eyebrow": "Step by step",
+    "title": "A thoughtful way to find your match.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Browse the cats",
+        "text": "Start with the current listings. Read each profile for the cat’s personality and any important notes."
+      },
+      {
+        "number": "02",
+        "title": "Keep an open mind",
+        "text": "You can express interest in a particular cat or begin the process while you are still deciding. Some bonded cats need a home together."
+      },
+      {
+        "number": "03",
+        "title": "Submit an application",
+        "text": "Share information about your household and what you hope for in a companion. Applicants must be at least 18."
+      },
+      {
+        "number": "04",
+        "title": "Connect with the team",
+        "text": "Volunteers review your application and may follow up with questions or talk through potential matches. Availability can change while applications are being reviewed."
+      },
+      {
+        "number": "05",
+        "title": "Meet, if appropriate",
+        "text": "After approval, a meet-and-greet can be arranged. Cats live in foster homes, so visits are coordinated in advance."
+      },
+      {
+        "number": "06",
+        "title": "Discuss next steps",
+        "text": "If it feels like a good match, the team will explain the remaining adoption steps and answer your questions."
+      }
+    ]
+  },
+
+  "finish": {
+    "eyebrow": "Ready to begin?",
+    "title": "Your next companion might be waiting.",
+    "text": "Explore the current cats, then use the official application when you are ready to connect.",
+    "primaryButton": {
+      "label": "See Adoptable Cats",
+      "url": "/adopt/#meet-cats"
+    },
+    "secondaryButton": {
+      "label": "Start an Application",
+      "url": "/adopt/adoption_application/"
+    }
+  }
+}

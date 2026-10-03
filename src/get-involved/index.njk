@@ -1,0 +1,154 @@
+---
+layout: layouts/base.njk
+seoTitle: Get Involved with a Cat Rescue in St. Augustine | Feline Fairies
+title: Get Involved with Feline Fairies
+description: Foster, volunteer, adopt, or donate with Feline Fairies, a foster-based cat rescue serving St. Augustine, Florida.
+pageStyles:
+  - /assets/css/interior.css
+  - /assets/css/community.css
+---
+
+
+<!-- ========================================
+     OPENING
+======================================== -->
+
+<section class="inner-band">
+
+  <div class="shell">
+
+    <p class="eyebrow">
+      {{ getInvolved.hero.eyebrow }}
+    </p>
+
+    <h1>
+
+      {{ getInvolved.hero.titleBefore }}
+
+      <em>
+        {{ getInvolved.hero.titleAccent }}
+      </em>
+
+    </h1>
+
+    <p>
+      {{ getInvolved.hero.text }}
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     WAYS TO HELP
+======================================== -->
+
+<section
+  class="involvement-paths"
+  aria-labelledby="involvement-paths-title"
+>
+
+  <div class="shell">
+
+    <p
+      class="eyebrow"
+      id="involvement-paths-title"
+    >
+      {{ getInvolved.paths.eyebrow }}
+    </p>
+
+
+    <div class="path-tiles">
+
+      {% for item in getInvolved.paths.items %}
+
+        <article class="path-tile">
+
+          <small>
+            {{ item.number }} / {{ item.label }}
+          </small>
+
+          <h2>
+            {{ item.title }}
+          </h2>
+
+          <p>
+            {{ item.text }}
+          </p>
+
+          <a href="{{ item.url }}">
+            {{ item.linkLabel }}
+          </a>
+
+        </article>
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     COMMUNITY CTA
+======================================== -->
+
+<section
+  class="community-panel"
+  aria-labelledby="community-title"
+>
+
+  <div
+    class="shell community-panel__motif"
+    aria-hidden="true"
+  >
+
+    <span>
+      ✦
+    </span>
+
+    <span>
+      {{ getInvolved.community.motif }}
+    </span>
+
+  </div>
+
+
+  <div class="shell community-panel__copy">
+
+    <div>
+
+      <p class="eyebrow">
+        {{ getInvolved.community.eyebrow }}
+      </p>
+
+      <h2 id="community-title">
+        {{ getInvolved.community.title }}
+      </h2>
+
+    </div>
+
+
+    <div>
+
+      <p>
+        {{ getInvolved.community.text }}
+      </p>
+
+      <a
+        class="button"
+        href="{{ getInvolved.community.button.url }}"
+      >
+        {{ getInvolved.community.button.label }}
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
