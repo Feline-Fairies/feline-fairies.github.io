@@ -23,8 +23,9 @@
 
   "announcement": {
     "enabled": true,
-    "text": "Help Cats in Our Community",
-    "url": "/get-involved/"
+    "text": "A second chance is waiting.",
+    "linkLabel": "Meet the cats",
+    "url": "/adopt/"
   },
 
   "navigation": [
@@ -72,9 +73,44 @@
     }
   ],
 
+  "footerNavigation": [
+    {
+      "label": "Home",
+      "url": "/"
+    },
+    {
+      "label": "Donate",
+      "url": "/donate/"
+    },
+    {
+      "label": "Adopt",
+      "url": "/adopt/"
+    },
+    {
+      "label": "About Us",
+      "url": "/about/"
+    },
+    {
+      "label": "Get Involved",
+      "url": "/get-involved/"
+    },
+    {
+      "label": "Events",
+      "url": "/events/"
+    },
+    {
+      "label": "FAQ",
+      "url": "/faq/"
+    },
+    {
+      "label": "Contact",
+      "url": "/contact/"
+    }
+  ],
+
   "donateButton": {
     "label": "Donate",
-    "url": "https://www.paypal.com/donate/?hosted_button_id=2RHY3745ZHNSG"
+    "url": "/donate/"
   },
 
   "social": {

@@ -1,180 +1,894 @@
 /* ========================================
-   Mobile Navigation
+   Feline Fairies
+   Global Site JavaScript
 ======================================== */
 
-const menuButton =
-  document.querySelector(".mobile-menu-button");
 
-const navigation =
-  document.querySelector(".primary-navigation");
+/* ========================================
+   Header + Navigation
+======================================== */
 
-const siteChrome =
-  document.querySelector(".site-chrome");
+(() => {
 
-const navLinks =
-  document.querySelectorAll(".primary-navigation a");
-
-const mobileBreakpoint =
-  1120;
-
-
-function updateMobileNavigationPosition() {
-
-  if (!siteChrome) {
-    return;
-  }
-
-  const chromeBottom =
-    siteChrome.getBoundingClientRect().bottom;
-
-  document.documentElement.style.setProperty(
-    "--mobile-nav-top",
-    `${Math.round(chromeBottom)}px`
-  );
-
-}
-
-
-function openMenu() {
-
-  if (!menuButton || !navigation) {
-    return;
-  }
-
-  updateMobileNavigationPosition();
-
-  navigation.classList.add("is-open");
-
-  menuButton.classList.add("is-open");
-
-  document.body.classList.add("menu-open");
-
-  menuButton.setAttribute(
-    "aria-expanded",
-    "true"
-  );
-
-  menuButton.setAttribute(
-    "aria-label",
-    "Close navigation menu"
-  );
-
-}
-
-
-function closeMenu() {
-
-  if (!menuButton || !navigation) {
-    return;
-  }
-
-  navigation.classList.remove("is-open");
-
-  menuButton.classList.remove("is-open");
-
-  document.body.classList.remove("menu-open");
-
-  menuButton.setAttribute(
-    "aria-expanded",
-    "false"
-  );
-
-  menuButton.setAttribute(
-    "aria-label",
-    "Open navigation menu"
-  );
-
-}
-
-
-function toggleMenu() {
-
-  const isOpen =
-    navigation?.classList.contains("is-open");
-
-  if (isOpen) {
-
-    closeMenu();
-
-  } else {
-
-    openMenu();
-
-  }
-
-}
-
-
-menuButton?.addEventListener(
-  "click",
-  toggleMenu
-);
-
-
-navLinks.forEach((link) => {
-
-  link.addEventListener(
-    "click",
-    closeMenu
-  );
-
-});
-
-
-document.addEventListener(
-  "keydown",
-  (event) => {
-
-    if (
-      event.key === "Escape" &&
-      navigation?.classList.contains("is-open")
-    ) {
-
-      closeMenu();
-
-      menuButton?.focus();
-
-    }
-
-  }
-);
-
-
-window.addEventListener(
-  "resize",
-  () => {
-
-    updateMobileNavigationPosition();
-
-    if (
-      window.innerWidth > mobileBreakpoint &&
-      navigation?.classList.contains("is-open")
-    ) {
-
-      closeMenu();
-
-    }
-
-  }
-);
-
-
-if (
-  siteChrome &&
-  "ResizeObserver" in window
-) {
-
-  const chromeObserver =
-    new ResizeObserver(
-      updateMobileNavigationPosition
+  const header =
+    document.querySelector(
+      ".site-header"
     );
 
-  chromeObserver.observe(siteChrome);
+  const announcement =
+    document.querySelector(
+      ".announcement"
+    );
 
-}
+  const nav =
+    document.querySelector(
+      "#site-navigation"
+    );
+
+  const toggle =
+    document.querySelector(
+      ".nav-toggle"
+    );
+
+  const donate =
+    header?.querySelector(
+      ".header-donate"
+    );
+
+  const headerInner =
+    header?.querySelector(
+      ".header-inner"
+    );
 
 
-updateMobileNavigationPosition();
+  if (
+    !header ||
+    !nav ||
+    !toggle ||
+    !donate ||
+    !headerInner
+  ) {
+
+    return;
+
+  }
+
+
+  /*
+   * The hamburger already exists in the HTML.
+   * JavaScript only activates it.
+   */
+
+  toggle.hidden =
+    false;
+
+
+  document.documentElement
+    .classList
+    .add(
+      "menu-enhanced"
+    );
+
+
+  const compact =
+    window.matchMedia(
+      "(max-width: 1150px)"
+    );
+
+
+  const branch =
+    nav.querySelector(
+      ".nav-branch"
+    );
+
+  const submenuToggle =
+    branch?.querySelector(
+      ".submenu-toggle"
+    );
+
+  const submenu =
+    branch?.querySelector(
+      ".nav-submenu"
+    );
+
+
+  /* ========================================
+     Get Involved Submenu
+  ======================================== */
+
+  function setSubmenu(open) {
+
+    if (
+      !submenu ||
+      !submenuToggle
+    ) {
+
+      return;
+
+    }
+
+
+    submenu.hidden =
+      !open;
+
+
+    submenuToggle.setAttribute(
+      "aria-expanded",
+      String(open)
+    );
+
+
+    submenuToggle.setAttribute(
+      "aria-label",
+      `${
+        open
+          ? "Collapse"
+          : "Expand"
+      } Get Involved options`
+    );
+
+  }
+
+
+  submenuToggle?.addEventListener(
+    "click",
+    () => {
+
+      const open =
+        submenuToggle.getAttribute(
+          "aria-expanded"
+        ) !== "true";
+
+
+      setSubmenu(open);
+
+    }
+  );
+
+
+  branch?.addEventListener(
+    "pointerenter",
+    (event) => {
+
+      if (
+        !compact.matches &&
+        event.pointerType === "mouse"
+      ) {
+
+        setSubmenu(true);
+
+      }
+
+    }
+  );
+
+
+  branch?.addEventListener(
+    "pointerleave",
+    () => {
+
+      if (
+        !compact.matches &&
+        !branch.contains(
+          document.activeElement
+        )
+      ) {
+
+        setSubmenu(false);
+
+      }
+
+    }
+  );
+
+
+  branch?.addEventListener(
+    "focusin",
+    (event) => {
+
+      const parentLink =
+        branch.querySelector(
+          ".nav-branch__row > a"
+        );
+
+
+      if (
+        !compact.matches &&
+        event.target === parentLink
+      ) {
+
+        setSubmenu(true);
+
+      }
+
+    }
+  );
+
+
+  branch?.addEventListener(
+    "focusout",
+    (event) => {
+
+      if (
+        !compact.matches &&
+        !branch.contains(
+          event.relatedTarget
+        )
+      ) {
+
+        setSubmenu(false);
+
+      }
+
+    }
+  );
+
+
+  document.addEventListener(
+    "click",
+    (event) => {
+
+      if (
+        !branch?.contains(
+          event.target
+        )
+      ) {
+
+        setSubmenu(false);
+
+      }
+
+    }
+  );
+
+
+  /* ========================================
+     Measurements
+  ======================================== */
+
+  function updateMeasurements() {
+
+    const announcementHeight =
+      announcement
+        ? announcement
+            .getBoundingClientRect()
+            .height
+        : 0;
+
+
+    document.documentElement
+      .style
+      .setProperty(
+        "--announcement-height",
+        `${announcementHeight}px`
+      );
+
+
+    const menuTop =
+      Math.max(
+        0,
+        headerInner
+          .getBoundingClientRect()
+          .bottom
+      );
+
+
+    document.documentElement
+      .style
+      .setProperty(
+        "--menu-top",
+        `${menuTop}px`
+      );
+
+  }
+
+
+  /* ========================================
+     Condensed Header
+  ======================================== */
+
+  let scrollFrame =
+    0;
+
+
+  function updateStickyState() {
+
+    /*
+     * Keep the mobile header the same height.
+     * Only tablet/desktop gets the subtle
+     * condensed state.
+     */
+
+    if (
+      window.innerWidth <= 700
+    ) {
+
+      header.classList.remove(
+        "is-condensed"
+      );
+
+      return;
+
+    }
+
+
+    const threshold =
+      announcement
+        ? announcement.offsetHeight
+        : 0;
+
+
+    const condensed =
+      header.classList.contains(
+        "is-condensed"
+      );
+
+
+    if (
+      !condensed &&
+      window.scrollY >
+        threshold + 8
+    ) {
+
+      header.classList.add(
+        "is-condensed"
+      );
+
+      updateMeasurements();
+
+    } else if (
+      condensed &&
+      window.scrollY <
+        Math.max(
+          0,
+          threshold - 8
+        )
+    ) {
+
+      header.classList.remove(
+        "is-condensed"
+      );
+
+      updateMeasurements();
+
+    }
+
+  }
+
+
+  function scheduleStickyUpdate() {
+
+    if (scrollFrame) {
+
+      return;
+
+    }
+
+
+    scrollFrame =
+      requestAnimationFrame(
+        () => {
+
+          scrollFrame =
+            0;
+
+          updateStickyState();
+
+        }
+      );
+
+  }
+
+
+  /* ========================================
+     Mobile Menu
+  ======================================== */
+
+  let previousFocus =
+    null;
+
+
+  function closeMenu(
+    restoreFocus = true
+  ) {
+
+    setSubmenu(false);
+
+
+    const wasOpen =
+      toggle.getAttribute(
+        "aria-expanded"
+      ) === "true";
+
+
+    toggle.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+    toggle.setAttribute(
+      "aria-label",
+      "Open menu"
+    );
+
+
+    nav.classList.remove(
+      "is-open"
+    );
+
+
+    document.documentElement
+      .classList
+      .remove(
+        "menu-open"
+      );
+
+
+    document
+      .querySelector(
+        "main"
+      )
+      ?.removeAttribute(
+        "inert"
+      );
+
+
+    document
+      .querySelector(
+        "footer"
+      )
+      ?.removeAttribute(
+        "inert"
+      );
+
+
+    if (compact.matches) {
+
+      nav.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      nav.inert =
+        true;
+
+    } else {
+
+      nav.removeAttribute(
+        "aria-hidden"
+      );
+
+      nav.inert =
+        false;
+
+    }
+
+
+    if (
+      restoreFocus &&
+      wasOpen
+    ) {
+
+      const focusTarget =
+        previousFocus?.isConnected
+          ? previousFocus
+          : toggle;
+
+
+      focusTarget.focus({
+        preventScroll:
+          true
+      });
+
+    }
+
+  }
+
+
+  function openMenu() {
+
+    previousFocus =
+      document.activeElement;
+
+
+    updateMeasurements();
+
+
+    nav.classList.add(
+      "is-open"
+    );
+
+
+    nav.removeAttribute(
+      "aria-hidden"
+    );
+
+
+    nav.inert =
+      false;
+
+
+    toggle.setAttribute(
+      "aria-expanded",
+      "true"
+    );
+
+
+    toggle.setAttribute(
+      "aria-label",
+      "Close menu"
+    );
+
+
+    document.documentElement
+      .classList
+      .add(
+        "menu-open"
+      );
+
+
+    document
+      .querySelector(
+        "main"
+      )
+      ?.setAttribute(
+        "inert",
+        ""
+      );
+
+
+    document
+      .querySelector(
+        "footer"
+      )
+      ?.setAttribute(
+        "inert",
+        ""
+      );
+
+
+    nav
+      .querySelector(
+        "a"
+      )
+      ?.focus({
+        preventScroll:
+          true
+      });
+
+  }
+
+
+  toggle.addEventListener(
+    "click",
+    () => {
+
+      const isOpen =
+        toggle.getAttribute(
+          "aria-expanded"
+        ) === "true";
+
+
+      if (isOpen) {
+
+        closeMenu();
+
+      } else {
+
+        openMenu();
+
+      }
+
+    }
+  );
+
+
+  nav.addEventListener(
+    "click",
+    (event) => {
+
+      /*
+       * Clicking the Get Involved chevron
+       * should expand the submenu instead
+       * of closing the entire mobile menu.
+       */
+
+      if (
+        event.target.closest(
+          ".submenu-toggle"
+        )
+      ) {
+
+        return;
+
+      }
+
+
+      if (
+        event.target.closest(
+          "a"
+        ) &&
+        compact.matches
+      ) {
+
+        closeMenu(false);
+
+      }
+
+    }
+  );
+
+
+  /* ========================================
+     Responsive Navigation
+  ======================================== */
+
+  function syncNavigation() {
+
+    setSubmenu(false);
+
+    closeMenu(false);
+
+
+    if (compact.matches) {
+
+      /*
+       * Place the menu immediately after
+       * the sticky header so it can fill
+       * the remaining viewport.
+       */
+
+      header.insertAdjacentElement(
+        "afterend",
+        nav
+      );
+
+
+      nav.appendChild(
+        donate
+      );
+
+
+      nav.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+
+      nav.inert =
+        true;
+
+    } else {
+
+      /*
+       * Restore normal desktop structure.
+       */
+
+      headerInner.appendChild(
+        nav
+      );
+
+
+      headerInner.appendChild(
+        donate
+      );
+
+
+      nav.removeAttribute(
+        "aria-hidden"
+      );
+
+
+      nav.inert =
+        false;
+
+    }
+
+
+    updateStickyState();
+
+    updateMeasurements();
+
+  }
+
+
+  /* ========================================
+     Keyboard Support
+  ======================================== */
+
+  document.addEventListener(
+    "keydown",
+    (event) => {
+
+      /*
+       * Desktop submenu Escape behavior.
+       */
+
+      if (
+        event.key === "Escape" &&
+        !compact.matches &&
+        submenuToggle?.getAttribute(
+          "aria-expanded"
+        ) === "true"
+      ) {
+
+        event.preventDefault();
+
+        setSubmenu(false);
+
+
+        submenuToggle.focus({
+          preventScroll:
+            true
+        });
+
+
+        return;
+
+      }
+
+
+      /*
+       * Everything below applies only
+       * while the mobile menu is open.
+       */
+
+      if (
+        toggle.getAttribute(
+          "aria-expanded"
+        ) !== "true"
+      ) {
+
+        return;
+
+      }
+
+
+      if (
+        event.key === "Escape"
+      ) {
+
+        event.preventDefault();
+
+        closeMenu();
+
+        return;
+
+      }
+
+
+      /*
+       * Keep keyboard focus inside the
+       * open mobile navigation.
+       */
+
+      if (
+        event.key === "Tab"
+      ) {
+
+        const focusables = [
+
+          toggle,
+
+          ...[
+            ...nav.querySelectorAll(
+              "a, button"
+            )
+          ].filter(
+            (element) =>
+              element
+                .getClientRects()
+                .length > 0
+          )
+
+        ];
+
+
+        const first =
+          focusables[0];
+
+
+        const last =
+          focusables[
+            focusables.length - 1
+          ];
+
+
+        if (
+          event.shiftKey &&
+          document.activeElement ===
+            first
+        ) {
+
+          event.preventDefault();
+
+          last.focus();
+
+        } else if (
+          !event.shiftKey &&
+          document.activeElement ===
+            last
+        ) {
+
+          event.preventDefault();
+
+          first.focus();
+
+        }
+
+      }
+
+    }
+  );
+
+
+  /* ========================================
+     Responsive Listeners
+  ======================================== */
+
+  if (
+    typeof compact.addEventListener ===
+    "function"
+  ) {
+
+    compact.addEventListener(
+      "change",
+      syncNavigation
+    );
+
+  }
+
+
+  window.addEventListener(
+    "scroll",
+    scheduleStickyUpdate,
+    {
+      passive:
+        true
+    }
+  );
+
+
+  window.addEventListener(
+    "resize",
+    updateMeasurements,
+    {
+      passive:
+        true
+    }
+  );
+
+
+  if (
+    "ResizeObserver" in
+    window
+  ) {
+
+    const sizes =
+      new ResizeObserver(
+        updateMeasurements
+      );
+
+
+    if (announcement) {
+
+      sizes.observe(
+        announcement
+      );
+
+    }
+
+
+    sizes.observe(
+      headerInner
+    );
+
+  }
+
+
+  syncNavigation();
+
+})();
 
 
 
@@ -183,15 +897,22 @@ updateMobileNavigationPosition();
 ======================================== */
 
 const impactNumbers =
-  document.querySelectorAll(".impact-number");
+  document.querySelectorAll(
+    ".impact-number"
+  );
 
 
-function animateImpactNumber(element) {
+function animateImpactNumber(
+  element
+) {
 
   if (
-    element.dataset.animated === "true"
+    element.dataset.animated ===
+    "true"
   ) {
+
     return;
+
   }
 
 
@@ -200,7 +921,9 @@ function animateImpactNumber(element) {
 
 
   if (!finalValue) {
+
     return;
+
   }
 
 
@@ -240,18 +963,23 @@ function animateImpactNumber(element) {
     0;
 
 
-  function updateNumber(currentTime) {
+  function updateNumber(
+    currentTime
+  ) {
 
     const elapsed =
-      currentTime - startTime;
+      currentTime -
+      startTime;
 
 
     if (
-      currentTime - lastUpdate >=
+      currentTime -
+        lastUpdate >=
       updateInterval
     ) {
 
-      let randomNumber = "";
+      let randomNumber =
+        "";
 
 
       for (
@@ -262,7 +990,8 @@ function animateImpactNumber(element) {
 
         randomNumber +=
           Math.floor(
-            Math.random() * 10
+            Math.random() *
+            10
           );
 
       }
@@ -271,13 +1000,17 @@ function animateImpactNumber(element) {
       element.textContent =
         randomNumber;
 
+
       lastUpdate =
         currentTime;
 
     }
 
 
-    if (elapsed < duration) {
+    if (
+      elapsed <
+      duration
+    ) {
 
       requestAnimationFrame(
         updateNumber
@@ -300,45 +1033,86 @@ function animateImpactNumber(element) {
 }
 
 
-if (impactNumbers.length) {
+if (
+  impactNumbers.length
+) {
 
-  const impactObserver =
-    new IntersectionObserver(
-      (entries, observer) => {
-
-        entries.forEach((entry) => {
-
-          if (!entry.isIntersecting) {
-            return;
-          }
+  const prefersReducedMotion =
+    window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
 
 
-          animateImpactNumber(
-            entry.target
-          );
+  if (
+    prefersReducedMotion ||
+    !(
+      "IntersectionObserver" in
+      window
+    )
+  ) {
 
+    impactNumbers.forEach(
+      (number) => {
 
-          observer.unobserve(
-            entry.target
-          );
+        number.textContent =
+          number.dataset
+            .impactNumber ||
+          number.textContent;
 
-        });
-
-      },
-      {
-        threshold: 0.4
       }
     );
 
+  } else {
 
-  impactNumbers.forEach(
-    (number) => {
+    const impactObserver =
+      new IntersectionObserver(
+        (
+          entries,
+          observer
+        ) => {
 
-      impactObserver.observe(
-        number
+          entries.forEach(
+            (entry) => {
+
+              if (
+                !entry.isIntersecting
+              ) {
+
+                return;
+
+              }
+
+
+              animateImpactNumber(
+                entry.target
+              );
+
+
+              observer.unobserve(
+                entry.target
+              );
+
+            }
+          );
+
+        },
+        {
+          threshold:
+            0.4
+        }
       );
 
-    }
-  );
+
+    impactNumbers.forEach(
+      (number) => {
+
+        impactObserver.observe(
+          number
+        );
+
+      }
+    );
+
+  }
 
 }

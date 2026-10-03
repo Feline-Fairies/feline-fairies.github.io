@@ -1,73 +1,164 @@
 <header class="site-header">
 
-  <div class="container header-inner">
+  <div class="shell header-inner">
 
     <a
-      class="site-logo"
+      class="brand"
       href="/"
       aria-label="Feline Fairies home"
     >
+
       <img
-        class="site-logo-image"
-        src="/assets/images/feline-fairies-logo.webp"
-        alt="Feline Fairies"
+        src="/assets/images/feline-fairies-logo-web.webp"
+        alt=""
+        width="320"
+        height="216"
+        decoding="async"
+        loading="eager"
       >
+
+      <span class="wordmark">
+
+        Feline Fairies
+
+        <span>
+          {{ site.tagline }}
+        </span>
+
+      </span>
+
     </a>
 
 
     <button
-      class="mobile-menu-button"
+      class="nav-toggle"
       type="button"
       aria-expanded="false"
-      aria-controls="primary-navigation"
-      aria-label="Open navigation menu"
+      aria-controls="site-navigation"
+      aria-label="Open menu"
+      hidden
     >
-      <span></span>
-      <span></span>
-      <span></span>
+      <span aria-hidden="true"></span>
     </button>
 
 
     <nav
-      class="primary-navigation"
-      id="primary-navigation"
-      aria-label="Primary navigation"
+      class="nav"
+      id="site-navigation"
+      aria-label="Main navigation"
     >
 
-      <ul>
+      {% for item in site.navigation %}
 
-        {% for item in site.navigation %}
+        {% if item.children %}
 
-        <li>
+          <div class="nav-branch">
+
+            <div class="nav-branch__row">
+
+              <a
+                href="{{ item.url }}"
+                {% if page.url == item.url %}
+                  aria-current="page"
+                {% endif %}
+              >
+                {{ item.label }}
+              </a>
+
+              <button
+                class="submenu-toggle"
+                type="button"
+                aria-label="Expand {{ item.label }} options"
+                aria-expanded="false"
+                aria-controls="involvement-submenu"
+              >
+
+                <svg
+                  viewBox="0 0 16 16"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="m4 6 4 4 4-4"></path>
+                </svg>
+
+              </button>
+
+            </div>
+
+
+            <div
+              class="nav-submenu"
+              id="involvement-submenu"
+              hidden
+            >
+
+              {% for child in item.children %}
+
+                <a
+                  href="{{ child.url }}"
+                  {% if page.url == child.url %}
+                    aria-current="page"
+                  {% endif %}
+                >
+                  {{ child.label }}
+                </a>
+
+              {% endfor %}
+
+            </div>
+
+          </div>
+
+        {% else %}
 
           <a
             href="{{ item.url }}"
             {% if page.url == item.url %}
-            aria-current="page"
+              aria-current="page"
             {% endif %}
           >
             {{ item.label }}
           </a>
 
-        </li>
+        {% endif %}
 
-        {% endfor %}
-
-      </ul>
-
-
-      {% if site.donationUrl %}
-
-      <a
-        class="button button-donate"
-        href="{{ site.donationUrl }}"
-      >
-        Donate
-      </a>
-
-      {% endif %}
+      {% endfor %}
 
     </nav>
+
+
+    <a
+      class="header-donate"
+      href="{{ site.donateButton.url }}"
+      {% if page.url == site.donateButton.url %}
+        aria-current="page"
+      {% endif %}
+    >
+
+      <span class="header-donate__label">
+        {{ site.donateButton.label }}
+      </span>
+
+      <svg
+        class="paw-icon"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+        focusable="false"
+        fill="currentColor"
+      >
+
+        <circle cx="5.2" cy="9.1" r="1.55"></circle>
+        <circle cx="9.2" cy="5.6" r="1.55"></circle>
+        <circle cx="14.8" cy="5.6" r="1.55"></circle>
+        <circle cx="18.8" cy="9.1" r="1.55"></circle>
+
+        <path
+          d="M12 11.2c-2.2 0-3.2 1.8-4.7 3.3-1 1-1.6 1.9-1.2 3.1.4 1.2 1.5 1.8 2.7 1.8 1.1 0 2-.6 3.2-.6s2.1.6 3.2.6c1.2 0 2.3-.6 2.7-1.8.4-1.2-.2-2.1-1.2-3.1-1.5-1.5-2.5-3.3-4.7-3.3Z"
+        ></path>
+
+      </svg>
+
+    </a>
 
   </div>
 

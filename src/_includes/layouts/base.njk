@@ -19,17 +19,22 @@
     {% endif %}
   </title>
 
+
   {% if description %}
+
   <meta
     name="description"
     content="{{ description }}"
   >
+
   {% endif %}
+
 
   <link
     rel="canonical"
     href="{{ site.url }}{{ page.url }}"
   >
+
 
   <link
     rel="preconnect"
@@ -43,8 +48,14 @@
   >
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
+  >
+
+
+  <link
+    rel="stylesheet"
+    href="/assets/css/foundation.css"
   >
 
   <link
@@ -52,7 +63,13 @@
     href="/assets/css/site.css"
   >
 
+  <link
+    rel="stylesheet"
+    href="/assets/css/header-footer.css"
+  >
+
 </head>
+
 
 <body>
 
@@ -63,13 +80,11 @@
     Skip to main content
   </a>
 
-  <div class="site-chrome">
 
-    {% include "components/announcement-bar.njk" %}
+  {% include "components/announcement-bar.njk" %}
 
-    {% include "components/header.njk" %}
+  {% include "components/header.njk" %}
 
-  </div>
 
   <main id="main-content">
 
@@ -77,7 +92,9 @@
 
   </main>
 
+
   {% include "components/footer.njk" %}
+
 
   <script
     src="/assets/js/site.js"

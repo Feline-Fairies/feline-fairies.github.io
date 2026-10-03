@@ -1,74 +1,147 @@
 <footer class="site-footer">
 
-  <div class="container footer-inner">
+  <div class="shell">
+
+    <div class="footer-top">
+
+      <div class="footer-brand-block">
+
+        <a
+          class="brand footer-brand"
+          href="/"
+          aria-label="Feline Fairies home"
+        >
+
+          <img
+            src="/assets/images/feline-fairies-logo-web.webp"
+            alt=""
+            width="320"
+            height="216"
+            decoding="async"
+            loading="lazy"
+          >
+
+          <span class="wordmark">
+
+            Feline Fairies
+
+            <span>
+              {{ site.tagline }}
+            </span>
+
+          </span>
+
+        </a>
 
 
-    <div class="footer-actions">
+        <nav
+          class="footer-social"
+          aria-label="Official social profiles"
+        >
 
-      <a
-        class="button button-primary"
-        href="/adopt/"
+          <a
+            href="{{ site.social.facebook.url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="{{ site.social.facebook.label }} (opens in a new tab)"
+          >
+
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              focusable="false"
+              fill="currentColor"
+            >
+
+              <path
+                d="M13.5 21v-8h2.8l.4-3h-3.2V8.1c0-.9.3-1.6 1.6-1.6h1.7V3.8c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1V10H7.7v3h2.7v8h3.1Z"
+              ></path>
+
+            </svg>
+
+          </a>
+
+
+          <a
+            href="{{ site.social.instagram.url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="{{ site.social.instagram.label }} (opens in a new tab)"
+          >
+
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              focusable="false"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+            >
+
+              <rect
+                x="3.5"
+                y="3.5"
+                width="17"
+                height="17"
+                rx="5"
+              ></rect>
+
+              <circle
+                cx="12"
+                cy="12"
+                r="4"
+              ></circle>
+
+              <circle
+                cx="17.3"
+                cy="6.7"
+                r=".9"
+                fill="currentColor"
+                stroke="none"
+              ></circle>
+
+            </svg>
+
+          </a>
+
+        </nav>
+
+      </div>
+
+
+      <nav
+        class="footer-nav"
+        aria-label="Footer navigation"
       >
-        View Cats for Adoption
-      </a>
 
-      <a
-        class="button button-coral"
-        href="/get-involved/"
-      >
-        Ways to Get Involved
-      </a>
+        {% for item in site.footerNavigation %}
+
+          <a
+            href="{{ item.url }}"
+            {% if page.url == item.url %}
+              aria-current="page"
+            {% endif %}
+          >
+            {{ item.label }}
+          </a>
+
+        {% endfor %}
+
+      </nav>
 
     </div>
 
 
-    <a
-      class="footer-logo"
-      href="/"
-      aria-label="Feline Fairies home"
-    >
-      <img
-        src="/assets/images/feline-fairies-logo.webp"
-        alt="Feline Fairies"
-      >
-    </a>
+    <div class="footer-bottom">
 
-
-    <nav
-      class="footer-navigation"
-      aria-label="Footer navigation"
-    >
-
-      <ul>
-
-        {% for item in site.navigation %}
-
-        <li>
-
-          <a href="{{ item.url }}">
-            {{ item.label }}
-          </a>
-
-        </li>
-
-        {% endfor %}
-
-      </ul>
-
-    </nav>
-
-
-    <div class="footer-legal">
-
-      <p>
-        {{ site.legalName }} is a 501(c)(3) nonprofit organization.
+      <span>
+        {{ site.name }} is a {{ site.nonprofitStatus }} nonprofit organization.
         EIN: {{ site.ein }}
-      </p>
+      </span>
 
-      <p>
-        © {{ currentYear }} {{ site.legalName }}
-        | {{ site.location }}
-      </p>
+      <span>
+        &copy; {{ currentYear }} {{ site.name }} · {{ site.location }}
+      </span>
 
     </div>
 
