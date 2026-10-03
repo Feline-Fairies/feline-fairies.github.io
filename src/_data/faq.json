@@ -1,0 +1,118 @@
+{
+  "hero": {
+    "eyebrow": "Frequently asked questions",
+    "title": "Good questions are welcome.",
+    "text": "Here are a few starting points about adoption, fostering, volunteering, donations, and surrender requests."
+  },
+
+  "categories": [
+    {
+      "id": "adoption",
+      "label": "Adoption",
+      "questions": [
+        {
+          "question": "Where can I see cats available for adoption?",
+          "answer": "Current listings are available on our Adopt page.",
+          "link": {
+            "label": "Browse adoptable cats",
+            "url": "/adopt/#meet-cats"
+          }
+        },
+        {
+          "question": "Can I apply before choosing a specific cat?",
+          "answer": "Yes. An application can start the conversation even if you are still looking for a match.",
+          "link": {
+            "label": "Open the adoption application",
+            "url": "/adopt/adoption_application/"
+          }
+        },
+        {
+          "question": "How do meet-and-greets work?",
+          "answer": "After application approval, the team can arrange a visit. Cats live in foster homes, so visits are planned rather than walk-ins.",
+          "link": {
+            "label": "Read the adoption steps",
+            "url": "/adopt/how-to-adopt/"
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "fostering",
+      "label": "Fostering",
+      "questions": [
+        {
+          "question": "Where do foster cats stay?",
+          "answer": "Feline Fairies is foster-based. Cats stay in volunteer homes rather than a shelter building."
+        },
+        {
+          "question": "How do I express interest in fostering?",
+          "answer": "Start with the foster application. A volunteer can follow up about current needs and a suitable next step.",
+          "link": {
+            "label": "Apply to foster",
+            "url": "/foster/foster_application/"
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "volunteering",
+      "label": "Volunteering",
+      "questions": [
+        {
+          "question": "What kinds of help might be useful?",
+          "answer": "Needs can include events, cat care, transport, and behind-the-scenes work. Availability and needs can change.",
+          "link": {
+            "label": "Volunteer with Feline Fairies",
+            "url": "/volunteer/volunteer_application/"
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "donations",
+      "label": "Donations",
+      "questions": [
+        {
+          "question": "How can I donate online?",
+          "answer": "The Donate page connects you to Feline Fairies’ PayPal donation flow.",
+          "link": {
+            "label": "Go to the Donate page",
+            "url": "/donate/"
+          }
+        },
+        {
+          "question": "What do donations support?",
+          "answer": "Gifts help with food, supplies, foster needs, safe housing, and basic medical care."
+        }
+      ]
+    },
+
+    {
+      "id": "surrender",
+      "label": "Surrender",
+      "questions": [
+        {
+          "question": "Can Feline Fairies accept every surrender request?",
+          "answer": "No acceptance can be promised. The surrender request form gives the volunteer team the information needed to review the situation and current capacity.",
+          "link": {
+            "label": "Submit a surrender request",
+            "url": "/surrender/surrender_form/"
+          }
+        }
+      ]
+    }
+  ],
+
+  "cta": {
+    "eyebrow": "Still wondering?",
+    "title": "Ask us directly.",
+    "text": "Send a question and we’ll help point you toward the right next step.",
+    "button": {
+      "label": "Contact Feline Fairies",
+      "url": "/contact/"
+    }
+  }
+}

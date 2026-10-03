@@ -1,0 +1,34 @@
+{
+  "hero": {
+    "eyebrow": "Feline Fairies / Events",
+    "title": "Meet us out in the community.",
+    "text": "Confirmed adoption and community events will be posted here with the details you need to plan a visit."
+  },
+
+  "items": [],
+
+  "empty": {
+    "eyebrow": "No upcoming events posted",
+    "title": "Nothing on the calendar just yet.",
+    "text": "When a date is confirmed, we’ll post the time, location, and details here. Until then, you can meet the cats online or get in touch with a question.",
+    "primaryButton": {
+      "label": "Meet the Cats",
+      "url": "/adopt/"
+    },
+    "secondaryButton": {
+      "label": "Contact Us",
+      "url": "/contact/"
+    }
+  },
+
+  "guide": {
+    "eyebrow": "When events are published",
+    "title": "Everything you need to plan a visit.",
+    "items": [
+      "Date & time",
+      "Location",
+      "What to expect",
+      "Event details link"
+    ]
+  }
+}

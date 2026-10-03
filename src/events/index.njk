@@ -1,0 +1,243 @@
+---
+layout: layouts/base.njk
+seoTitle: Feline Fairies Events | St. Augustine Cat Rescue
+title: Feline Fairies Events
+description: Check for upcoming Feline Fairies community and adoption events in St. Augustine, Florida. Confirmed event details are posted here.
+pageStyles:
+  - /assets/css/interior.css
+  - /assets/css/events-faq.css
+---
+
+
+<!-- ========================================
+     OPENING
+======================================== -->
+
+<section
+  class="events-open"
+  aria-labelledby="events-title"
+>
+
+  <div class="shell">
+
+    <p class="eyebrow">
+      {{ events.hero.eyebrow }}
+    </p>
+
+    <h1 id="events-title">
+      {{ events.hero.title }}
+    </h1>
+
+    <p>
+      {{ events.hero.text }}
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     EVENTS OR EMPTY STATE
+======================================== -->
+
+{% if events.items.length %}
+
+  <section
+    class="events-list"
+    aria-labelledby="upcoming-events-title"
+  >
+
+    <div class="shell">
+
+      <div class="events-list__heading">
+
+        <p class="eyebrow">
+          Upcoming events
+        </p>
+
+        <h2 id="upcoming-events-title">
+          Come say hello.
+        </h2>
+
+      </div>
+
+
+      <div class="event-cards">
+
+        {% for event in events.items %}
+
+          <article class="event-card">
+
+            {% if event.date %}
+
+              <p class="event-card__date">
+                {{ event.date }}
+              </p>
+
+            {% endif %}
+
+
+            <h3>
+              {{ event.title }}
+            </h3>
+
+
+            {% if event.description %}
+
+              <p>
+                {{ event.description }}
+              </p>
+
+            {% endif %}
+
+
+            <div class="event-card__meta">
+
+              {% if event.time %}
+
+                <span>
+                  <strong>Time:</strong>
+                  {{ event.time }}
+                </span>
+
+              {% endif %}
+
+
+              {% if event.location %}
+
+                <span>
+                  <strong>Location:</strong>
+                  {{ event.location }}
+                </span>
+
+              {% endif %}
+
+            </div>
+
+
+            {% if event.url %}
+
+              <a
+                href="{{ event.url }}"
+                {% if event.external %}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                {% endif %}
+              >
+                {{ event.linkLabel or "Event details" }}
+              </a>
+
+            {% endif %}
+
+          </article>
+
+        {% endfor %}
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+{% else %}
+
+
+  <section
+    class="events-empty"
+    aria-labelledby="events-empty-title"
+  >
+
+    <div class="shell events-empty__card">
+
+      <div>
+
+        <p class="eyebrow">
+          {{ events.empty.eyebrow }}
+        </p>
+
+        <h2 id="events-empty-title">
+          {{ events.empty.title }}
+        </h2>
+
+        <p>
+          {{ events.empty.text }}
+        </p>
+
+
+        <div class="events-empty__actions">
+
+          <a
+            class="button button--night"
+            href="{{ events.empty.primaryButton.url }}"
+          >
+            {{ events.empty.primaryButton.label }}
+          </a>
+
+          <a
+            class="button"
+            href="{{ events.empty.secondaryButton.url }}"
+          >
+            {{ events.empty.secondaryButton.label }}
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="events-empty__mark"
+        aria-hidden="true"
+      >
+        ✦
+      </div>
+
+    </div>
+
+  </section>
+
+
+{% endif %}
+
+
+
+<!-- ========================================
+     EVENT DETAILS GUIDE
+======================================== -->
+
+<section
+  class="event-schema"
+  aria-labelledby="event-schema-title"
+>
+
+  <div class="shell">
+
+    <p class="eyebrow">
+      {{ events.guide.eyebrow }}
+    </p>
+
+    <h2 id="event-schema-title">
+      {{ events.guide.title }}
+    </h2>
+
+
+    <div class="event-schema__grid">
+
+      {% for item in events.guide.items %}
+
+        <div>
+          <strong>
+            {{ item }}
+          </strong>
+        </div>
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+</section>

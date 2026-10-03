@@ -1,0 +1,157 @@
+---
+layout: layouts/base.njk
+seoTitle: Cat Rescue & Adoption FAQ | Feline Fairies
+title: Cat Rescue and Adoption FAQ
+description: Find answers about cat adoption, fostering, volunteering, donations, and surrender requests with foster-based rescue Feline Fairies in St. Augustine.
+pageStyles:
+  - /assets/css/interior.css
+  - /assets/css/events-faq.css
+---
+
+
+<!-- ========================================
+     OPENING
+======================================== -->
+
+<section
+  class="faq-open"
+  aria-labelledby="faq-title"
+>
+
+  <div class="shell">
+
+    <p class="eyebrow">
+      {{ faq.hero.eyebrow }}
+    </p>
+
+    <h1 id="faq-title">
+      {{ faq.hero.title }}
+    </h1>
+
+    <p>
+      {{ faq.hero.text }}
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     FAQ
+======================================== -->
+
+<div class="shell faq-layout">
+
+  <nav
+    class="faq-index"
+    aria-label="FAQ categories"
+  >
+
+    {% for category in faq.categories %}
+
+      <a href="#{{ category.id }}">
+        {{ category.label }}
+      </a>
+
+    {% endfor %}
+
+  </nav>
+
+
+  <div>
+
+    {% for category in faq.categories %}
+
+      <section
+        class="faq-group"
+        id="{{ category.id }}"
+        aria-labelledby="{{ category.id }}-title"
+      >
+
+        <h2 id="{{ category.id }}-title">
+          {{ category.label }}
+        </h2>
+
+
+        {% for item in category.questions %}
+
+          <details>
+
+            <summary>
+              {{ item.question }}
+            </summary>
+
+            <p>
+
+              {{ item.answer }}
+
+              {% if item.link %}
+
+                <a href="{{ item.link.url }}">
+                  {{ item.link.label }}
+                </a>
+
+              {% endif %}
+
+            </p>
+
+          </details>
+
+        {% endfor %}
+
+      </section>
+
+    {% endfor %}
+
+  </div>
+
+</div>
+
+
+
+<!-- ========================================
+     FINAL CTA
+======================================== -->
+
+<section
+  class="faq-finish"
+  aria-labelledby="faq-finish-title"
+>
+
+  <div class="shell faq-finish__grid">
+
+    <div>
+
+      <p class="eyebrow">
+        {{ faq.cta.eyebrow }}
+      </p>
+
+      <h2 id="faq-finish-title">
+        {{ faq.cta.title }}
+      </h2>
+
+      <p>
+        {{ faq.cta.text }}
+      </p>
+
+    </div>
+
+
+    <a
+      class="button"
+      href="{{ faq.cta.button.url }}"
+    >
+      {{ faq.cta.button.label }}
+    </a>
+
+  </div>
+
+</section>
+
+
+<script
+  src="/assets/js/faq.js"
+  defer
+></script>
