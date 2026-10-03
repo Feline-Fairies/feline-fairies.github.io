@@ -1,82 +1,147 @@
 {
   "hero": {
-    "eyebrow": "Over 800+ cats rescued and rehomed",
-    "title": "Because Every Cat Deserves a Future Filled With Love.",
-    "text": "Feline Fairies is a volunteer-run nonprofit based in St. Augustine, Florida providing shelter, care, and second chances for homeless cats and kittens.",
+    "eyebrow": "Foster-based cat rescue in North Florida",
+    "title": {
+      "line1Before": "A little",
+      "accent": "magic",
+      "line2": "can change a cat’s",
+      "line3": "whole world."
+    },
+    "text": "Feline Fairies is a volunteer-run rescue in St. Augustine. We give homeless cats and kittens safe foster homes, basic medical care, and a path to the families who will love them for life.",
     "primaryButton": {
-      "label": "View Cats for Adoption",
+      "label": "Meet the Cats",
       "url": "/adopt/"
     },
     "secondaryButton": {
-      "label": "Ways to Get Involved",
-      "url": "/get-involved/"
+      "label": "How You Can Help",
+      "url": "#get-involved"
     },
-    "image": "/media/home/hero-kittens.jpg",
-    "imageAlt": "Two cats resting together"
+    "image": {
+      "src": "/media/home/hero-foster-cats-candid.webp",
+      "src640": "/media/home/hero-foster-cats-candid-640.webp",
+      "src960": "/media/home/hero-foster-cats-candid-960.webp",
+      "alt": "Ginger cat and gray kitten resting together on a sofa in an illustrative foster-home scene",
+      "width": 1024,
+      "height": 1536
+    },
+    "badge": {
+      "number": "800+",
+      "label": "Cats rescued & rehomed"
+    }
+  },
+
+  "intro": {
+    "eyebrow": "Small rescue. Big heart.",
+    "titleBefore": "There is no shelter building.",
+    "titleAccent": "There is a community.",
+    "text": "Our cats live in foster homes while volunteers help them grow comfortable, cared for, and ready for adoption.",
+    "linkLabel": "Get to know Feline Fairies",
+    "linkUrl": "/about/"
   },
 
   "mission": {
-    "eyebrow": "Our Mission",
-    "title": "Rescue, Rehabilitate, and Rehome",
+    "eyebrow": "What we do",
+    "title": "A soft place to land. A chance to belong.",
     "paragraphs": [
-      "At Feline Fairies, our mission is simple: to ensure every cat has a chance at a life filled with love, safety, and dignity.",
-      "Based in St. Augustine, we're a volunteer-run rescue helping cats through rescue, foster care, adoption, socialization, and basic medical care. From tiny kittens to senior companions, we support them until they're ready for their forever families.",
-      "We believe every purr, paw, and playful leap is worth fighting for."
+      "From tiny kittens to senior companions, our volunteers rescue homeless, abandoned, and at-risk cats. Foster homes provide daily care, comfort, and socialization while the rescue arranges basic medical care and works to find each cat a loving family.",
+      "Every adoption makes room for another cat who needs us."
     ],
-    "buttonLabel": "Learn More About Us",
-    "buttonUrl": "/about/",
-    "image": "/media/home/mission-cat.webp",
-    "imageAlt": "A rescued cat relaxing with a person"
+    "button": {
+      "label": "Read Our Story",
+      "url": "/about/"
+    },
+    "image": {
+      "src": "/media/home/mission-foster-cat-candid.webp",
+      "src640": "/media/home/mission-foster-cat-candid-640.webp",
+      "src960": "/media/home/mission-foster-cat-candid-960.webp",
+      "alt": "Calico cat resting in a person’s lap in an illustrative foster-home scene",
+      "width": 1086,
+      "height": 1448
+    }
   },
 
   "impact": {
+    "titleBefore": "The power of a",
+    "titleAccent": "second chance.",
     "items": [
       {
-        "number": "315",
-        "label": "Cats Adopted"
+        "number": "800+",
+        "label": "Cats rescued and rehomed"
       },
       {
-        "number": "352",
-        "label": "Cats Taken Into Foster Care"
+        "number": "2021",
+        "label": "Year the rescue began"
       },
       {
-        "number": "498",
-        "label": "Cats Spayed or Neutered"
+        "number": "100%",
+        "label": "Volunteer-run"
       }
     ]
   },
 
-  "rescueStory": {
-    "title": "Be Part of Their Rescue Story",
+  "paths": {
+    "eyebrow": "Find your place in the story",
+    "title": "Their next chapter could start with you.",
+    "text": "However you choose to help, you become part of a cat’s second chance.",
     "items": [
       {
+        "number": "01",
         "title": "Adopt",
-        "accent": "green",
-        "text": "Our Adoption Program matches cats and kittens with loving, committed families. Every cat receives basic medical care, love, and socialization before they're ready for their forever home.",
-        "buttonLabel": "Adopt Now",
+        "text": "Meet cats and kittens looking for a family. Find the companion who feels like yours, then take the next step toward bringing them home.",
+        "linkLabel": "Meet adoptable cats",
         "url": "/adopt/"
       },
       {
+        "number": "02",
         "title": "Foster",
-        "accent": "coral",
-        "text": "Our Foster Program gives cats and kittens a soft place to land before adoption. Whether you're new to fostering or experienced, we'll guide you every step of the way while they heal and grow.",
-        "buttonLabel": "Become a Foster",
-        "url": "/foster/foster_application/"
+        "text": "Open your home to a cat while they wait for adoption. Whether it’s your first time or your tenth, the rescue will help you get started.",
+        "linkLabel": "Explore fostering",
+        "url": "/get-involved/"
       },
       {
+        "number": "03",
         "title": "Volunteer",
-        "accent": "purple",
-        "text": "As a volunteer-run organization, we rely on people like you to carry out our mission. Help with events, socialization, transport, and behind-the-scenes support while making a meaningful impact.",
-        "buttonLabel": "Lend a Paw",
-        "url": "/volunteer/volunteer_application/"
+        "text": "Help at events, spend time with cats, support transport, or lend your skills behind the scenes. There is room for many kinds of helping hands.",
+        "linkLabel": "Ways to volunteer",
+        "url": "/get-involved/"
       }
     ]
   },
 
-  "donate": {
-    "eyebrow": "Support the Rescue",
-    "title": "Help us say yes to more cats.",
-    "text": "Donations help provide food, basic medical care, supplies, and safe housing for cats in our care.",
-    "buttonLabel": "Donate to Feline Fairies"
+  "steps": {
+    "eyebrow": "Ready to meet your match?",
+    "title": "Adoption begins with a connection.",
+    "text": "We want every cat and family to have the best possible start together.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Meet the cats",
+        "text": "Browse the cats and kittens currently looking for homes."
+      },
+      {
+        "number": "02",
+        "title": "Apply to adopt",
+        "text": "Share a little about your home and the companion you hope to meet."
+      },
+      {
+        "number": "03",
+        "title": "Plan a visit",
+        "text": "After application approval, a meet-and-greet can be scheduled."
+      }
+    ],
+    "button": {
+      "label": "Explore Adoption",
+      "url": "/adopt/"
+    }
+  },
+
+  "donation": {
+    "eyebrow": "Give a little magic",
+    "title": "You can help make room for the next rescue.",
+    "text": "Donations support foster-based care, basic medical care, and the everyday needs of cats and kittens as they wait for a family.",
+    "button": {
+      "label": "Donate to Feline Fairies",
+      "url": "/donate/"
+    }
   }
 }

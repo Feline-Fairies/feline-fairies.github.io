@@ -11,8 +11,16 @@
     content="width=device-width, initial-scale=1"
   >
 
+  <meta
+    name="theme-color"
+    content="#123b45"
+  >
+
+
   <title>
-    {% if title %}
+    {% if seoTitle %}
+      {{ seoTitle }}
+    {% elif title %}
       {{ title }} | {{ site.name }}
     {% else %}
       {{ site.name }}
@@ -22,10 +30,10 @@
 
   {% if description %}
 
-  <meta
-    name="description"
-    content="{{ description }}"
-  >
+    <meta
+      name="description"
+      content="{{ description }}"
+    >
 
   {% endif %}
 
@@ -58,10 +66,20 @@
     href="/assets/css/foundation.css"
   >
 
-  <link
-    rel="stylesheet"
-    href="/assets/css/site.css"
-  >
+
+  {% if pageStyles %}
+
+    {% for stylesheet in pageStyles %}
+
+      <link
+        rel="stylesheet"
+        href="{{ stylesheet }}"
+      >
+
+    {% endfor %}
+
+  {% endif %}
+
 
   <link
     rel="stylesheet"
@@ -86,7 +104,10 @@
   {% include "components/header.njk" %}
 
 
-  <main id="main-content">
+  <main
+    id="main-content"
+    tabindex="-1"
+  >
 
     {{ content | safe }}
 
