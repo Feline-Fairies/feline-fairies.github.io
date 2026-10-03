@@ -1,0 +1,558 @@
+/* ========================================
+   Feline Fairies
+   Foster Hub
+======================================== */
+
+.foster-hub h1,
+.foster-hub h2,
+.foster-hub h3 {
+  text-wrap: balance;
+}
+
+.foster-hub p {
+  text-wrap: pretty;
+}
+
+
+/* ========================================
+   Opening
+======================================== */
+
+.foster-opening {
+  padding: 70px 0 76px;
+  background: var(--paper);
+}
+
+.foster-opening__grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.foster-opening h1 {
+  max-width: 720px;
+  margin: 24px 0;
+  font-size: clamp(62px, 5.5vw, 82px);
+}
+
+.foster-opening h1 em {
+  color: var(--night);
+  font-weight: 400;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-decoration-color: var(--coral);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 7px;
+}
+
+.foster-lede {
+  max-width: 560px;
+  color: var(--body);
+  font-size: 18px;
+}
+
+.foster-actions {
+  display: flex;
+  gap: 26px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.foster-text-link {
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+}
+
+.foster-text-link:hover {
+  text-decoration-thickness: 2px;
+}
+
+.foster-opening__photo {
+  position: relative;
+  margin: 0;
+}
+
+.foster-opening__photo img {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+  object-position: 50% 40%;
+  border-radius: 8px 110px 8px 8px;
+}
+
+
+/* ========================================
+   Why Fostering Matters
+======================================== */
+
+.foster-why {
+  padding: 86px 0;
+  background: var(--night);
+  color: var(--cream);
+}
+
+.foster-why__grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.foster-hub h2 {
+  margin: 20px 0 24px;
+  font-size: clamp(44px, 4.5vw, 64px);
+}
+
+.foster-why .eyebrow,
+.foster-process .eyebrow {
+  color: #b9d1cb;
+}
+
+.foster-why__copy p:first-child {
+  margin-bottom: 18px;
+  color: var(--cream);
+  font-size: 22px;
+}
+
+.foster-why__copy p {
+  max-width: 490px;
+  color: #d5e2dd;
+}
+
+.foster-small-star {
+  display: block;
+  margin-top: 20px;
+  color: var(--coral);
+  font-size: 30px;
+}
+
+
+/* ========================================
+   Everyday Things
+======================================== */
+
+.foster-everyday {
+  padding: 96px 0;
+  background: var(--cream);
+}
+
+.foster-section-intro {
+  margin-bottom: 40px;
+}
+
+.foster-care-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.foster-care-grid article {
+  padding: 27px 24px 30px;
+  border-radius: 6px;
+  background: var(--paper);
+}
+
+.foster-care-grid article:nth-child(2) {
+  background: var(--lilac);
+}
+
+.foster-care-grid article:nth-child(3) {
+  background: #e5eddf;
+}
+
+.foster-care-grid article:nth-child(4) {
+  background: var(--coral-soft);
+}
+
+.foster-index {
+  font: 400 36px/1 "Instrument Serif", Georgia, serif;
+}
+
+.foster-care-grid h3 {
+  margin: 26px 0 14px;
+  font-size: 31px;
+  letter-spacing: -0.025em;
+}
+
+.foster-care-grid p {
+  color: var(--body);
+  font-size: 16px;
+}
+
+
+/* ========================================
+   Is Fostering Right For Me
+======================================== */
+
+.foster-fit {
+  padding: 86px 0;
+  background: var(--paper);
+}
+
+.foster-fit__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.foster-fit p {
+  max-width: 530px;
+  margin-bottom: 24px;
+  color: var(--body);
+}
+
+.foster-considerations {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+
+.foster-considerations li {
+  position: relative;
+  padding: 22px 0 22px 32px;
+  border-bottom: 1px solid var(--line);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.foster-considerations li::before {
+  content: "✦";
+  position: absolute;
+  top: 25px;
+  left: 0;
+  color: var(--night);
+  font-size: 16px;
+}
+
+
+/* ========================================
+   Process
+======================================== */
+
+.foster-process {
+  padding: 90px 0;
+  background: var(--night);
+  color: var(--cream);
+}
+
+.foster-process__heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  align-items: center;
+  margin-bottom: 38px;
+}
+
+.foster-process__heading p {
+  max-width: 400px;
+  color: #d5e2dd;
+}
+
+.foster-process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 35px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.foster-process-grid li {
+  padding-top: 22px;
+  border-top: 1px solid #68858a;
+}
+
+.foster-process-grid .foster-index {
+  color: var(--coral);
+}
+
+.foster-process-grid h3 {
+  margin: 24px 0 14px;
+  font-size: 32px;
+}
+
+.foster-process-grid p {
+  color: #d5e2dd;
+  font-size: 16px;
+}
+
+
+/* ========================================
+   Closing
+======================================== */
+
+.foster-closing {
+  padding: 80px 0 86px;
+  background: var(--coral);
+}
+
+.foster-closing .shell {
+  max-width: 1000px;
+}
+
+.foster-closing h2 {
+  max-width: 900px;
+  font-size: clamp(48px, 5vw, 72px);
+}
+
+.foster-closing h2 em {
+  color: var(--night);
+  font-weight: 400;
+}
+
+.foster-closing p:not(.eyebrow) {
+  max-width: 650px;
+  font-size: 18px;
+}
+
+
+/* ========================================
+   Tablet
+======================================== */
+
+@media (max-width: 1150px) {
+
+  .foster-opening {
+    padding: 54px 0 60px;
+  }
+
+  .foster-opening__grid,
+  .foster-why__grid {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 34px;
+  }
+
+  .foster-opening h1 {
+    font-size: clamp(46px, 6vw, 66px);
+  }
+
+  .foster-opening__photo img {
+    height: 340px;
+    border-top-right-radius: 80px;
+  }
+
+  .foster-lede {
+    font-size: 17px;
+  }
+
+  .foster-actions {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .foster-everyday,
+  .foster-fit,
+  .foster-process {
+    padding: 66px 0;
+  }
+
+  .foster-care-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .foster-fit__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .foster-hub h2 {
+    font-size: 48px;
+  }
+
+  .foster-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 36px;
+  }
+
+  .foster-process__heading {
+    gap: 28px;
+  }
+
+  .foster-process__heading p {
+    max-width: 300px;
+  }
+
+  .foster-closing {
+    padding: 64px 0;
+  }
+
+  .foster-closing h2 {
+    font-size: 60px;
+  }
+}
+
+
+/* ========================================
+   Mobile
+======================================== */
+
+@media (max-width: 700px) {
+
+  .foster-opening {
+    padding: 38px 0 46px;
+  }
+
+  .foster-opening__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: stretch;
+  }
+
+  .foster-opening h1 {
+    margin: 20px 0;
+    font-size: clamp(43px, 11.6vw, 57px);
+  }
+
+  .foster-opening__photo img {
+    height: 245px;
+    object-position: 50% 25%;
+    border-radius: 6px 64px 6px 6px;
+  }
+
+  .foster-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    margin-top: 26px;
+  }
+
+  .foster-actions .button {
+    width: 100%;
+  }
+
+  .foster-actions .foster-text-link {
+    display: flex;
+    min-height: 44px;
+    align-items: center;
+    align-self: center;
+  }
+
+  .foster-why {
+    padding: 48px 0;
+  }
+
+  .foster-why__grid,
+  .foster-fit__grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .foster-hub h2 {
+    margin: 18px 0 20px;
+    font-size: 42px;
+  }
+
+  .foster-why__copy p:first-child {
+    font-size: 20px;
+  }
+
+  .foster-small-star {
+    margin-top: 14px;
+  }
+
+  .foster-everyday,
+  .foster-fit,
+  .foster-process {
+    padding: 50px 0;
+  }
+
+  .foster-section-intro {
+    margin-bottom: 26px;
+  }
+
+  .foster-care-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .foster-care-grid article {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    column-gap: 18px;
+    padding: 22px 24px;
+  }
+
+  .foster-care-grid .foster-index {
+    grid-row: 1 / 3;
+    font-size: 29px;
+  }
+
+  .foster-care-grid h3 {
+    margin: 0 0 10px;
+    font-size: 30px;
+  }
+
+  .foster-care-grid p {
+    grid-column: 2;
+  }
+
+  .foster-fit p {
+    margin-bottom: 18px;
+  }
+
+  .foster-fit__grid {
+    gap: 26px;
+  }
+
+  .foster-considerations li {
+    padding-block: 18px;
+    font-size: 17px;
+  }
+
+  .foster-considerations li::before {
+    top: 21px;
+  }
+
+  .foster-process__heading {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  .foster-process__heading p {
+    max-width: none;
+  }
+
+  .foster-process-grid {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .foster-process-grid li {
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    gap: 0 18px;
+    padding-top: 22px;
+  }
+
+  .foster-process-grid .foster-index {
+    grid-row: 1 / 3;
+    font-size: 32px;
+  }
+
+  .foster-process-grid h3 {
+    margin: 0 0 12px;
+    font-size: 31px;
+  }
+
+  .foster-process-grid p {
+    grid-column: 2;
+  }
+
+  .foster-closing {
+    padding: 50px 0 56px;
+  }
+
+  .foster-closing h2 {
+    font-size: 46px;
+  }
+
+  .foster-closing p:not(.eyebrow) {
+    font-size: 17px;
+  }
+}

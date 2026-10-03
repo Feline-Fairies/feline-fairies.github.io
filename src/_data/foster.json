@@ -1,0 +1,121 @@
+{
+  "hero": {
+    "eyebrow": "Foster with Feline Fairies",
+    "titleLine1": "Open your home.",
+    "titleLine2Before": "Change a cat’s",
+    "titleAccent": "next chapter.",
+    "text": "Feline Fairies is a foster-based rescue. Temporary homes give cats a safe place to settle while they wait for adoption.",
+    "primaryButton": {
+      "label": "Apply to Foster",
+      "url": "/foster/foster_application/"
+    },
+    "secondaryLink": {
+      "label": "Have a question?",
+      "url": "/contact/"
+    },
+    "image": {
+      "src": "/media/foster/foster-home-candid.webp",
+      "src640": "/media/foster/foster-home-candid-640.webp",
+      "src960": "/media/foster/foster-home-candid-960.webp",
+      "width": 1024,
+      "height": 1536,
+      "alt": "A cat relaxing comfortably in a foster home"
+    }
+  },
+
+  "why": {
+    "eyebrow": "Why fostering matters",
+    "titleLine1": "A safe place",
+    "titleLine2": "changes everything.",
+    "lead": "There is no shelter building. There is a community of foster homes.",
+    "text": "Fostering makes space for a cat’s next chapter: somewhere to rest, settle into a routine, and be cared for while they wait for a home."
+  },
+
+  "everyday": {
+    "eyebrow": "What fostering can look like",
+    "titleLine1": "The everyday things.",
+    "titleLine2": "The difference they make.",
+    "items": [
+      {
+        "number": "01",
+        "title": "A safe space",
+        "text": "Offer a calm temporary place for a cat to settle."
+      },
+      {
+        "number": "02",
+        "title": "Everyday care",
+        "text": "Provide routine care, attention, and a comfortable home environment."
+      },
+      {
+        "number": "03",
+        "title": "Communication",
+        "text": "Stay in touch with the rescue and share useful updates."
+      },
+      {
+        "number": "04",
+        "title": "Help them get ready",
+        "text": "Give a cat time and stability while they move toward adoption."
+      }
+    ]
+  },
+
+  "fit": {
+    "eyebrow": "Is fostering right for me?",
+    "titleLine1": "Start with a little",
+    "titleLine2": "room to consider.",
+    "text": "You do not have to have every answer before starting a conversation. These questions can help you think about how fostering might fit into your home.",
+    "link": {
+      "label": "Talk with Feline Fairies",
+      "url": "/contact/"
+    },
+    "items": [
+      "Do I have a safe area where a cat can settle?",
+      "Can I provide consistent day-to-day care?",
+      "Can I communicate with the rescue when needed?",
+      "Am I comfortable helping a cat adjust at their own pace?"
+    ]
+  },
+
+  "process": {
+    "eyebrow": "How it works",
+    "title": "One step at a time.",
+    "text": "Start with an application. The rescue can help you explore whether there is a suitable opportunity.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Apply",
+        "text": "Tell us about your home and interest in fostering."
+      },
+      {
+        "number": "02",
+        "title": "Connect",
+        "text": "A volunteer can follow up and talk through current needs."
+      },
+      {
+        "number": "03",
+        "title": "Find the right fit",
+        "text": "If there is a suitable opportunity, the rescue can discuss next steps with you."
+      },
+      {
+        "number": "04",
+        "title": "Welcome a foster",
+        "text": "Give a cat a temporary place to feel safe while they wait for what comes next."
+      }
+    ]
+  },
+
+  "closing": {
+    "eyebrow": "Ready to help?",
+    "titleLine1": "A spare room can become",
+    "titleAccent": "a fresh start.",
+    "text": "If fostering sounds like something you would like to explore, start with the application and tell us a little about your home.",
+    "primaryButton": {
+      "label": "Apply to Foster",
+      "url": "/foster/foster_application/"
+    },
+    "secondaryLink": {
+      "label": "Contact Us",
+      "url": "/contact/"
+    }
+  }
+}

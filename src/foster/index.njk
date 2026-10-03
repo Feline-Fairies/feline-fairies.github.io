@@ -1,0 +1,305 @@
+---
+layout: layouts/base.njk
+seoTitle: Foster Cats in St. Augustine, FL | Feline Fairies
+title: Foster Cats in St. Augustine, FL
+description: Learn about fostering cats with Feline Fairies, a foster-based cat rescue serving St. Augustine, Florida, and find out how to apply.
+pageStyles:
+  - /assets/css/interior.css
+  - /assets/css/foster-hub.css
+---
+
+<div class="foster-hub">
+
+  <section class="foster-opening">
+
+    <div class="shell foster-opening__grid">
+
+      <div class="foster-opening__copy">
+
+        <p class="eyebrow">
+          {{ foster.hero.eyebrow }}
+        </p>
+
+        <h1>
+          {{ foster.hero.titleLine1 }}<br>
+          {{ foster.hero.titleLine2Before }}
+          <em>{{ foster.hero.titleAccent }}</em>
+        </h1>
+
+        <p class="foster-lede">
+          {{ foster.hero.text }}
+        </p>
+
+        <div class="foster-actions">
+
+          <a
+            class="button button--night"
+            href="{{ foster.hero.primaryButton.url }}"
+          >
+            {{ foster.hero.primaryButton.label }}
+          </a>
+
+          <a
+            class="foster-text-link"
+            href="{{ foster.hero.secondaryLink.url }}"
+          >
+            {{ foster.hero.secondaryLink.label }}
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <figure class="foster-opening__photo">
+
+        <img
+          src="{{ foster.hero.image.src }}"
+          srcset="
+            {{ foster.hero.image.src640 }} 640w,
+            {{ foster.hero.image.src960 }} 960w,
+            {{ foster.hero.image.src }} 1086w
+          "
+          sizes="(max-width:700px) calc(100vw - 40px), (max-width:1150px) 40vw, 480px"
+          width="{{ foster.hero.image.width }}"
+          height="{{ foster.hero.image.height }}"
+          alt="{{ foster.hero.image.alt }}"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+
+      </figure>
+
+    </div>
+
+  </section>
+
+
+  <section class="foster-why">
+
+    <div class="shell foster-why__grid">
+
+      <div>
+
+        <p class="eyebrow">
+          {{ foster.why.eyebrow }}
+        </p>
+
+        <h2>
+          {{ foster.why.titleLine1 }}<br>
+          {{ foster.why.titleLine2 }}
+        </h2>
+
+      </div>
+
+
+      <div class="foster-why__copy">
+
+        <p>
+          {{ foster.why.lead }}
+        </p>
+
+        <p>
+          {{ foster.why.text }}
+        </p>
+
+        <span
+          class="foster-small-star"
+          aria-hidden="true"
+        >
+          ✦
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="foster-everyday">
+
+    <div class="shell">
+
+      <div class="foster-section-intro">
+
+        <p class="eyebrow">
+          {{ foster.everyday.eyebrow }}
+        </p>
+
+        <h2>
+          {{ foster.everyday.titleLine1 }}<br>
+          {{ foster.everyday.titleLine2 }}
+        </h2>
+
+      </div>
+
+
+      <div class="foster-care-grid">
+
+        {% for item in foster.everyday.items %}
+
+          <article>
+
+            <span class="foster-index">
+              {{ item.number }}
+            </span>
+
+            <h3>
+              {{ item.title }}
+            </h3>
+
+            <p>
+              {{ item.text }}
+            </p>
+
+          </article>
+
+        {% endfor %}
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="foster-fit">
+
+    <div class="shell foster-fit__grid">
+
+      <div>
+
+        <p class="eyebrow">
+          {{ foster.fit.eyebrow }}
+        </p>
+
+        <h2>
+          {{ foster.fit.titleLine1 }}<br>
+          {{ foster.fit.titleLine2 }}
+        </h2>
+
+        <p>
+          {{ foster.fit.text }}
+        </p>
+
+        <a
+          class="foster-text-link"
+          href="{{ foster.fit.link.url }}"
+        >
+          {{ foster.fit.link.label }}
+        </a>
+
+      </div>
+
+
+      <ul class="foster-considerations">
+
+        {% for item in foster.fit.items %}
+
+          <li>
+            {{ item }}
+          </li>
+
+        {% endfor %}
+
+      </ul>
+
+    </div>
+
+  </section>
+
+
+  <section class="foster-process">
+
+    <div class="shell">
+
+      <p class="eyebrow">
+        {{ foster.process.eyebrow }}
+      </p>
+
+
+      <div class="foster-process__heading">
+
+        <h2>
+          {{ foster.process.title }}
+        </h2>
+
+        <p>
+          {{ foster.process.text }}
+        </p>
+
+      </div>
+
+
+      <ol class="foster-process-grid">
+
+        {% for item in foster.process.items %}
+
+          <li>
+
+            <span class="foster-index">
+              {{ item.number }}
+            </span>
+
+            <h3>
+              {{ item.title }}
+            </h3>
+
+            <p>
+              {{ item.text }}
+            </p>
+
+          </li>
+
+        {% endfor %}
+
+      </ol>
+
+    </div>
+
+  </section>
+
+
+  <section class="foster-closing">
+
+    <div class="shell">
+
+      <p class="eyebrow">
+        {{ foster.closing.eyebrow }}
+      </p>
+
+      <h2>
+        {{ foster.closing.titleLine1 }}<br>
+        <em>{{ foster.closing.titleAccent }}</em>
+      </h2>
+
+      <p>
+        {{ foster.closing.text }}
+      </p>
+
+
+      <div class="foster-actions">
+
+        <a
+          class="button button--night"
+          href="{{ foster.closing.primaryButton.url }}"
+        >
+          {{ foster.closing.primaryButton.label }}
+        </a>
+
+        <a
+          class="foster-text-link"
+          href="{{ foster.closing.secondaryLink.url }}"
+        >
+          {{ foster.closing.secondaryLink.label }}
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>

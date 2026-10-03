@@ -1,0 +1,315 @@
+---
+layout: layouts/base.njk
+seoTitle: Volunteer with a Cat Rescue in St. Augustine | Feline Fairies
+title: Volunteer with Feline Fairies
+description: Learn how to volunteer with Feline Fairies, a foster-based cat rescue serving St. Augustine, Florida, and find out how to apply.
+pageStyles:
+  - /assets/css/interior.css
+  - /assets/css/volunteer-hub.css
+---
+
+<div class="volunteer-hub">
+
+  <section class="volunteer-opening">
+
+    <div class="shell">
+
+      <p class="eyebrow">
+        {{ volunteer.hero.eyebrow }}
+      </p>
+
+
+      <div class="volunteer-opening__grid">
+
+        <h1>
+          {{ volunteer.hero.titleBefore }}
+          <em>{{ volunteer.hero.titleAccent }}</em>
+        </h1>
+
+
+        <div class="volunteer-opening__copy">
+
+          <p>
+            {{ volunteer.hero.text }}
+          </p>
+
+
+          <div class="volunteer-actions">
+
+            <a
+              class="button button--night"
+              href="{{ volunteer.hero.primaryButton.url }}"
+            >
+              {{ volunteer.hero.primaryButton.label }}
+            </a>
+
+            <a
+              class="volunteer-text-link"
+              href="{{ volunteer.hero.secondaryLink.url }}"
+            >
+              {{ volunteer.hero.secondaryLink.label }}
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="volunteer-community">
+
+    <div class="shell volunteer-community__grid">
+
+      <figure>
+
+        <img
+          src="{{ volunteer.community.image.src }}"
+          srcset="
+            {{ volunteer.community.image.src960 }} 960w,
+            {{ volunteer.community.image.src1280 }} 1280w,
+            {{ volunteer.community.image.src }} 1536w
+          "
+          sizes="(max-width:700px) calc(100vw - 40px), (max-width:1150px) 42vw, 560px"
+          width="{{ volunteer.community.image.width }}"
+          height="{{ volunteer.community.image.height }}"
+          alt="{{ volunteer.community.image.alt }}"
+          loading="lazy"
+          decoding="async"
+        >
+
+      </figure>
+
+
+      <div>
+
+        <p class="eyebrow">
+          {{ volunteer.community.eyebrow }}
+        </p>
+
+        <h2>
+          {{ volunteer.community.titleLine1 }}<br>
+          {{ volunteer.community.titleLine2 }}
+        </h2>
+
+
+        {% for paragraph in volunteer.community.paragraphs %}
+
+          <p>
+            {{ paragraph }}
+          </p>
+
+        {% endfor %}
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="volunteer-ways">
+
+    <div class="shell">
+
+      <div class="volunteer-section-heading">
+
+        <div>
+
+          <p class="eyebrow">
+            {{ volunteer.ways.eyebrow }}
+          </p>
+
+          <h2>
+            {{ volunteer.ways.titleLine1 }}<br>
+            {{ volunteer.ways.titleLine2 }}
+          </h2>
+
+        </div>
+
+        <p>
+          {{ volunteer.ways.text }}
+        </p>
+
+      </div>
+
+
+      <div class="volunteer-ways-grid">
+
+        {% for item in volunteer.ways.items %}
+
+          <article>
+
+            <span class="volunteer-index">
+              {{ item.number }}
+            </span>
+
+            <div>
+
+              <h3>
+                {{ item.title }}
+              </h3>
+
+              <p>
+                {{ item.text }}
+              </p>
+
+            </div>
+
+          </article>
+
+        {% endfor %}
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="volunteer-fit">
+
+    <div class="shell volunteer-fit__grid">
+
+      <div>
+
+        <p class="eyebrow">
+          {{ volunteer.fit.eyebrow }}
+        </p>
+
+        <h2>
+          {{ volunteer.fit.titleLine1 }}<br>
+          {{ volunteer.fit.titleLine2 }}
+        </h2>
+
+        <p>
+          {{ volunteer.fit.text }}
+        </p>
+
+      </div>
+
+
+      <div class="volunteer-fit__ideas">
+
+        {% for idea in volunteer.fit.ideas %}
+
+          <p>
+            {{ idea }}
+          </p>
+
+        {% endfor %}
+
+        <span aria-hidden="true">
+          ✦
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="volunteer-process">
+
+    <div class="shell">
+
+      <p class="eyebrow">
+        {{ volunteer.process.eyebrow }}
+      </p>
+
+      <h2>
+        {{ volunteer.process.title }}
+      </h2>
+
+
+      <ol class="volunteer-process-grid">
+
+        {% for item in volunteer.process.items %}
+
+          <li>
+
+            <span class="volunteer-index">
+              {{ item.number }}
+            </span>
+
+            <h3>
+              {{ item.title }}
+            </h3>
+
+            <p>
+              {{ item.text }}
+            </p>
+
+          </li>
+
+        {% endfor %}
+
+      </ol>
+
+
+      <aside class="volunteer-foster">
+
+        <p>
+          {{ volunteer.process.fosterPrompt }}
+        </p>
+
+        <a
+          class="volunteer-text-link"
+          href="{{ volunteer.process.fosterLink.url }}"
+        >
+          {{ volunteer.process.fosterLink.label }}
+        </a>
+
+      </aside>
+
+    </div>
+
+  </section>
+
+
+  <section class="volunteer-closing">
+
+    <div class="shell">
+
+      <p class="eyebrow">
+        {{ volunteer.closing.eyebrow }}
+      </p>
+
+      <h2>
+        {{ volunteer.closing.titleLine1 }}<br>
+        {{ volunteer.closing.titleLine2 }}
+      </h2>
+
+      <p>
+        {{ volunteer.closing.text }}
+      </p>
+
+
+      <div class="volunteer-actions">
+
+        <a
+          class="button button--night"
+          href="{{ volunteer.closing.primaryButton.url }}"
+        >
+          {{ volunteer.closing.primaryButton.label }}
+        </a>
+
+        <a
+          class="volunteer-text-link"
+          href="{{ volunteer.closing.secondaryLink.url }}"
+        >
+          {{ volunteer.closing.secondaryLink.label }}
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>

@@ -14,16 +14,16 @@
         "label": "Open your home",
         "title": "Foster",
         "text": "Give a cat a safe place to settle while they wait for adoption.",
-        "linkLabel": "Apply to foster",
-        "url": "/foster/foster_application/"
+        "linkLabel": "Explore fostering",
+        "url": "/foster/"
       },
       {
         "number": "02",
         "label": "Give your time",
         "title": "Volunteer",
         "text": "Support the everyday work of a volunteer-run rescue in ways that fit your skills.",
-        "linkLabel": "Apply to volunteer",
-        "url": "/volunteer/volunteer_application/"
+        "linkLabel": "Lend a hand",
+        "url": "/volunteer/"
       },
       {
         "number": "03",

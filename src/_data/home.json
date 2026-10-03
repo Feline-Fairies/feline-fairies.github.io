@@ -96,14 +96,14 @@
         "title": "Foster",
         "text": "Open your home to a cat while they wait for adoption. Whether it’s your first time or your tenth, the rescue will help you get started.",
         "linkLabel": "Explore fostering",
-        "url": "/get-involved/"
+        "url": "/foster/"
       },
       {
         "number": "03",
         "title": "Volunteer",
         "text": "Help at events, spend time with cats, support transport, or lend your skills behind the scenes. There is room for many kinds of helping hands.",
         "linkLabel": "Ways to volunteer",
-        "url": "/get-involved/"
+        "url": "/volunteer/"
       }
     ]
   },

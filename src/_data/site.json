@@ -47,11 +47,11 @@
       "children": [
         {
           "label": "Volunteer",
-          "url": "/volunteer/volunteer_application/"
+          "url": "/volunteer/"
         },
         {
           "label": "Foster",
-          "url": "/foster/foster_application/"
+          "url": "/foster/"
         },
         {
           "label": "Surrender",

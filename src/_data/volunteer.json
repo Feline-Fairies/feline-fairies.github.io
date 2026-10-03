@@ -1,0 +1,125 @@
+{
+  "hero": {
+    "eyebrow": "Volunteer with Feline Fairies",
+    "titleBefore": "A little time can make a",
+    "titleAccent": "big difference.",
+    "text": "Feline Fairies is a volunteer-run, foster-based cat rescue in St. Augustine. People help keep the rescue moving in different ways, with their time, care, and practical skills.",
+    "primaryButton": {
+      "label": "Apply to Volunteer",
+      "url": "/volunteer/volunteer_application/"
+    },
+    "secondaryLink": {
+      "label": "Have a question?",
+      "url": "/contact/"
+    }
+  },
+
+  "community": {
+    "eyebrow": "Why volunteers matter",
+    "titleLine1": "Rescue takes",
+    "titleLine2": "a community.",
+    "paragraphs": [
+      "There is no shelter building. The work happens through foster homes and the people who support them.",
+      "You do not need to foster a cat to contribute. Many small, practical contributions can help the rescue care for cats and connect them with homes."
+    ],
+    "image": {
+      "src": "/media/volunteer/volunteer-rescue-candid.webp",
+      "src960": "/media/volunteer/volunteer-rescue-candid-640.webp",
+      "src1280": "/media/volunteer/volunteer-rescue-candid-960.webp",
+      "width": 1536,
+      "height": 1024,
+      "alt": "A volunteer helping organize supplies for a cat rescue"
+    }
+  },
+
+  "ways": {
+    "eyebrow": "Ways people may help",
+    "titleLine1": "An extra set of hands.",
+    "titleLine2": "A useful skill.",
+    "text": "Volunteer needs can change. These are examples of support to explore with the rescue, rather than a list of open positions.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Events & outreach",
+        "text": "Help with community outreach or adoption events when opportunities are available."
+      },
+      {
+        "number": "02",
+        "title": "Time with cats",
+        "text": "Spend time helping cats feel comfortable when the rescue has an appropriate need."
+      },
+      {
+        "number": "03",
+        "title": "Transport",
+        "text": "Help with practical transportation when arrangements and needs align."
+      },
+      {
+        "number": "04",
+        "title": "Behind the scenes",
+        "text": "Offer organization, communication, supply support, creative skills, or other practical help."
+      }
+    ]
+  },
+
+  "fit": {
+    "eyebrow": "Find your way to help",
+    "titleLine1": "You do not have to",
+    "titleLine2": "do everything.",
+    "text": "Different people have different schedules, comfort levels, and skills. Tell the rescue what interests you and what feels manageable.",
+    "ideas": [
+      "Prefer helping behind the scenes?",
+      "Comfortable talking with people?",
+      "Good at organizing?",
+      "Interested in occasional help?",
+      "Love spending time with cats?",
+      "Have a skill you would like to offer?"
+    ]
+  },
+
+  "process": {
+    "eyebrow": "How it works",
+    "title": "Start with a conversation.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Apply",
+        "text": "Tell us a little about yourself, your interests, and your availability."
+      },
+      {
+        "number": "02",
+        "title": "Connect",
+        "text": "A volunteer can follow up and learn more about how you would like to help."
+      },
+      {
+        "number": "03",
+        "title": "Find a fit",
+        "text": "If there is a current need that matches, the rescue can discuss possible next steps."
+      },
+      {
+        "number": "04",
+        "title": "Lend a hand",
+        "text": "Help where your time and skills can support the rescue."
+      }
+    ],
+    "fosterPrompt": "Interested in welcoming a cat into your home?",
+    "fosterLink": {
+      "label": "Learn about fostering",
+      "url": "/foster/"
+    }
+  },
+
+  "closing": {
+    "eyebrow": "Ready to help?",
+    "titleLine1": "There may be a place",
+    "titleLine2": "for what you can give.",
+    "text": "If you would like to volunteer, start with the application and tell us a little about your interests, availability, and skills.",
+    "primaryButton": {
+      "label": "Apply to Volunteer",
+      "url": "/volunteer/volunteer_application/"
+    },
+    "secondaryLink": {
+      "label": "Contact Us",
+      "url": "/contact/"
+    }
+  }
+}
