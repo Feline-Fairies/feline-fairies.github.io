@@ -1,0 +1,43 @@
+{
+  "adoption": {
+    "name": "Adoption Application",
+    "embedUrl": "https://form.jotform.com/213545250046044",
+    "directUrl": "https://form.jotform.com/213545250046044",
+    "directLabel": "Open the application in a new tab",
+    "ariaLabel": "Feline Fairies adoption application"
+  },
+
+  "foster": {
+    "name": "Foster Application",
+    "embedUrl": "https://form.jotform.com/220908119311044",
+    "directUrl": "https://form.jotform.com/220908119311044",
+    "directLabel": "Open the foster application in a new tab",
+    "ariaLabel": "Feline Fairies foster application"
+  },
+
+  "volunteer": {
+    "name": "Volunteer Application",
+    "embedUrl": "",
+    "directUrl": "",
+    "directLabel": "",
+    "ariaLabel": "Feline Fairies volunteer application",
+    "placeholderText": "Volunteer Jotform will be connected here."
+  },
+
+  "surrender": {
+    "name": "Surrender Request",
+    "embedUrl": "https://form.jotform.com/220105320438037",
+    "directUrl": "https://form.jotform.com/220105320438037",
+    "directLabel": "Open the surrender form in a new tab",
+    "ariaLabel": "Feline Fairies surrender request form"
+  },
+
+  "contact": {
+    "name": "Contact Form",
+    "embedUrl": "",
+    "directUrl": "",
+    "directLabel": "",
+    "ariaLabel": "Feline Fairies contact form",
+    "placeholderText": "Contact Jotform will be connected here."
+  }
+}

@@ -1,0 +1,138 @@
+---
+layout: layouts/base.njk
+seoTitle: Cat Adoption Application | Feline Fairies, St. Augustine
+title: Cat Adoption Application
+description: Read what to know before applying to adopt a cat through Feline Fairies in St. Augustine and complete the official adoption application.
+pageStyles:
+  - /assets/css/interior.css
+  - /assets/css/forms.css
+---
+
+
+<section class="application-opening">
+
+  <div class="shell">
+
+    <p class="eyebrow">
+      Adoption / Application
+    </p>
+
+    <h1>
+      Let’s get
+      <em>acquainted.</em>
+    </h1>
+
+    <p>
+      Complete Feline Fairies’ official application below. You can apply for a specific cat or ask us to help you find a match.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section class="application-prep">
+
+  <div class="shell application-prep__grid">
+
+    <h2>
+      Before you begin
+    </h2>
+
+    <ul>
+
+      <li>
+        Applicants must be 18 or older.
+      </li>
+
+      <li>
+        You can apply before choosing a specific cat.
+      </li>
+
+      <li>
+        An application starts a conversation and does not reserve a cat.
+      </li>
+
+    </ul>
+
+  </div>
+
+</section>
+
+
+
+<section
+  class="application-form"
+  id="application"
+>
+
+  <div class="shell">
+
+    <div class="application-form__head">
+
+      <div>
+
+        <p class="eyebrow">
+          Official application
+        </p>
+
+        <h2>
+          Apply to adopt.
+        </h2>
+
+      </div>
+
+      <p>
+        The form is provided by Jotform and is reviewed by the Feline Fairies volunteer team.
+      </p>
+
+    </div>
+
+
+    {% set formConfig = forms.adoption %}
+    {% set formSize = "long" %}
+    {% include "components/form-embed.njk" %}
+
+  </div>
+
+</section>
+
+
+
+<section class="application-next">
+
+  <div class="shell application-next__grid">
+
+    <div>
+
+      <p class="eyebrow">
+        What happens next
+      </p>
+
+      <h2>
+        We’ll be in touch.
+      </h2>
+
+    </div>
+
+
+    <div>
+
+      <p>
+        Our volunteer adoptions team reviews applications and follows up about next steps. If the match seems right, a meet-and-greet can be arranged after approval.
+      </p>
+
+      <a
+        class="button button--night"
+        href="/adopt/"
+        style="margin-top:25px"
+      >
+        Browse the Cats
+      </a>
+
+    </div>
+
+  </div>
+
+</section>

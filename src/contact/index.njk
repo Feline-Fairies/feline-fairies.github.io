@@ -1,0 +1,90 @@
+---
+layout: layouts/base.njk
+seoTitle: Contact Feline Fairies | St. Augustine Cat Rescue
+title: Contact Feline Fairies
+description: Contact Feline Fairies in St. Augustine or go directly to adoption, foster, volunteer, surrender, and donation resources.
+pageStyles:
+  - /assets/css/interior.css
+  - /assets/css/forms.css
+---
+
+
+<section class="contact-open">
+
+  <div class="shell">
+
+    <p class="eyebrow">
+      Contact Feline Fairies
+    </p>
+
+    <h1>
+      Let’s connect.
+    </h1>
+
+    <p>
+      Have a general question? Send a message below. For adoption, fostering, volunteering, or surrender requests, the direct links can help your information reach the right process.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section class="contact-layout">
+
+  <div class="shell contact-layout__grid">
+
+    <div>
+
+      <p class="eyebrow">
+        Send a message
+      </p>
+
+      <h2>
+        How can we help?
+      </h2>
+
+
+      {% set formConfig = forms.contact %}
+      {% set formSize = "compact" %}
+      {% include "components/form-embed.njk" %}
+
+    </div>
+
+
+    <aside class="contact-links">
+
+      <h3>
+        Find the right place
+      </h3>
+
+      <p>
+        These pages have the details and forms for specific requests.
+      </p>
+
+      <a href="/adopt/">
+        Adopt a cat
+      </a>
+
+      <a href="/foster/foster_application/">
+        Apply to foster
+      </a>
+
+      <a href="/volunteer/volunteer_application/">
+        Apply to volunteer
+      </a>
+
+      <a href="/surrender/surrender_form/">
+        Request surrender help
+      </a>
+
+      <a href="/donate/">
+        Support the rescue
+      </a>
+
+    </aside>
+
+  </div>
+
+</section>

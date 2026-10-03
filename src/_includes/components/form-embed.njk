@@ -1,0 +1,48 @@
+<div
+  class="embed-shell{% if formSize %} embed-shell--{{ formSize }}{% endif %}"
+>
+
+  {% if formConfig.embedUrl %}
+
+    <iframe
+      src="{{ formConfig.embedUrl }}"
+      title="{{ formConfig.ariaLabel }}"
+      loading="lazy"
+      allow="camera; microphone; autoplay; encrypted-media"
+    ></iframe>
+
+  {% else %}
+
+    <div
+      class="jotform-placeholder{% if formSize %} jotform-placeholder--{{ formSize }}{% endif %}"
+      role="region"
+      aria-label="{{ formConfig.ariaLabel }}"
+    >
+
+      <span>
+        {{ formConfig.placeholderText }}
+      </span>
+
+    </div>
+
+  {% endif %}
+
+</div>
+
+
+{% if formConfig.directUrl %}
+
+  <p class="embed-fallback">
+
+    <a
+      href="{{ formConfig.directUrl }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="{{ formConfig.directLabel }} (opens in a new tab)"
+    >
+      {{ formConfig.directLabel }}
+    </a>
+
+  </p>
+
+{% endif %}
