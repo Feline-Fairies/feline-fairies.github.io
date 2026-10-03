@@ -2,12 +2,24 @@
   "name": "Feline Fairies",
   "legalName": "Feline Fairies, Inc.",
   "url": "https://felinefairies.com",
-  "location": "St. Augustine, Florida",
-  "ein": "87-3836140",
+  "tagline": "Cat rescue · St. Augustine",
 
-  "phone": "",
+  "location": "St. Augustine, Florida",
+  "city": "St. Augustine",
+  "state": "Florida",
+
+  "ein": "87-3836140",
+  "nonprofitStatus": "501(c)(3)",
+
+  "phone": "719-332-7146",
+  "phoneHref": "tel:+17193327146",
+
   "email": "",
+  "mailingAddress": "",
+
   "donationUrl": "https://www.paypal.com/donate/?hosted_button_id=2RHY3745ZHNSG",
+
+  "shelterBossUrl": "https://fairies.shelterboss.com/Public/Adoptables/a",
 
   "announcement": {
     "enabled": true,
@@ -21,10 +33,6 @@
       "url": "/"
     },
     {
-      "label": "Donate",
-      "url": "/donate/"
-    },
-    {
       "label": "Adopt",
       "url": "/adopt/"
     },
@@ -34,7 +42,21 @@
     },
     {
       "label": "Get Involved",
-      "url": "/get-involved/"
+      "url": "/get-involved/",
+      "children": [
+        {
+          "label": "Volunteer",
+          "url": "/volunteer/volunteer_application/"
+        },
+        {
+          "label": "Foster",
+          "url": "/foster/foster_application/"
+        },
+        {
+          "label": "Surrender",
+          "url": "/surrender/surrender_form/"
+        }
+      ]
     },
     {
       "label": "Events",
@@ -48,5 +70,21 @@
       "label": "Contact",
       "url": "/contact/"
     }
-  ]
+  ],
+
+  "donateButton": {
+    "label": "Donate",
+    "url": "https://www.paypal.com/donate/?hosted_button_id=2RHY3745ZHNSG"
+  },
+
+  "social": {
+    "facebook": {
+      "label": "Feline Fairies on Facebook",
+      "url": "https://www.facebook.com/felinefairiesinc/"
+    },
+    "instagram": {
+      "label": "Feline Fairies on Instagram",
+      "url": "https://www.instagram.com/felinefairiesinc"
+    }
+  }
 }
