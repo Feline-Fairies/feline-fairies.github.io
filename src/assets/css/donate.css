@@ -1,0 +1,1217 @@
+/* ========================================
+   Feline Fairies
+   Donate Page
+======================================== */
+
+
+/* ========================================
+   Opening
+======================================== */
+
+.donate-opening {
+
+  overflow:
+    hidden;
+
+  background:
+    var(--coral);
+
+}
+
+
+.donate-opening__grid {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    0.86fr
+    1.14fr;
+
+  min-height:
+    660px;
+
+  align-items:
+    center;
+
+  gap:
+    clamp(
+      70px,
+      8vw,
+      130px
+    );
+
+}
+
+
+.donate-opening__image {
+
+  position:
+    relative;
+
+  align-self:
+    end;
+
+  margin:
+    0;
+
+}
+
+
+.donate-opening__image::before {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  inset:
+    22px
+    -20px
+    -24px
+    24px;
+
+  border:
+    1.5px solid
+    rgba(18, 59, 69, 0.55);
+
+  border-radius:
+    350px
+    350px
+    0
+    0;
+
+}
+
+
+.donate-opening__image img {
+
+  position:
+    relative;
+
+  display:
+    block;
+
+  width:
+    100%;
+
+  height:
+    620px;
+
+  object-fit:
+    cover;
+
+  object-position:
+    center;
+
+  border-radius:
+    350px
+    350px
+    0
+    0;
+
+}
+
+
+.donate-opening__copy {
+
+  padding:
+    75px
+    0;
+
+}
+
+
+.donate-opening h1 {
+
+  max-width:
+    720px;
+
+  margin:
+    22px
+    0
+    25px;
+
+  font-size:
+    calc(
+      clamp(
+        4.7rem,
+        6.2vw,
+        7rem
+      ) - 2px
+    );
+
+}
+
+
+.donate-opening h1 em {
+
+  color:
+    var(--cream);
+
+  font-weight:
+    400;
+
+}
+
+
+.donate-opening p:not(.eyebrow) {
+
+  max-width:
+    575px;
+
+  color:
+    var(--night);
+
+  font-size:
+    19px;
+
+}
+
+
+.donate-opening .button {
+
+  margin-top:
+    32px;
+
+}
+
+
+.donate-opening .image-caption {
+
+  margin-top:
+    12px;
+
+  color:
+    var(--night);
+
+}
+
+
+/* ========================================
+   What Donations Support
+======================================== */
+
+.donate-support {
+
+  padding:
+    105px
+    0
+    110px;
+
+  background:
+    var(--cream);
+
+}
+
+
+.donate-support__head {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr
+    0.55fr;
+
+  align-items:
+    end;
+
+  gap:
+    95px;
+
+}
+
+
+.donate-support h2 {
+
+  margin:
+    20px
+    0
+    0;
+
+  font-size:
+    clamp(
+      3.7rem,
+      5vw,
+      5.8rem
+    );
+
+}
+
+
+.donate-support__head p {
+
+  padding-bottom:
+    7px;
+
+  color:
+    var(--body);
+
+  font-size:
+    18px;
+
+}
+
+
+.donate-support__rows {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap:
+    0;
+
+  margin-top:
+    65px;
+
+  border-top:
+    1px solid
+    var(--line);
+
+}
+
+
+.donate-support__rows article {
+
+  min-height:
+    245px;
+
+  padding:
+    31px
+    39px
+    20px
+    0;
+
+  border-right:
+    1px solid
+    var(--line);
+
+}
+
+
+.donate-support__rows article + article {
+
+  padding-left:
+    39px;
+
+}
+
+
+.donate-support__rows article:last-child {
+
+  border-right:
+    0;
+
+}
+
+
+.donate-support__rows span {
+
+  color:
+    #bb745f;
+
+  font:
+    400
+    39px
+    / 1
+    "Instrument Serif",
+    Georgia,
+    serif;
+
+}
+
+
+.donate-support__rows h3 {
+
+  margin:
+    25px
+    0
+    15px;
+
+  font-size:
+    32px;
+
+}
+
+
+.donate-support__rows p {
+
+  color:
+    var(--body);
+
+  font-size:
+    16px;
+
+}
+
+
+/* ========================================
+   Ways To Give
+======================================== */
+
+.donate-giving {
+
+  padding:
+    87px
+    0;
+
+  background:
+    var(--paper);
+
+}
+
+
+.donate-giving__grid {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    0.75fr
+    1.25fr;
+
+  align-items:
+    start;
+
+  gap:
+    95px;
+
+}
+
+
+.donate-giving h2 {
+
+  margin:
+    16px
+    0
+    0;
+
+  font-size:
+    clamp(
+      3.4rem,
+      4.5vw,
+      5.1rem
+    );
+
+}
+
+
+.donate-giving p {
+
+  max-width:
+    700px;
+
+  color:
+    var(--body);
+
+  font-size:
+    18px;
+
+}
+
+
+.donate-giving .button {
+
+  margin-top:
+    24px;
+
+}
+
+
+.donate-mail {
+
+  margin-top:
+    50px;
+
+  padding-top:
+    30px;
+
+  border-top:
+    1px solid
+    var(--line);
+
+}
+
+
+.donate-mail h3 {
+
+  margin:
+    0
+    0
+    10px;
+
+  font-size:
+    30px;
+
+}
+
+
+.donate-mail a {
+
+  color:
+    var(--night);
+
+  font-weight:
+    800;
+
+  text-underline-offset:
+    4px;
+
+}
+
+
+/* ========================================
+   Final CTA
+======================================== */
+
+.donate-finish {
+
+  padding:
+    85px
+    0
+    95px;
+
+  background:
+    var(--night);
+
+  color:
+    #ffffff;
+
+}
+
+
+.donate-finish .eyebrow {
+
+  color:
+    #b9d1cb;
+
+}
+
+
+.donate-finish h2 {
+
+  max-width:
+    790px;
+
+  margin:
+    18px
+    0
+    25px;
+
+  color:
+    #ffffff;
+
+  font-size:
+    clamp(
+      3.9rem,
+      5.3vw,
+      6.2rem
+    );
+
+}
+
+
+.donate-finish p {
+
+  max-width:
+    550px;
+
+  margin-bottom:
+    27px;
+
+  color:
+    #d5e2dd;
+
+}
+
+
+/* ========================================
+   Medium Desktop
+======================================== */
+
+@media (max-width: 1150px) {
+
+  .donate-opening__grid {
+
+    gap:
+      48px;
+
+  }
+
+
+  .donate-opening h1 {
+
+    font-size:
+      clamp(
+        3.6rem,
+        6.5vw,
+        5.3rem
+      );
+
+  }
+
+
+  .donate-support__head,
+  .donate-giving__grid {
+
+    gap:
+      32px;
+
+  }
+
+}
+
+
+/* ========================================
+   Tablet Hero
+   701px to 820px
+======================================== */
+
+@media (min-width: 701px) and (max-width: 820px) {
+
+  .donate-opening__grid {
+
+    grid-template-columns:
+      minmax(0, 42fr)
+      minmax(0, 58fr);
+
+    min-height:
+      500px;
+
+    align-items:
+      center;
+
+    gap:
+      34px;
+
+    padding-block:
+      40px;
+
+  }
+
+
+  .donate-opening__image {
+
+    order:
+      1;
+
+    align-self:
+      center;
+
+    width:
+      100%;
+
+  }
+
+
+  .donate-opening__image::before {
+
+    inset:
+      17px
+      -12px
+      -17px
+      17px;
+
+    border-radius:
+      220px
+      220px
+      8px
+      8px;
+
+  }
+
+
+  .donate-opening__image img {
+
+    width:
+      100%;
+
+    height:
+      clamp(
+        360px,
+        48vw,
+        410px
+      );
+
+    object-position:
+      50%
+      45%;
+
+    border-radius:
+      220px
+      220px
+      8px
+      8px;
+
+  }
+
+
+  .donate-opening__copy {
+
+    order:
+      2;
+
+    padding:
+      0;
+
+  }
+
+
+  .donate-opening h1 {
+
+    margin:
+      17px
+      0
+      19px;
+
+    font-size:
+      clamp(
+        3.15rem,
+        6.5vw,
+        4rem
+      );
+
+    line-height:
+      1.02;
+
+  }
+
+
+  .donate-opening p:not(.eyebrow) {
+
+    font-size:
+      16px;
+
+    line-height:
+      1.65;
+
+  }
+
+
+  .donate-opening .button {
+
+    margin-top:
+      24px;
+
+  }
+
+
+  .donate-opening .image-caption {
+
+    margin-top:
+      9px;
+
+    font-size:
+      11px;
+
+  }
+
+
+  .donate-support__head,
+  .donate-giving__grid {
+
+    grid-template-columns:
+      minmax(0, 1fr);
+
+  }
+
+
+  .donate-support {
+
+    padding-block:
+      70px;
+
+  }
+
+
+  .donate-support__rows {
+
+    grid-template-columns:
+      minmax(0, 1fr);
+
+  }
+
+
+  .donate-support__rows article,
+  .donate-support__rows article + article {
+
+    min-height:
+      0;
+
+    padding:
+      28px
+      0;
+
+    border-right:
+      0;
+
+    border-bottom:
+      1px solid
+      var(--line);
+
+  }
+
+
+  .donate-support__rows article:last-child {
+
+    border-bottom:
+      0;
+
+  }
+
+
+  .donate-giving {
+
+    padding-block:
+      70px;
+
+  }
+
+}
+
+
+/* ========================================
+   Mobile
+   700px and below
+======================================== */
+
+@media (max-width: 700px) {
+
+  .donate-opening__grid {
+
+    display:
+      flex;
+
+    flex-direction:
+      column;
+
+    min-height:
+      0;
+
+    gap:
+      0;
+
+  }
+
+
+  .donate-opening__copy {
+
+    order:
+      1;
+
+    width:
+      100%;
+
+    padding:
+      40px
+      0
+      28px;
+
+  }
+
+
+  .donate-opening h1 {
+
+    margin:
+      17px
+      0
+      18px;
+
+    font-size:
+      clamp(
+        3.05rem,
+        11vw,
+        3.65rem
+      );
+
+    line-height:
+      1.01;
+
+    text-wrap:
+      balance;
+
+  }
+
+
+  .donate-opening p:not(.eyebrow) {
+
+    max-width:
+      none;
+
+    font-size:
+      16px;
+
+    line-height:
+      1.65;
+
+  }
+
+
+  .donate-opening .button {
+
+    display:
+      flex;
+
+    width:
+      100%;
+
+    margin-top:
+      23px;
+
+  }
+
+
+  .donate-opening__image {
+
+    order:
+      2;
+
+    align-self:
+      center;
+
+    width:
+      min(
+        92%,
+        390px
+      );
+
+    margin:
+      0
+      auto
+      28px;
+
+  }
+
+
+  .donate-opening__image::before {
+
+    inset:
+      14px
+      -8px
+      -14px
+      14px;
+
+    border-radius:
+      190px
+      190px
+      7px
+      7px;
+
+  }
+
+
+  .donate-opening__image img {
+
+    width:
+      100%;
+
+    height:
+      325px;
+
+    object-position:
+      50%
+      42%;
+
+    border-radius:
+      190px
+      190px
+      7px
+      7px;
+
+  }
+
+
+  .donate-opening .image-caption {
+
+    margin-top:
+      8px;
+
+    font-size:
+      11px;
+
+  }
+
+
+  .donate-support__head,
+  .donate-giving__grid {
+
+    grid-template-columns:
+      minmax(0, 1fr);
+
+  }
+
+
+  .donate-support {
+
+    padding-block:
+      58px;
+
+  }
+
+
+  .donate-support__head {
+
+    gap:
+      19px;
+
+  }
+
+
+  .donate-support h2,
+  .donate-giving h2 {
+
+    font-size:
+      clamp(
+        2.7rem,
+        10.4vw,
+        3.4rem
+      );
+
+    line-height:
+      1.03;
+
+  }
+
+
+  .donate-support__head p,
+  .donate-giving p {
+
+    font-size:
+      16px;
+
+  }
+
+
+  .donate-support__rows {
+
+    grid-template-columns:
+      minmax(0, 1fr);
+
+    margin-top:
+      34px;
+
+  }
+
+
+  .donate-support__rows article,
+  .donate-support__rows article + article {
+
+    min-height:
+      0;
+
+    padding:
+      24px
+      0;
+
+    border-right:
+      0;
+
+    border-bottom:
+      1px solid
+      var(--line);
+
+  }
+
+
+  .donate-support__rows article:last-child {
+
+    border-bottom:
+      0;
+
+  }
+
+
+  .donate-support__rows span {
+
+    font-size:
+      34px;
+
+  }
+
+
+  .donate-support__rows h3 {
+
+    margin:
+      13px
+      0
+      8px;
+
+    font-size:
+      28px;
+
+  }
+
+
+  .donate-giving {
+
+    padding-block:
+      58px;
+
+  }
+
+
+  .donate-giving__grid {
+
+    gap:
+      22px;
+
+  }
+
+
+  .donate-giving .button {
+
+    width:
+      100%;
+
+  }
+
+
+  .donate-mail {
+
+    margin-top:
+      35px;
+
+    padding-top:
+      24px;
+
+  }
+
+
+  .donate-mail h3 {
+
+    font-size:
+      27px;
+
+  }
+
+
+  .donate-finish {
+
+    padding:
+      65px
+      0
+      72px;
+
+  }
+
+
+  .donate-finish h2 {
+
+    margin:
+      17px
+      0
+      20px;
+
+    font-size:
+      clamp(
+        3rem,
+        11vw,
+        3.7rem
+      );
+
+    line-height:
+      1.02;
+
+  }
+
+
+  .donate-finish .button {
+
+    width:
+      100%;
+
+  }
+
+}
+
+
+/* ========================================
+   Small Mobile
+======================================== */
+
+@media (max-width: 430px) {
+
+  .donate-opening__copy {
+
+    padding-top:
+      36px;
+
+  }
+
+
+  .donate-opening h1 {
+
+    font-size:
+      clamp(
+        3rem,
+        11.5vw,
+        3.45rem
+      );
+
+  }
+
+
+  .donate-opening__image {
+
+    width:
+      94%;
+
+    margin-bottom:
+      24px;
+
+  }
+
+
+  .donate-opening__image img {
+
+    height:
+      310px;
+
+  }
+
+}
+
+
+@media (max-width: 400px) {
+
+  .donate-opening h1 {
+
+    font-size:
+      3.05rem;
+
+  }
+
+
+  .donate-opening__image img {
+
+    height:
+      300px;
+
+  }
+
+}
+/* ========================================
+   401px to 430px Donate Hero Image Fix
+======================================== */
+
+@media (min-width: 320px) and (max-width: 430px) {
+
+  .donate-opening__image img {
+
+    height:
+      350px;
+
+    object-position:
+      center top;
+
+  }
+
+}

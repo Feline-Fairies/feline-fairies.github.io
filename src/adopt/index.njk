@@ -1,0 +1,292 @@
+---
+layout: layouts/base.njk
+seoTitle: Cats for Adoption in St. Augustine, FL | Feline Fairies
+title: Cats for Adoption in St. Augustine, FL
+description: Browse cats available through Feline Fairies in St. Augustine, see successful adoptions, and learn how to begin the adoption process.
+pageStyles:
+  - /assets/css/interior.css
+  - /assets/css/adopt.css
+---
+
+
+<!-- ========================================
+     OPENING
+======================================== -->
+
+<section class="adopt-opening">
+
+  <div class="shell adopt-opening__grid">
+
+    <div>
+
+      <p class="eyebrow">
+        {{ adopt.hero.eyebrow }}
+      </p>
+
+      <h1>
+
+        {{ adopt.hero.titleBefore }}
+
+        <em>
+          {{ adopt.hero.titleAccent }}
+        </em>
+
+      </h1>
+
+      <p>
+        {{ adopt.hero.text }}
+      </p>
+
+
+      <div class="adopt-opening__links">
+
+        <a
+          class="button button--night"
+          href="{{ adopt.hero.primaryButton.url }}"
+        >
+          {{ adopt.hero.primaryButton.label }}
+        </a>
+
+
+        {% for link in adopt.hero.secondaryLinks %}
+
+          <a
+            class="text-link"
+            href="{{ link.url }}"
+          >
+            {{ link.label }}
+          </a>
+
+        {% endfor %}
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     ADOPTABLE CATS
+======================================== -->
+
+<section
+  class="adopt-listing"
+  id="meet-cats"
+  aria-labelledby="meet-cats-title"
+>
+
+  <div class="shell">
+
+    <p class="eyebrow">
+      {{ adopt.listing.eyebrow }}
+    </p>
+
+    <h2 id="meet-cats-title">
+      {{ adopt.listing.title }}
+    </h2>
+
+
+    <div class="listing-frame">
+
+      <iframe
+        title="{{ adopt.listing.iframeTitle }}"
+        src="{{ site.shelterBossUrl }}"
+        loading="eager"
+      ></iframe>
+
+
+      <p class="frame-fallback">
+
+        {{ adopt.listing.fallbackBefore }}
+
+        <a
+          href="{{ site.shelterBossUrl }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="{{ adopt.listing.fallbackLabel }} (opens in a new tab)"
+        >
+          {{ adopt.listing.fallbackLabel }}
+        </a>.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     ADOPTION PROCESS
+======================================== -->
+
+<section
+  class="adopt-steps"
+  id="how-it-works"
+  aria-labelledby="adopt-process-title"
+>
+
+  <div class="shell">
+
+    <p class="eyebrow">
+      {{ adopt.process.eyebrow }}
+    </p>
+
+    <h2 id="adopt-process-title">
+      {{ adopt.process.title }}
+    </h2>
+
+
+    <div class="number-list">
+
+      {% for item in adopt.process.items %}
+
+        <div class="number-item">
+
+          <span>
+            {{ item.number }}
+          </span>
+
+          <h3>
+            {{ item.title }}
+          </h3>
+
+          <p>
+            {{ item.text }}
+          </p>
+
+        </div>
+
+      {% endfor %}
+
+    </div>
+
+
+    <a
+      class="button button--night adopt-steps__button"
+      href="{{ adopt.process.button.url }}"
+    >
+      {{ adopt.process.button.label }}
+    </a>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     SUCCESSFUL ADOPTIONS
+======================================== -->
+
+<section
+  class="adoption-success"
+  id="successful-adoptions"
+  aria-labelledby="successful-adoptions-title"
+>
+
+  <div class="shell">
+
+    <div class="adoption-success__heading">
+
+      <h2 id="successful-adoptions-title">
+
+        {{ adopt.successfulAdoptions.title }}
+
+        <span aria-hidden="true">
+          ✦
+        </span>
+
+      </h2>
+
+      <p>
+        {{ adopt.successfulAdoptions.text }}
+      </p>
+
+    </div>
+
+
+    <div class="adoption-success__gallery">
+
+      {% for adoption in adopt.successfulAdoptions.items %}
+
+        <figure class="adoption-memory">
+
+          <img
+            src="{{ adoption.image }}"
+            alt="{{ adoption.alt }}"
+            width="{{ adoption.width }}"
+            height="{{ adoption.height }}"
+            loading="lazy"
+            decoding="async"
+          >
+
+        </figure>
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     GOOD TO KNOW
+======================================== -->
+
+<section
+  class="adopt-notes"
+  aria-labelledby="adopt-notes-title"
+>
+
+  <div class="shell adopt-notes__grid">
+
+    <div>
+
+      <p class="eyebrow">
+        {{ adopt.notes.eyebrow }}
+      </p>
+
+      <h2 id="adopt-notes-title">
+        {{ adopt.notes.title }}
+      </h2>
+
+    </div>
+
+
+    <div>
+
+      <ul>
+
+        {% for item in adopt.notes.items %}
+
+          <li>
+            {{ item }}
+          </li>
+
+        {% endfor %}
+
+      </ul>
+
+
+      <a
+        class="button button--night"
+        href="{{ adopt.notes.button.url }}"
+      >
+        {{ adopt.notes.button.label }}
+      </a>
+
+    </div>
+
+  </div>
+
+</section>

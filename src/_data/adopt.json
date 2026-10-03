@@ -1,0 +1,114 @@
+{
+  "hero": {
+    "eyebrow": "Adopt with Feline Fairies",
+    "titleBefore": "Find a cat to call",
+    "titleAccent": "family.",
+    "text": "Browse current listings below. When someone catches your eye, learn the process or send an application to start the conversation.",
+    "primaryButton": {
+      "label": "See Adoptable Cats",
+      "url": "#meet-cats"
+    },
+    "secondaryLinks": [
+      {
+        "label": "How adoption works",
+        "url": "/adopt/how-to-adopt/"
+      },
+      {
+        "label": "Apply to adopt",
+        "url": "/adopt/adoption_application/"
+      }
+    ]
+  },
+
+  "listing": {
+    "eyebrow": "Current listings",
+    "title": "Meet the cats.",
+    "iframeTitle": "Feline Fairies adoptable cats",
+    "fallbackBefore": "Having trouble viewing the listings?",
+    "fallbackLabel": "Open adoptable cats in a new tab"
+  },
+
+  "process": {
+    "eyebrow": "How adoption works",
+    "title": "Three steps toward hello.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Explore",
+        "text": "Browse the cats and kittens currently listed. Their availability may change as they find homes."
+      },
+      {
+        "number": "02",
+        "title": "Apply",
+        "text": "Tell us about your home. You can apply even if you are still finding your match."
+      },
+      {
+        "number": "03",
+        "title": "Connect",
+        "text": "Our volunteer team follows up. After approval, a meet-and-greet can be arranged."
+      }
+    ],
+    "button": {
+      "label": "Start an Application",
+      "url": "/adopt/adoption_application/"
+    }
+  },
+
+  "successfulAdoptions": {
+    "title": "Successful Adoptions",
+    "text": "A few happy beginnings, shared by the cats and people who found each other.",
+    "items": [
+      {
+        "image": "/media/adoptions/successful-adoption-hershey.webp",
+        "alt": "Hershey, adopted September 20, 2025; collage of Hershey and his adopting family.",
+        "width": 370,
+        "height": 370
+      },
+      {
+        "image": "/media/adoptions/successful-adoption-snuggles.webp",
+        "alt": "Snuggles, adopted September 20, 2025; collage of Snuggles and the adopters.",
+        "width": 370,
+        "height": 370
+      },
+      {
+        "image": "/media/adoptions/successful-adoption-stardust.webp",
+        "alt": "Stardust, adopted September 13, 2025; collage of Stardust and the adopting family.",
+        "width": 370,
+        "height": 370
+      },
+      {
+        "image": "/media/adoptions/successful-adoption-hazelnut-and-iris.webp",
+        "alt": "Hazelnut and Iris, adopted September 8, 2025; collage of the cats and their adopters.",
+        "width": 370,
+        "height": 370
+      },
+      {
+        "image": "/media/adoptions/successful-adoption-glitter.webp",
+        "alt": "Glitter, adopted September 7, 2025; collage of Glitter and the adopters.",
+        "width": 370,
+        "height": 370
+      },
+      {
+        "image": "/media/adoptions/successful-adoption-spats.webp",
+        "alt": "Spats, adopted July 28, 2025; collage of Spats and the adopters.",
+        "width": 370,
+        "height": 370
+      }
+    ]
+  },
+
+  "notes": {
+    "eyebrow": "Good to know",
+    "title": "A thoughtful match takes a little conversation.",
+    "items": [
+      "Applicants must be at least 18 years old.",
+      "Some bonded cats need to be adopted together; their listing will explain this.",
+      "If a cat is adopted before we connect, your application can still help us find another match.",
+      "Our cats live in foster homes. Visits are arranged after application approval."
+    ],
+    "button": {
+      "label": "Ask a Question",
+      "url": "/contact/"
+    }
+  }
+}

@@ -1,0 +1,909 @@
+/* ========================================
+   Feline Fairies
+   Adopt Page
+======================================== */
+
+
+/* ========================================
+   Opening
+======================================== */
+
+.adopt-opening {
+
+  padding:
+    58px
+    0
+    56px;
+
+  background:
+    #e5eddf;
+
+}
+
+
+.adopt-opening__grid {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(0, 1fr);
+
+  align-items:
+    center;
+
+}
+
+
+.adopt-opening h1 {
+
+  max-width:
+    930px;
+
+  margin:
+    17px
+    0
+    18px;
+
+  font-size:
+    calc(
+      clamp(
+        4rem,
+        5.3vw,
+        6rem
+      ) - 2px
+    );
+
+}
+
+
+.adopt-opening h1 em {
+
+  color:
+    #bd6e58;
+
+  font-weight:
+    400;
+
+}
+
+
+.adopt-opening p:not(.eyebrow) {
+
+  max-width:
+    690px;
+
+  color:
+    var(--body);
+
+  font-size:
+    18px;
+
+}
+
+
+.adopt-opening__links {
+
+  display:
+    flex;
+
+  flex-wrap:
+    wrap;
+
+  align-items:
+    center;
+
+  gap:
+    24px;
+
+  margin-top:
+    27px;
+
+}
+
+
+.adopt-opening__links .button {
+
+  min-height:
+    51px;
+
+}
+
+
+.adopt-opening__links .text-link {
+
+  font-size:
+    14px;
+
+  font-weight:
+    800;
+
+  text-decoration:
+    underline;
+
+  text-underline-offset:
+    5px;
+
+}
+
+
+/* ========================================
+   Adoptable Listings
+======================================== */
+
+.adopt-listing {
+
+  padding:
+    72px
+    0
+    105px;
+
+  background:
+    var(--cream);
+
+}
+
+
+.adopt-listing h2 {
+
+  margin:
+    16px
+    0
+    0;
+
+  font-size:
+    clamp(
+      3.3rem,
+      4vw,
+      4.7rem
+    );
+
+}
+
+
+.adopt-listing .listing-frame {
+
+  margin-top:
+    27px;
+
+}
+
+
+/* ========================================
+   Adoption Process
+======================================== */
+
+.adopt-steps {
+
+  padding:
+    97px
+    0
+    105px;
+
+  background:
+    var(--paper);
+
+}
+
+
+.adopt-steps h2 {
+
+  margin:
+    20px
+    0
+    12px;
+
+  font-size:
+    clamp(
+      3.5rem,
+      4.6vw,
+      5.3rem
+    );
+
+}
+
+
+.adopt-steps .number-list {
+
+  margin-top:
+    52px;
+
+}
+
+
+.adopt-steps__button {
+
+  margin-top:
+    48px;
+
+}
+
+
+/* ========================================
+   Successful Adoptions
+======================================== */
+
+.adoption-success {
+
+  padding:
+    90px
+    0
+    96px;
+
+  background:
+    var(--paper);
+
+}
+
+
+.adoption-success__heading {
+
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    end;
+
+  gap:
+    40px;
+
+  margin-bottom:
+    42px;
+
+}
+
+
+.adoption-success__heading h2 {
+
+  max-width:
+    700px;
+
+  margin:
+    0;
+
+  font-size:
+    clamp(
+      3rem,
+      4.5vw,
+      4.8rem
+    );
+
+  text-wrap:
+    balance;
+
+}
+
+
+.adoption-success__heading h2 span {
+
+  color:
+    var(--coral);
+
+  font-size:
+    0.42em;
+
+  vertical-align:
+    middle;
+
+}
+
+
+.adoption-success__heading p {
+
+  max-width:
+    310px;
+
+  margin:
+    0;
+
+  color:
+    var(--body);
+
+  text-wrap:
+    pretty;
+
+}
+
+
+.adoption-success__gallery {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap:
+    28px;
+
+  max-width:
+    1202px;
+
+  margin-inline:
+    auto;
+
+}
+
+
+.adoption-memory {
+
+  margin:
+    0;
+
+  padding:
+    10px;
+
+  border:
+    1px solid
+    var(--line);
+
+  border-radius:
+    8px;
+
+  background:
+    var(--cream);
+
+}
+
+
+.adoption-memory img {
+
+  display:
+    block;
+
+  width:
+    100%;
+
+  height:
+    auto;
+
+}
+
+
+/* ========================================
+   Good To Know
+======================================== */
+
+.adopt-notes {
+
+  padding:
+    82px
+    0
+    87px;
+
+  background:
+    var(--lilac);
+
+}
+
+
+.adopt-notes__grid {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    0.8fr
+    1.2fr;
+
+  gap:
+    110px;
+
+}
+
+
+.adopt-notes h2 {
+
+  margin:
+    18px
+    0;
+
+  font-size:
+    clamp(
+      3.1rem,
+      4vw,
+      4.7rem
+    );
+
+}
+
+
+.adopt-notes ul {
+
+  margin:
+    15px
+    0
+    25px;
+
+  padding-left:
+    23px;
+
+  color:
+    var(--body);
+
+  font-size:
+    17px;
+
+}
+
+
+.adopt-notes li + li {
+
+  margin-top:
+    15px;
+
+}
+
+
+/* ========================================
+   Medium Desktop
+======================================== */
+
+@media (max-width: 1150px) {
+
+  .adopt-notes__grid {
+
+    gap:
+      32px;
+
+  }
+
+
+  .listing-frame {
+
+    min-width:
+      0;
+
+    max-width:
+      100%;
+
+  }
+
+
+  .listing-frame iframe {
+
+    max-width:
+      100%;
+
+  }
+
+}
+
+
+@media (max-width: 1050px) {
+
+  .adopt-notes h2 {
+
+    font-size:
+      clamp(
+        3rem,
+        3.8vw,
+        4.2rem
+      );
+
+  }
+
+
+  .adoption-success {
+
+    padding-block:
+      64px;
+
+  }
+
+
+  .adoption-success__heading {
+
+    align-items:
+      start;
+
+    flex-direction:
+      column;
+
+    gap:
+      18px;
+
+    margin-bottom:
+      30px;
+
+  }
+
+
+  .adoption-success__heading p {
+
+    max-width:
+      540px;
+
+  }
+
+
+  .adoption-success__gallery {
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+
+    max-width:
+      806px;
+
+    gap:
+      22px;
+
+  }
+
+}
+
+
+/* ========================================
+   Tablet
+======================================== */
+
+@media (max-width: 820px) {
+
+  .adopt-opening__grid,
+  .adopt-notes__grid {
+
+    grid-template-columns:
+      minmax(0, 1fr);
+
+  }
+
+
+  .adopt-opening {
+
+    padding-block:
+      46px;
+
+  }
+
+
+  .adopt-listing,
+  .adopt-steps,
+  .adopt-notes {
+
+    padding-block:
+      65px;
+
+  }
+
+
+  /*
+   * The approved tablet design keeps the
+   * three adoption steps side by side.
+   * This overrides the generic interior
+   * mobile stack until the true mobile
+   * breakpoint.
+   */
+
+  .adopt-steps .number-list {
+
+    grid-template-columns:
+      repeat(
+        3,
+        minmax(0, 1fr)
+      );
+
+    gap:
+      20px;
+
+  }
+
+}
+
+
+/* ========================================
+   Mobile
+======================================== */
+
+@media (max-width: 700px) {
+
+  .adopt-opening {
+
+    padding-block:
+      38px;
+
+  }
+
+
+  .adopt-opening h1 {
+
+    margin:
+      15px
+      0;
+
+    font-size:
+      clamp(
+        2.95rem,
+        10.8vw,
+        3.45rem
+      );
+
+  }
+
+
+  .adopt-opening p:not(.eyebrow) {
+
+    font-size:
+      16px;
+
+  }
+
+
+  .adopt-opening__links {
+
+    display:
+      flex;
+
+    flex-direction:
+      column;
+
+    align-items:
+      stretch;
+
+    gap:
+      13px;
+
+    margin-top:
+      21px;
+
+  }
+
+
+  .adopt-opening__links .button {
+
+    width:
+      100%;
+
+  }
+
+
+  .adopt-opening__links .text-link {
+
+    display:
+      flex;
+
+    justify-content:
+      center;
+
+    align-items:
+      center;
+
+    min-height:
+      44px;
+
+  }
+
+
+  .adopt-listing {
+
+    padding:
+      42px
+      0
+      55px;
+
+  }
+
+
+  .adopt-listing h2,
+  .adopt-steps h2,
+  .adopt-notes h2 {
+
+    font-size:
+      clamp(
+        2.6rem,
+        10vw,
+        3.25rem
+      );
+
+  }
+
+
+  .adopt-listing .listing-frame {
+
+    margin-top:
+      20px;
+
+  }
+
+
+  .listing-frame {
+
+    padding:
+      4px;
+
+  }
+
+
+  .listing-frame iframe {
+
+    width:
+      100%;
+
+    height:
+      660px;
+
+  }
+
+
+  .frame-fallback {
+
+    font-size:
+      13px;
+
+  }
+
+
+  .adopt-steps,
+  .adopt-notes {
+
+    padding-block:
+      58px;
+
+  }
+
+
+  .adopt-steps .number-list {
+
+    grid-template-columns:
+      minmax(0, 1fr);
+
+    margin-top:
+      29px;
+
+    gap:
+      16px;
+
+  }
+
+
+  .number-item {
+
+    padding-top:
+      13px;
+
+  }
+
+
+  .number-item span {
+
+    font-size:
+      38px;
+
+  }
+
+
+  .number-item h3 {
+
+    margin:
+      8px
+      0;
+
+    font-size:
+      28px;
+
+  }
+
+
+  .adopt-steps__button {
+
+    width:
+      100%;
+
+    margin-top:
+      30px;
+
+  }
+
+
+  .adopt-notes__grid {
+
+    gap:
+      12px;
+
+  }
+
+}
+
+
+/* ========================================
+   Successful Adoptions Mobile
+======================================== */
+
+@media (max-width: 600px) {
+
+  .adoption-success {
+
+    padding-block:
+      52px
+      58px;
+
+  }
+
+
+  .adoption-success__heading {
+
+    gap:
+      15px;
+
+    margin-bottom:
+      26px;
+
+  }
+
+
+  .adoption-success__heading h2 {
+
+    font-size:
+      clamp(
+        2.7rem,
+        10.5vw,
+        3.2rem
+      );
+
+  }
+
+
+  .adoption-success__gallery {
+
+    grid-template-columns:
+      minmax(0, 1fr);
+
+    max-width:
+      390px;
+
+    gap:
+      22px;
+
+  }
+
+
+  .adoption-memory {
+
+    padding:
+      8px;
+
+  }
+
+}
+
+
+/* ========================================
+   Small Mobile
+======================================== */
+
+@media (max-width: 570px) {
+
+  .adopt-opening h1 {
+
+    font-size:
+      calc(
+        clamp(
+          3.25rem,
+          11.5vw,
+          4.3rem
+        ) - 2px
+      );
+
+  }
+
+
+  .adopt-notes h2 {
+
+    font-size:
+      clamp(
+        2.8rem,
+        9.6vw,
+        3.7rem
+      );
+
+  }
+
+}

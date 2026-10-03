@@ -1,0 +1,67 @@
+{
+  "hero": {
+    "eyebrow": "About Feline Fairies",
+    "titleBefore": "It starts with someone saying",
+    "titleAccent": "yes.",
+    "text": "A foster home. A little patience. A whole community behind one cat’s next chapter. That is the heart of Feline Fairies.",
+    "image": {
+      "src": "/media/about/about-volunteer-candid.webp",
+      "src640": "/media/about/about-volunteer-candid-640.webp",
+      "src960": "/media/about/about-volunteer-candid-960.webp",
+      "src1280": "/media/about/about-volunteer-candid-1280.webp",
+      "alt": "Illustrative scene of a person playing with a cat at home",
+      "width": 1536,
+      "height": 1024
+    },
+    "caption": "Illustrative photography"
+  },
+
+  "why": {
+    "index": "01 / Why we exist",
+    "quote": "A safe place to land can change a cat’s whole world.",
+    "text": "Feline Fairies is a volunteer-run nonprofit based in St. Augustine, Florida. Through foster homes, basic medical care, and adoption, we help homeless and vulnerable cats find a path to loving families."
+  },
+
+  "model": {
+    "eyebrow": "A different kind of home",
+    "titleBefore": "There is no shelter building.",
+    "titleAccent": "There are people.",
+    "paragraphs": [
+      "Our cats stay in volunteer foster homes. A familiar space and daily care give each cat room to settle in, while fosters help us learn their individual personalities and needs.",
+      "That knowledge guides thoughtful connections with adopters and makes every new home possible."
+    ],
+    "button": {
+      "label": "Explore Fostering",
+      "url": "/foster/foster_application/"
+    },
+    "statement": "Care begins with a safe place to land.",
+    "statementLabel": "Foster-based rescue · St. Augustine"
+  },
+
+  "beginning": {
+    "eyebrow": "Our beginning",
+    "title": "Small beginnings. Shared purpose.",
+    "year": "2021",
+    "text": "Feline Fairies began with volunteers helping kittens in need. It has grown through neighbors who foster, volunteer, adopt, and give, while remaining a community-driven rescue serving St. Augustine and North Florida."
+  },
+
+  "help": {
+    "eyebrow": "Be part of their story",
+    "title": "Every helping hand matters.",
+    "text": "Give a cat a home, share your time, or help meet the everyday needs of cats in foster care.",
+    "buttons": [
+      {
+        "label": "Adopt",
+        "url": "/adopt/"
+      },
+      {
+        "label": "Get Involved",
+        "url": "/get-involved/"
+      },
+      {
+        "label": "Donate",
+        "url": "/donate/"
+      }
+    ]
+  }
+}

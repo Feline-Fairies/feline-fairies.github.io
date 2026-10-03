@@ -1,0 +1,61 @@
+{
+  "hero": {
+    "eyebrow": "Give a little magic",
+    "titleBefore": "Make room for",
+    "titleAccent": "the next rescue.",
+    "text": "Your gift helps provide the everyday care that gives cats a safe place to land while they wait for a family.",
+    "button": {
+      "label": "Donate with PayPal"
+    },
+    "image": {
+      "src": "/media/donate/donate-held-cat-candid.webp",
+      "src640": "/media/donate/donate-held-cat-candid-640.webp",
+      "src960": "/media/donate/donate-held-cat-candid-960.webp",
+      "alt": "Illustrative scene of a cat being held gently in a home",
+      "width": 1024,
+      "height": 1536
+    },
+    "caption": "Illustrative photography"
+  },
+
+  "support": {
+    "eyebrow": "What your donation supports",
+    "title": "Care is made of everyday things.",
+    "text": "Feline Fairies is foster-based and volunteer-run. Contributions help provide essentials for cats and kittens in foster homes.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Food & supplies",
+        "text": "Meals, litter, and other essentials for daily care."
+      },
+      {
+        "number": "02",
+        "title": "Safe foster homes",
+        "text": "Practical needs that help volunteers offer a comfortable, safe place to stay."
+      },
+      {
+        "number": "03",
+        "title": "Basic medical care",
+        "text": "Support for the basic medical care provided through the rescue."
+      }
+    ]
+  },
+
+  "giving": {
+    "eyebrow": "Ways to give",
+    "title": "Choose what feels right for you.",
+    "text": "Give online through PayPal. If you would like to contribute regularly, check the options available there when making your gift.",
+    "buttonLabel": "Give Through PayPal",
+    "mailTitle": "Prefer to give by mail?",
+    "mailBefore": "Please",
+    "mailLinkLabel": "contact Feline Fairies",
+    "mailAfter": "for current mailing instructions before sending a check."
+  },
+
+  "finish": {
+    "eyebrow": "Thank you for being here",
+    "title": "A little care can change a whole world.",
+    "text": "Your support helps cats settle in, feel safe, and move toward a new home.",
+    "buttonLabel": "Donate Now"
+  }
+}

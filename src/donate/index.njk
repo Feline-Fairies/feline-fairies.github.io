@@ -1,0 +1,250 @@
+---
+layout: layouts/base.njk
+seoTitle: Donate to Cat Rescue in St. Augustine | Feline Fairies
+title: Donate to Feline Fairies
+description: Support Feline Fairies with a PayPal donation. Help provide food, supplies, foster needs, safe housing, and basic medical care for rescued cats.
+pageStyles:
+  - /assets/css/interior.css
+  - /assets/css/donate.css
+---
+
+
+<!-- ========================================
+     DONATE OPENING
+======================================== -->
+
+<section class="donate-opening">
+
+  <div class="shell donate-opening__grid">
+
+    <figure class="donate-opening__image">
+
+      <img
+        src="{{ donate.hero.image.src }}"
+        srcset="
+          {{ donate.hero.image.src640 }} 640w,
+          {{ donate.hero.image.src960 }} 960w,
+          {{ donate.hero.image.src }} 1024w
+        "
+        sizes="(max-width: 820px) calc(100vw - 42px), 50vw"
+        alt="{{ donate.hero.image.alt }}"
+        width="{{ donate.hero.image.width }}"
+        height="{{ donate.hero.image.height }}"
+        decoding="async"
+        loading="eager"
+        fetchpriority="high"
+      >
+
+      <figcaption class="image-caption">
+        {{ donate.hero.caption }}
+      </figcaption>
+
+    </figure>
+
+
+    <div class="donate-opening__copy">
+
+      <p class="eyebrow">
+        {{ donate.hero.eyebrow }}
+      </p>
+
+      <h1>
+
+        {{ donate.hero.titleBefore }}
+
+        <em>
+          {{ donate.hero.titleAccent }}
+        </em>
+
+      </h1>
+
+      <p>
+        {{ donate.hero.text }}
+      </p>
+
+      <a
+        class="button button--night"
+        href="{{ site.donationUrl }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="{{ donate.hero.button.label }} (opens in a new tab)"
+      >
+        {{ donate.hero.button.label }}
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     WHAT DONATIONS SUPPORT
+======================================== -->
+
+<section
+  class="donate-support"
+  aria-labelledby="donate-support-title"
+>
+
+  <div class="shell">
+
+    <div class="donate-support__head">
+
+      <div>
+
+        <p class="eyebrow">
+          {{ donate.support.eyebrow }}
+        </p>
+
+        <h2 id="donate-support-title">
+          {{ donate.support.title }}
+        </h2>
+
+      </div>
+
+      <p>
+        {{ donate.support.text }}
+      </p>
+
+    </div>
+
+
+    <div class="donate-support__rows">
+
+      {% for item in donate.support.items %}
+
+        <article>
+
+          <span>
+            {{ item.number }}
+          </span>
+
+          <h3>
+            {{ item.title }}
+          </h3>
+
+          <p>
+            {{ item.text }}
+          </p>
+
+        </article>
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     WAYS TO GIVE
+======================================== -->
+
+<section
+  class="donate-giving"
+  aria-labelledby="ways-to-give-title"
+>
+
+  <div class="shell donate-giving__grid">
+
+    <div>
+
+      <p class="eyebrow">
+        {{ donate.giving.eyebrow }}
+      </p>
+
+      <h2 id="ways-to-give-title">
+        {{ donate.giving.title }}
+      </h2>
+
+    </div>
+
+
+    <div>
+
+      <p>
+        {{ donate.giving.text }}
+      </p>
+
+
+      <a
+        class="button button--night"
+        href="{{ site.donationUrl }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="{{ donate.giving.buttonLabel }} (opens in a new tab)"
+      >
+        {{ donate.giving.buttonLabel }}
+      </a>
+
+
+      <div class="donate-mail">
+
+        <h3>
+          {{ donate.giving.mailTitle }}
+        </h3>
+
+        <p>
+
+          {{ donate.giving.mailBefore }}
+
+          <a href="/contact/">
+            {{ donate.giving.mailLinkLabel }}
+          </a>
+
+          {{ donate.giving.mailAfter }}
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     FINAL CTA
+======================================== -->
+
+<section
+  class="donate-finish"
+  aria-labelledby="donate-finish-title"
+>
+
+  <div class="shell">
+
+    <p class="eyebrow">
+      {{ donate.finish.eyebrow }}
+    </p>
+
+    <h2 id="donate-finish-title">
+      {{ donate.finish.title }}
+    </h2>
+
+    <p>
+      {{ donate.finish.text }}
+    </p>
+
+    <a
+      class="button"
+      href="{{ site.donationUrl }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="{{ donate.finish.buttonLabel }} (opens in a new tab)"
+    >
+      {{ donate.finish.buttonLabel }}
+    </a>
+
+  </div>
+
+</section>

@@ -1,0 +1,247 @@
+---
+layout: layouts/base.njk
+seoTitle: About Feline Fairies | St. Augustine Cat Rescue
+title: About Feline Fairies
+description: Learn about Feline Fairies, a volunteer-run foster-based cat rescue helping cats in St. Augustine, Florida through foster care, adoption, and basic medical care.
+pageStyles:
+  - /assets/css/interior.css
+  - /assets/css/about.css
+---
+
+
+<!-- ========================================
+     ABOUT OPENING
+======================================== -->
+
+<section class="about-opening">
+
+  <div class="shell about-opening__top">
+
+    <div>
+
+      <p class="eyebrow">
+        {{ about.hero.eyebrow }}
+      </p>
+
+      <h1>
+
+        {{ about.hero.titleBefore }}
+
+        <em>
+          {{ about.hero.titleAccent }}
+        </em>
+
+      </h1>
+
+    </div>
+
+
+    <p>
+      {{ about.hero.text }}
+    </p>
+
+  </div>
+
+
+  <img
+    class="about-opening__image"
+    src="{{ about.hero.image.src }}"
+    srcset="
+      {{ about.hero.image.src640 }} 640w,
+      {{ about.hero.image.src960 }} 960w,
+      {{ about.hero.image.src1280 }} 1280w,
+      {{ about.hero.image.src }} 1536w
+    "
+    sizes="(max-width: 1150px) 100vw, 54vw"
+    alt="{{ about.hero.image.alt }}"
+    width="{{ about.hero.image.width }}"
+    height="{{ about.hero.image.height }}"
+    loading="eager"
+    decoding="async"
+    fetchpriority="high"
+  >
+
+
+  <div class="shell image-caption image-caption--right">
+    {{ about.hero.caption }}
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     WHY WE EXIST
+======================================== -->
+
+<section class="section section--cream">
+
+  <div class="shell about-story">
+
+    <div class="about-story__index">
+      {{ about.why.index }}
+    </div>
+
+
+    <div>
+
+      <div class="big-quote">
+        {{ about.why.quote }}
+      </div>
+
+      <p class="lede">
+        {{ about.why.text }}
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     FOSTER MODEL
+======================================== -->
+
+<section class="section section--paper">
+
+  <div class="shell about-model">
+
+    <div class="prose">
+
+      <p class="eyebrow">
+        {{ about.model.eyebrow }}
+      </p>
+
+      <h2>
+
+        {{ about.model.titleBefore }}
+
+        <em>
+          {{ about.model.titleAccent }}
+        </em>
+
+      </h2>
+
+
+      {% for paragraph in about.model.paragraphs %}
+
+        <p>
+          {{ paragraph }}
+        </p>
+
+      {% endfor %}
+
+
+      <a
+        class="button button--night"
+        href="{{ about.model.button.url }}"
+      >
+        {{ about.model.button.label }}
+      </a>
+
+    </div>
+
+
+    <div class="about-model__statement">
+
+      <span aria-hidden="true">
+        ✦
+      </span>
+
+      <p>
+        {{ about.model.statement }}
+      </p>
+
+      <small>
+        {{ about.model.statementLabel }}
+      </small>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     BEGINNING
+======================================== -->
+
+<section class="section section--cream">
+
+  <div class="shell">
+
+    <p class="eyebrow">
+      {{ about.beginning.eyebrow }}
+    </p>
+
+    <h2>
+      {{ about.beginning.title }}
+    </h2>
+
+
+    <div class="about-timeline">
+
+      <strong>
+        {{ about.beginning.year }}
+      </strong>
+
+      <p>
+        {{ about.beginning.text }}
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     CTA
+======================================== -->
+
+<section class="section about-help">
+
+  <div class="shell cta-panel">
+
+    <div>
+
+      <p class="eyebrow">
+        {{ about.help.eyebrow }}
+      </p>
+
+      <h2>
+        {{ about.help.title }}
+      </h2>
+
+      <p>
+        {{ about.help.text }}
+      </p>
+
+
+      <div class="about-help__links">
+
+        {% for button in about.help.buttons %}
+
+          <a
+            class="button button--night"
+            href="{{ button.url }}"
+          >
+            {{ button.label }}
+          </a>
+
+        {% endfor %}
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
