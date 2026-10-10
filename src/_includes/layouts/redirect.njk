@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="robots"
+    content="noindex, follow"
+  >
+
+  <title>
+    Redirecting | Feline Fairies
+  </title>
+
+  <link
+    rel="canonical"
+    href="{{ site.url }}{{ redirectTarget }}"
+  >
+
+  <meta
+    http-equiv="refresh"
+    content="0; url={{ redirectTarget }}"
+  >
+
+  <script>
+    window.location.replace(
+      "{{ redirectTarget }}"
+    );
+  </script>
+
+</head>
+
+
+<body>
+
+  <main>
+
+    <p>
+      This page has moved.
+      <a href="{{ redirectTarget }}">
+        Continue to Feline Fairies
+      </a>.
+    </p>
+
+  </main>
+
+</body>
+
+</html>
