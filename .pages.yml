@@ -1,3 +1,22 @@
+# ========================================
+# Feline Fairies
+# Pages CMS Configuration
+# ========================================
+
+
+# ========================================
+# SAFETY
+# ========================================
+
+settings:
+  content:
+    merge: true
+
+
+# ========================================
+# MEDIA LIBRARY
+# ========================================
+
 media:
   - name: site_images
     label: Site Images
@@ -11,141 +30,2969 @@ media:
     rename: safe
 
 
+# ========================================
+# CONTENT
+# ========================================
+
 content:
 
-  # ========================================
-  # GLOBAL SITE SETTINGS
-  # ========================================
 
-  - name: site_settings
-    label: Site Settings
-    type: file
-    path: src/_data/site.json
-    format: json
+  # ======================================
+  # QUICK UPDATES
+  # ======================================
 
-    operations:
-      delete: false
+  - name: quick_updates
+    label: Quick Updates
+    type: group
 
-    fields:
-
-      - name: name
-        label: Organization Name
-        type: string
-        readonly: true
-
-      - name: legalName
-        label: Legal Name
-        type: string
-        readonly: true
-
-      - name: url
-        label: Website URL
-        type: string
-        readonly: true
-
-      - name: tagline
-        label: Site Tagline
-        type: string
-
-      - name: location
-        label: Location
-        type: string
-
-      - name: city
-        label: City
-        type: string
-        readonly: true
-
-      - name: state
-        label: State
-        type: string
-        readonly: true
-
-      - name: ein
-        label: EIN
-        type: string
-        readonly: true
-
-      - name: nonprofitStatus
-        label: Nonprofit Status
-        type: string
-        readonly: true
-
-      - name: phone
-        label: Phone Number
-        type: string
-        description: "Visible phone number, for example 719-332-7146."
-
-      - name: phoneHref
-        label: Phone Link
-        type: string
-        description: "Telephone link used by buttons. Example: tel:+17193327146"
-
-      - name: email
-        label: Email
-        type: string
-
-      - name: mailingAddress
-        label: Mailing Address
-        type: text
-        description: "Leave blank until a current mailing address is confirmed."
-
-      - name: donationUrl
-        label: PayPal Donation URL
-        type: string
-
-      - name: shelterBossUrl
-        label: ShelterBoss Adoptable Cats URL
-        type: string
+    items:
 
 
-      # Announcement
+      # ----------------------------------
+      # QUICK: ANNOUNCEMENT + CONTACT
+      # ----------------------------------
 
-      - name: announcement
-        label: Announcement Bar
-        type: object
+      - name: quick_site
+        label: Announcement + Contact
+        type: file
+        path: src/_data/site.json
+        format: json
+
+        operations:
+          create: false
+          rename: false
+          delete: false
 
         fields:
 
-          - name: enabled
-            label: Show Announcement
-            type: boolean
-
-          - name: text
-            label: Announcement Text
-            type: string
-
-          - name: linkLabel
-            label: Link Text
-            type: string
-
-          - name: url
-            label: Link Destination
-            type: string
-
-
-      # Main navigation is visible but protected for now.
-
-      - name: navigation
-        label: Main Navigation
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{label}"
-        readonly: true
-
-        fields:
-
-          - name: label
-            type: string
-
-          - name: url
-            type: string
-
-          - name: children
+          - name: announcement
+            label: Announcement Bar
             type: object
+
+            fields:
+
+              - name: enabled
+                label: Show Announcement
+                type: boolean
+
+              - name: text
+                label: Announcement Text
+                type: string
+
+              - name: linkLabel
+                label: Link Text
+                type: string
+
+              - name: url
+                label: Link Destination
+                type: string
+                readonly: true
+
+
+          - name: phone
+            label: Phone Number
+            type: string
+            description: "Visible phone number."
+
+
+          - name: phoneHref
+            label: Phone Link
+            type: string
+            description: "Example: tel:+17193327146"
+
+
+          - name: email
+            label: Email Address
+            type: string
+            description: "Leave blank until the rescue confirms the correct public email."
+
+
+          - name: mailingAddress
+            label: Mailing Address
+            type: text
+            description: "Leave blank until a current mailing address is confirmed."
+
+
+          - name: donationUrl
+            label: PayPal Donation URL
+            type: string
+
+
+          - name: shelterBossUrl
+            label: ShelterBoss Adoptable Cats URL
+            type: string
+
+
+          - name: social
+            label: Social Media
+            type: object
+
             list:
+              min: 2
+              max: 2
+              collapsible:
+                collapsed: true
+                summary: "{label}"
+
+            fields:
+
+              - name: label
+                label: Platform
+                type: string
+                readonly: true
+
+              - name: url
+                label: Profile URL
+                type: string
+
+
+      # ----------------------------------
+      # QUICK: UPCOMING EVENTS
+      # ----------------------------------
+
+      - name: quick_events
+        label: Upcoming Events
+        type: file
+        path: src/_data/events.json
+        format: json
+
+        operations:
+          create: false
+          rename: false
+          delete: false
+
+        fields:
+
+          - name: items
+            label: Upcoming Events
+            type: object
+
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+
+            description: "Add confirmed events here. Remove an event when it is no longer current."
+
+            fields:
+
+              - name: title
+                label: Event Name
+                type: string
+                required: true
+
+              - name: date
+                label: Date
+                type: string
+
+              - name: time
+                label: Time
+                type: string
+
+              - name: location
+                label: Location
+                type: string
+
+              - name: description
+                label: Description
+                type: text
+
+              - name: url
+                label: Event Details URL
+                type: string
+
+              - name: linkLabel
+                label: Link Text
+                type: string
+
+              - name: external
+                label: External Link
+                type: boolean
+                description: "Turn this on if the event link goes to another website."
+
+
+      # ----------------------------------
+      # QUICK: SUCCESSFUL ADOPTIONS
+      # ----------------------------------
+
+      - name: quick_successful_adoptions
+        label: Successful Adoptions
+        type: file
+        path: src/_data/adopt.json
+        format: json
+
+        operations:
+          create: false
+          rename: false
+          delete: false
+
+        fields:
+
+          - name: successfulAdoptions
+            label: Successful Adoptions
+            type: object
+
+            fields:
+
+              - name: title
+                label: Section Heading
+                type: string
+
+              - name: text
+                label: Intro Text
+                type: text
+
+              - name: items
+                label: Adoption Gallery
+                type: object
+
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "{alt}"
+
+                fields:
+
+                  - name: image
+                    label: Adoption Image
+                    type: image
+                    required: true
+
+                    options:
+                      media: site_images
+                      path: adoptions
+
+                  - name: alt
+                    label: Image Description
+                    type: string
+                    required: true
+
+                  - name: width
+                    label: Image Width
+                    type: number
+                    description: "Current gallery graphics use 370."
+
+                  - name: height
+                    label: Image Height
+                    type: number
+                    description: "Current gallery graphics use 370."
+
+
+      # ----------------------------------
+      # QUICK: HOMEPAGE IMPACT
+      # ----------------------------------
+
+      - name: quick_impact
+        label: Homepage Impact Numbers
+        type: file
+        path: src/_data/home.json
+        format: json
+
+        operations:
+          create: false
+          rename: false
+          delete: false
+
+        fields:
+
+          - name: impact
+            label: Homepage Impact
+            type: object
+
+            fields:
+
+              - name: titleBefore
+                label: Heading
+                type: string
+
+              - name: titleAccent
+                label: Accent Heading
+                type: string
+
+              - name: items
+                label: Impact Statistics
+                type: object
+
+                list:
+                  min: 3
+                  max: 3
+                  collapsible:
+                    collapsed: true
+                    summary: "{number} - {label}"
+
+                fields:
+
+                  - name: number
+                    label: Number
+                    type: string
+
+                  - name: label
+                    label: Description
+                    type: string
+
+
+      # ----------------------------------
+      # QUICK: FORMS + LINKS
+      # ----------------------------------
+
+      - name: quick_forms
+        label: Forms + Links
+        type: file
+        path: src/_data/forms.json
+        format: json
+
+        operations:
+          create: false
+          rename: false
+          delete: false
+
+        fields:
+
+          - name: adoption
+            label: Adoption Application
+            type: object
+
+            fields:
+
+              - name: embedUrl
+                label: Jotform Embed URL
+                type: string
+
+              - name: directUrl
+                label: Direct Jotform URL
+                type: string
+
+
+          - name: foster
+            label: Foster Application
+            type: object
+
+            fields:
+
+              - name: embedUrl
+                label: Jotform Embed URL
+                type: string
+
+              - name: directUrl
+                label: Direct Jotform URL
+                type: string
+
+
+          - name: volunteer
+            label: Volunteer Application
+            type: object
+
+            fields:
+
+              - name: embedUrl
+                label: Jotform Embed URL
+                type: string
+                description: "Currently blank until the official Volunteer Jotform is confirmed."
+
+              - name: directUrl
+                label: Direct Jotform URL
+                type: string
+
+
+          - name: surrender
+            label: Surrender Request
+            type: object
+
+            fields:
+
+              - name: embedUrl
+                label: Jotform Embed URL
+                type: string
+
+              - name: directUrl
+                label: Direct Jotform URL
+                type: string
+
+
+          - name: contact
+            label: Contact Form
+            type: object
+
+            fields:
+
+              - name: embedUrl
+                label: Jotform Embed URL
+                type: string
+                description: "Currently blank until the official Contact Jotform is confirmed."
+
+              - name: directUrl
+                label: Direct Jotform URL
+                type: string
+
+
+
+  # ======================================
+  # PAGES
+  # ======================================
+
+  - name: pages
+    label: Pages
+    type: group
+
+    items:
+
+
+      # ----------------------------------
+      # HOME
+      # ----------------------------------
+
+      - name: home
+        label: Home
+        type: file
+        path: src/_data/home.json
+        format: json
+
+        operations:
+          create: false
+          rename: false
+          delete: false
+
+        fields:
+
+          - name: hero
+            label: Hero
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+
+              - name: title
+                label: Main Heading
+                type: object
+
+                fields:
+
+                  - name: line1Before
+                    label: First Line
+                    type: string
+
+                  - name: accent
+                    label: Accent Word
+                    type: string
+
+                  - name: line2
+                    label: Second Line
+                    type: string
+
+                  - name: line3
+                    label: Third Line
+                    type: string
+
+
+              - name: text
+                label: Hero Text
+                type: text
+
+
+              - name: primaryButton
+                label: Primary Button
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Button Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+
+              - name: secondaryButton
+                label: Secondary Button
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Button Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+
+              - name: image
+                label: Hero Image Set
+                type: object
+                description: "Replace all three responsive sizes together."
+
+                fields:
+
+                  - name: src
+                    label: Full Size Image
+                    type: image
+
+                    options:
+                      media: site_images
+                      path: home
+
+                  - name: src640
+                    label: 640px Image
+                    type: image
+
+                    options:
+                      media: site_images
+                      path: home
+
+                  - name: src960
+                    label: 960px Image
+                    type: image
+
+                    options:
+                      media: site_images
+                      path: home
+
+                  - name: alt
+                    label: Image Description
+                    type: string
+
+                  - name: width
+                    label: Source Width
+                    type: number
+
+                  - name: height
+                    label: Source Height
+                    type: number
+
+
+              - name: badge
+                label: Hero Impact Badge
+                type: object
+
+                fields:
+
+                  - name: number
+                    label: Number
+                    type: string
+
+                  - name: label
+                    label: Description
+                    type: string
+
+
+          - name: intro
+            label: Intro Section
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: titleBefore
+                label: Heading
+                type: string
+
+              - name: titleAccent
+                label: Accent Heading
+                type: string
+
+              - name: text
+                label: Text
+                type: text
+
+              - name: linkLabel
+                label: Link Text
+                type: string
+
+              - name: linkUrl
+                label: Link Destination
+                type: string
+                readonly: true
+
+
+          - name: mission
+            label: Mission Section
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: title
+                label: Heading
+                type: string
+
+              - name: paragraphs
+                label: Paragraphs
+                type: text
+
+                list:
+                  min: 2
+                  max: 2
+
+
+              - name: button
+                label: Button
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Button Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+
+              - name: image
+                label: Mission Image Set
+                type: object
+                description: "Replace all three responsive sizes together."
+
+                fields:
+
+                  - name: src
+                    label: Full Size Image
+                    type: image
+
+                    options:
+                      media: site_images
+                      path: home
+
+                  - name: src640
+                    label: 640px Image
+                    type: image
+
+                    options:
+                      media: site_images
+                      path: home
+
+                  - name: src960
+                    label: 960px Image
+                    type: image
+
+                    options:
+                      media: site_images
+                      path: home
+
+                  - name: alt
+                    label: Image Description
+                    type: string
+
+                  - name: width
+                    label: Source Width
+                    type: number
+
+                  - name: height
+                    label: Source Height
+                    type: number
+
+
+          - name: impact
+            label: Impact Numbers
+            type: object
+
+            fields:
+
+              - name: titleBefore
+                label: Heading
+                type: string
+
+              - name: titleAccent
+                label: Accent Heading
+                type: string
+
+              - name: items
+                label: Impact Statistics
+                type: object
+
+                list:
+                  min: 3
+                  max: 3
+                  collapsible:
+                    collapsed: true
+                    summary: "{number} - {label}"
+
+                fields:
+
+                  - name: number
+                    label: Number
+                    type: string
+
+                  - name: label
+                    label: Description
+                    type: string
+
+
+          - name: paths
+            label: Ways to Help
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: title
+                label: Heading
+                type: string
+
+              - name: text
+                label: Intro Text
+                type: text
+
+              - name: items
+                label: Path Cards
+                type: object
+
+                list:
+                  min: 3
+                  max: 3
+                  collapsible:
+                    collapsed: true
+                    summary: "{title}"
+
+                fields:
+
+                  - name: number
+                    label: Number
+                    type: string
+                    readonly: true
+
+                  - name: title
+                    label: Card Title
+                    type: string
+
+                  - name: text
+                    label: Description
+                    type: text
+
+                  - name: linkLabel
+                    label: Link Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+
+          - name: steps
+            label: Adoption Steps
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: title
+                label: Heading
+                type: string
+
+              - name: text
+                label: Intro Text
+                type: text
+
+              - name: items
+                label: Steps
+                type: object
+
+                list:
+                  min: 3
+                  max: 3
+                  collapsible:
+                    collapsed: true
+                    summary: "{number} - {title}"
+
+                fields:
+
+                  - name: number
+                    label: Number
+                    type: string
+                    readonly: true
+
+                  - name: title
+                    label: Step Title
+                    type: string
+
+                  - name: text
+                    label: Step Text
+                    type: text
+
+
+              - name: button
+                label: Button
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Button Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+
+          - name: donation
+            label: Donation Call to Action
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: title
+                label: Heading
+                type: string
+
+              - name: text
+                label: Text
+                type: text
+
+              - name: button
+                label: Button
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Button Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+
+      # ----------------------------------
+      # ABOUT
+      # ----------------------------------
+
+      - name: about
+        label: About
+        type: file
+        path: src/_data/about.json
+        format: json
+
+        operations:
+          create: false
+          rename: false
+          delete: false
+
+        fields:
+
+          - name: hero
+            label: About Introduction
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: titleBefore
+                label: Main Heading
+                type: string
+
+              - name: titleAccent
+                label: Accent Word
+                type: string
+
+              - name: text
+                label: Intro Text
+                type: text
+
+
+              - name: image
+                label: About Image Set
+                type: object
+                description: "Replace all responsive image sizes together."
+
+                fields:
+
+                  - name: src
+                    label: Full Size Image
+                    type: image
+
+                    options:
+                      media: site_images
+                      path: about
+
+                  - name: src640
+                    label: 640px Image
+                    type: image
+
+                    options:
+                      media: site_images
+                      path: about
+
+                  - name: src960
+                    label: 960px Image
+                    type: image
+
+                    options:
+                      media: site_images
+                      path: about
+
+                  - name: src1280
+                    label: 1280px Image
+                    type: image
+
+                    options:
+                      media: site_images
+                      path: about
+
+                  - name: alt
+                    label: Image Description
+                    type: string
+
+                  - name: width
+                    label: Source Width
+                    type: number
+
+                  - name: height
+                    label: Source Height
+                    type: number
+
+
+              - name: caption
+                label: Image Caption
+                type: string
+
+
+          - name: why
+            label: Why We Exist
+            type: object
+
+            fields:
+
+              - name: index
+                label: Section Label
+                type: string
+
+              - name: quote
+                label: Main Statement
+                type: text
+
+              - name: text
+                label: Supporting Text
+                type: text
+
+
+          - name: model
+            label: Foster-Based Model
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: titleBefore
+                label: Main Heading
+                type: string
+
+              - name: titleAccent
+                label: Accent Heading
+                type: string
+
+              - name: paragraphs
+                label: Paragraphs
+                type: text
+
+                list:
+                  min: 2
+                  max: 2
+
+              - name: button
+                label: Button
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Button Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+              - name: statement
+                label: Closing Statement
+                type: string
+
+              - name: statementLabel
+                label: Statement Label
+                type: string
+
+
+          - name: beginning
+            label: Our Beginning
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: title
+                label: Heading
+                type: string
+
+              - name: year
+                label: Year
+                type: string
+                description: "Confirm this fact with the rescue before launch."
+
+              - name: text
+                label: Text
+                type: text
+
+
+          - name: help
+            label: Final Call to Action
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: title
+                label: Heading
+                type: string
+
+              - name: text
+                label: Text
+                type: text
+
+              - name: buttons
+                label: Buttons
+                type: object
+
+                list:
+                  min: 3
+                  max: 3
+                  collapsible:
+                    collapsed: true
+                    summary: "{label}"
+
+                fields:
+
+                  - name: label
+                    label: Button Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+
+      # ----------------------------------
+      # ADOPT
+      # ----------------------------------
+
+      - name: adopt
+        label: Adopt
+        type: file
+        path: src/_data/adopt.json
+        format: json
+
+        operations:
+          create: false
+          rename: false
+          delete: false
+
+        fields:
+
+          - name: hero
+            label: Adopt Introduction
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: titleBefore
+                label: Main Heading
+                type: string
+
+              - name: titleAccent
+                label: Accent Word
+                type: string
+
+              - name: text
+                label: Intro Text
+                type: text
+
+              - name: primaryButton
+                label: Primary Button
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Button Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+
+              - name: secondaryLinks
+                label: Secondary Links
+                type: object
+
+                list:
+                  min: 2
+                  max: 2
+                  collapsible:
+                    collapsed: true
+                    summary: "{label}"
+
+                fields:
+
+                  - name: label
+                    label: Link Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+
+          - name: listing
+            label: Adoptable Cats Listing
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: title
+                label: Heading
+                type: string
+
+              - name: iframeTitle
+                label: Accessible Listing Title
+                type: string
+
+              - name: fallbackBefore
+                label: Fallback Message
+                type: string
+
+              - name: fallbackLabel
+                label: Fallback Link Text
+                type: string
+
+
+          - name: process
+            label: Adoption Process
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: title
+                label: Heading
+                type: string
+
+              - name: items
+                label: Steps
+                type: object
+
+                list:
+                  min: 3
+                  max: 3
+                  collapsible:
+                    collapsed: true
+                    summary: "{number} - {title}"
+
+                fields:
+
+                  - name: number
+                    label: Number
+                    type: string
+                    readonly: true
+
+                  - name: title
+                    label: Step Title
+                    type: string
+
+                  - name: text
+                    label: Step Text
+                    type: text
+
+
+              - name: button
+                label: Application Button
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Button Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+
+          - name: successfulAdoptions
+            label: Successful Adoptions
+            type: object
+
+            fields:
+
+              - name: title
+                label: Heading
+                type: string
+
+              - name: text
+                label: Intro Text
+                type: text
+
+              - name: items
+                label: Adoption Gallery
+                type: object
+
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "{alt}"
+
+                fields:
+
+                  - name: image
+                    label: Adoption Image
+                    type: image
+                    required: true
+
+                    options:
+                      media: site_images
+                      path: adoptions
+
+                  - name: alt
+                    label: Image Description
+                    type: string
+                    required: true
+
+                  - name: width
+                    label: Image Width
+                    type: number
+
+                  - name: height
+                    label: Image Height
+                    type: number
+
+
+          - name: notes
+            label: Good to Know
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: title
+                label: Heading
+                type: string
+
+              - name: items
+                label: Notes
+                type: string
+                list: true
+
+              - name: button
+                label: Contact Button
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Button Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+
+      # ----------------------------------
+      # HOW TO ADOPT
+      # ----------------------------------
+
+      - name: how_to_adopt
+        label: How to Adopt
+        type: file
+        path: src/_data/howToAdopt.json
+        format: json
+
+        operations:
+          create: false
+          rename: false
+          delete: false
+
+        fields:
+
+          - name: hero
+            label: Page Introduction
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: title
+                label: Main Heading
+                type: string
+
+              - name: text
+                label: Intro Text
+                type: text
+
+              - name: primaryButton
+                label: Browse Cats Button
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Button Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+              - name: secondaryButton
+                label: Apply Button
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Button Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+
+          - name: steps
+            label: Adoption Steps
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: title
+                label: Heading
+                type: string
+
+              - name: items
+                label: Steps
+                type: object
+
+                list:
+                  min: 6
+                  max: 6
+                  collapsible:
+                    collapsed: true
+                    summary: "{number} - {title}"
+
+                fields:
+
+                  - name: number
+                    label: Step Number
+                    type: string
+                    readonly: true
+
+                  - name: title
+                    label: Step Title
+                    type: string
+
+                  - name: text
+                    label: Step Text
+                    type: text
+
+
+          - name: finish
+            label: Final Call to Action
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: title
+                label: Heading
+                type: string
+
+              - name: text
+                label: Text
+                type: text
+
+              - name: primaryButton
+                label: Browse Cats Button
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Button Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+              - name: secondaryButton
+                label: Application Button
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Button Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+
+      # ----------------------------------
+      # GET INVOLVED
+      # ----------------------------------
+
+      - name: get_involved
+        label: Get Involved
+        type: file
+        path: src/_data/getInvolved.json
+        format: json
+
+        operations:
+          create: false
+          rename: false
+          delete: false
+
+        fields:
+
+          - name: hero
+            label: Page Introduction
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: titleBefore
+                label: Main Heading
+                type: string
+
+              - name: titleAccent
+                label: Accent Heading
+                type: string
+
+              - name: text
+                label: Intro Text
+                type: text
+
+
+          - name: paths
+            label: Ways to Make a Difference
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: items
+                label: Action Cards
+                type: object
+
+                list:
+                  min: 4
+                  max: 4
+                  collapsible:
+                    collapsed: true
+                    summary: "{title}"
+
+                fields:
+
+                  - name: number
+                    label: Number
+                    type: string
+                    readonly: true
+
+                  - name: label
+                    label: Small Label
+                    type: string
+
+                  - name: title
+                    label: Card Title
+                    type: string
+
+                  - name: text
+                    label: Description
+                    type: text
+
+                  - name: linkLabel
+                    label: Link Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+
+          - name: community
+            label: Community Section
+            type: object
+
+            fields:
+
+              - name: motif
+                label: Decorative Message
+                type: string
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: title
+                label: Heading
+                type: string
+
+              - name: text
+                label: Text
+                type: text
+
+              - name: button
+                label: Button
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Button Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+
+      # ----------------------------------
+      # FOSTER
+      # ----------------------------------
+
+      - name: foster
+        label: Foster
+        type: file
+        path: src/_data/foster.json
+        format: json
+
+        operations:
+          create: false
+          rename: false
+          delete: false
+
+        fields:
+
+          - name: hero
+            label: Foster Introduction
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: titleLine1
+                label: Heading Line 1
+                type: string
+
+              - name: titleLine2Before
+                label: Heading Line 2
+                type: string
+
+              - name: titleAccent
+                label: Accent Words
+                type: string
+
+              - name: text
+                label: Intro Text
+                type: text
+
+
+              - name: primaryButton
+                label: Apply Button
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Button Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+
+              - name: secondaryLink
+                label: Secondary Link
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Link Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+
+              - name: image
+                label: Foster Image Set
+                type: object
+                description: "Replace all three responsive images together."
+
+                fields:
+
+                  - name: src
+                    label: Full Size Image
+                    type: image
+
+                    options:
+                      media: site_images
+                      path: foster
+
+                  - name: src640
+                    label: 640px Image
+                    type: image
+
+                    options:
+                      media: site_images
+                      path: foster
+
+                  - name: src960
+                    label: 960px Image
+                    type: image
+
+                    options:
+                      media: site_images
+                      path: foster
+
+                  - name: width
+                    label: Source Width
+                    type: number
+
+                  - name: height
+                    label: Source Height
+                    type: number
+
+                  - name: alt
+                    label: Image Description
+                    type: string
+
+
+          - name: why
+            label: Why Fostering Matters
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: titleLine1
+                label: Heading Line 1
+                type: string
+
+              - name: titleLine2
+                label: Heading Line 2
+                type: string
+
+              - name: lead
+                label: Lead Text
+                type: text
+
+              - name: text
+                label: Supporting Text
+                type: text
+
+
+          - name: everyday
+            label: What Fostering Can Look Like
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: titleLine1
+                label: Heading Line 1
+                type: string
+
+              - name: titleLine2
+                label: Heading Line 2
+                type: string
+
+              - name: items
+                label: Foster Care Cards
+                type: object
+
+                list:
+                  min: 4
+                  max: 4
+                  collapsible:
+                    collapsed: true
+                    summary: "{title}"
+
+                fields:
+
+                  - name: number
+                    label: Number
+                    type: string
+                    readonly: true
+
+                  - name: title
+                    label: Card Title
+                    type: string
+
+                  - name: text
+                    label: Card Text
+                    type: text
+
+
+          - name: fit
+            label: Is Fostering Right for Me?
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: titleLine1
+                label: Heading Line 1
+                type: string
+
+              - name: titleLine2
+                label: Heading Line 2
+                type: string
+
+              - name: text
+                label: Supporting Text
+                type: text
+
+              - name: link
+                label: Contact Link
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Link Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+              - name: items
+                label: Considerations
+                type: string
+
+                list:
+                  min: 4
+                  max: 4
+
+
+          - name: process
+            label: How Fostering Works
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: title
+                label: Heading
+                type: string
+
+              - name: text
+                label: Supporting Text
+                type: text
+
+              - name: items
+                label: Steps
+                type: object
+
+                list:
+                  min: 4
+                  max: 4
+                  collapsible:
+                    collapsed: true
+                    summary: "{number} - {title}"
+
+                fields:
+
+                  - name: number
+                    label: Step Number
+                    type: string
+                    readonly: true
+
+                  - name: title
+                    label: Step Title
+                    type: string
+
+                  - name: text
+                    label: Step Text
+                    type: text
+
+
+          - name: closing
+            label: Final Foster Call to Action
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: titleLine1
+                label: Heading
+                type: string
+
+              - name: titleAccent
+                label: Accent Words
+                type: string
+
+              - name: text
+                label: Supporting Text
+                type: text
+
+              - name: primaryButton
+                label: Apply Button
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Button Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+              - name: secondaryLink
+                label: Secondary Link
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Link Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+
+      # ----------------------------------
+      # VOLUNTEER
+      # ----------------------------------
+
+      - name: volunteer
+        label: Volunteer
+        type: file
+        path: src/_data/volunteer.json
+        format: json
+
+        operations:
+          create: false
+          rename: false
+          delete: false
+
+        fields:
+
+          - name: hero
+            label: Volunteer Introduction
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: titleBefore
+                label: Main Heading
+                type: string
+
+              - name: titleAccent
+                label: Accent Words
+                type: string
+
+              - name: text
+                label: Intro Text
+                type: text
+
+              - name: primaryButton
+                label: Apply Button
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Button Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+              - name: secondaryLink
+                label: Secondary Link
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Link Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+
+          - name: community
+            label: Why Volunteers Matter
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: titleLine1
+                label: Heading Line 1
+                type: string
+
+              - name: titleLine2
+                label: Heading Line 2
+                type: string
+
+              - name: paragraphs
+                label: Paragraphs
+                type: text
+
+                list:
+                  min: 2
+                  max: 2
+
+
+              - name: image
+                label: Volunteer Image Set
+                type: object
+                description: "Keep responsive image variants matched to the same photo."
+
+                fields:
+
+                  - name: src
+                    label: Full Size Image
+                    type: image
+
+                    options:
+                      media: site_images
+                      path: volunteer
+
+                  - name: src640
+                    label: 640px Image
+                    type: image
+
+                    options:
+                      media: site_images
+                      path: volunteer
+
+                  - name: src960
+                    label: 960px Image
+                    type: image
+
+                    options:
+                      media: site_images
+                      path: volunteer
+
+                  - name: src1280
+                    label: 1280px Image
+                    type: image
+
+                    options:
+                      media: site_images
+                      path: volunteer
+
+                  - name: width
+                    label: Source Width
+                    type: number
+
+                  - name: height
+                    label: Source Height
+                    type: number
+
+                  - name: alt
+                    label: Image Description
+                    type: string
+
+
+          - name: ways
+            label: Ways People May Help
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: titleLine1
+                label: Heading Line 1
+                type: string
+
+              - name: titleLine2
+                label: Heading Line 2
+                type: string
+
+              - name: text
+                label: Supporting Text
+                type: text
+
+              - name: items
+                label: Volunteer Examples
+                type: object
+
+                list:
+                  min: 4
+                  max: 4
+                  collapsible:
+                    collapsed: true
+                    summary: "{title}"
+
+                fields:
+
+                  - name: number
+                    label: Number
+                    type: string
+                    readonly: true
+
+                  - name: title
+                    label: Title
+                    type: string
+
+                  - name: text
+                    label: Text
+                    type: text
+
+
+          - name: fit
+            label: Find Your Way to Help
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: titleLine1
+                label: Heading Line 1
+                type: string
+
+              - name: titleLine2
+                label: Heading Line 2
+                type: string
+
+              - name: text
+                label: Supporting Text
+                type: text
+
+              - name: ideas
+                label: Volunteer Ideas
+                type: string
+
+                list:
+                  min: 6
+                  max: 6
+
+
+          - name: process
+            label: How Volunteering Works
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: title
+                label: Heading
+                type: string
+
+              - name: items
+                label: Steps
+                type: object
+
+                list:
+                  min: 4
+                  max: 4
+                  collapsible:
+                    collapsed: true
+                    summary: "{number} - {title}"
+
+                fields:
+
+                  - name: number
+                    label: Step Number
+                    type: string
+                    readonly: true
+
+                  - name: title
+                    label: Step Title
+                    type: string
+
+                  - name: text
+                    label: Step Text
+                    type: text
+
+
+              - name: fosterPrompt
+                label: Foster Cross-Link Text
+                type: string
+
+              - name: fosterLink
+                label: Foster Link
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Link Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+
+          - name: closing
+            label: Final Volunteer Call to Action
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: titleLine1
+                label: Heading Line 1
+                type: string
+
+              - name: titleLine2
+                label: Heading Line 2
+                type: string
+
+              - name: text
+                label: Supporting Text
+                type: text
+
+              - name: primaryButton
+                label: Apply Button
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Button Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+              - name: secondaryLink
+                label: Secondary Link
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Link Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+
+      # ----------------------------------
+      # DONATE
+      # ----------------------------------
+
+      - name: donate
+        label: Donate
+        type: file
+        path: src/_data/donate.json
+        format: json
+
+        operations:
+          create: false
+          rename: false
+          delete: false
+
+        fields:
+
+          - name: hero
+            label: Donation Introduction
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: titleBefore
+                label: Main Heading
+                type: string
+
+              - name: titleAccent
+                label: Accent Heading
+                type: string
+
+              - name: text
+                label: Intro Text
+                type: text
+
+
+              - name: button
+                label: Donation Button
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Button Text
+                    type: string
+
+
+              - name: image
+                label: Donation Image Set
+                type: object
+                description: "Replace all responsive images together."
+
+                fields:
+
+                  - name: src
+                    label: Full Size Image
+                    type: image
+
+                    options:
+                      media: site_images
+                      path: donate
+
+                  - name: src640
+                    label: 640px Image
+                    type: image
+
+                    options:
+                      media: site_images
+                      path: donate
+
+                  - name: src960
+                    label: 960px Image
+                    type: image
+
+                    options:
+                      media: site_images
+                      path: donate
+
+                  - name: alt
+                    label: Image Description
+                    type: string
+
+                  - name: width
+                    label: Source Width
+                    type: number
+
+                  - name: height
+                    label: Source Height
+                    type: number
+
+
+              - name: caption
+                label: Image Caption
+                type: string
+
+
+          - name: support
+            label: What Donations Support
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: title
+                label: Heading
+                type: string
+
+              - name: text
+                label: Intro Text
+                type: text
+
+              - name: items
+                label: Support Categories
+                type: object
+
+                list:
+                  min: 3
+                  max: 3
+                  collapsible:
+                    collapsed: true
+                    summary: "{number} - {title}"
+
+                fields:
+
+                  - name: number
+                    label: Number
+                    type: string
+                    readonly: true
+
+                  - name: title
+                    label: Category Title
+                    type: string
+
+                  - name: text
+                    label: Category Text
+                    type: text
+
+
+          - name: giving
+            label: Ways to Give
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: title
+                label: Heading
+                type: string
+
+              - name: text
+                label: Text
+                type: text
+
+              - name: buttonLabel
+                label: PayPal Button Text
+                type: string
+
+              - name: mailTitle
+                label: Mail Section Heading
+                type: string
+
+              - name: mailBefore
+                label: Text Before Contact Link
+                type: string
+
+              - name: mailLinkLabel
+                label: Contact Link Text
+                type: string
+
+              - name: mailAfter
+                label: Text After Contact Link
+                type: string
+
+
+          - name: finish
+            label: Final Donation Call to Action
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: title
+                label: Heading
+                type: string
+
+              - name: text
+                label: Text
+                type: text
+
+              - name: buttonLabel
+                label: Button Text
+                type: string
+
+
+      # ----------------------------------
+      # EVENTS
+      # ----------------------------------
+
+      - name: events
+        label: Events
+        type: file
+        path: src/_data/events.json
+        format: json
+
+        operations:
+          create: false
+          rename: false
+          delete: false
+
+        fields:
+
+          - name: hero
+            label: Page Introduction
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: title
+                label: Main Heading
+                type: string
+
+              - name: text
+                label: Intro Text
+                type: text
+
+
+          - name: items
+            label: Upcoming Events
+            type: object
+
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+
+            description: "Add only confirmed events."
+
+            fields:
+
+              - name: title
+                label: Event Name
+                type: string
+                required: true
+
+              - name: date
+                label: Date
+                type: string
+
+              - name: time
+                label: Time
+                type: string
+
+              - name: location
+                label: Location
+                type: string
+
+              - name: description
+                label: Description
+                type: text
+
+              - name: url
+                label: Event Details URL
+                type: string
+
+              - name: linkLabel
+                label: Link Text
+                type: string
+
+              - name: external
+                label: External Link
+                type: boolean
+
+
+          - name: empty
+            label: No Upcoming Events Message
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: title
+                label: Heading
+                type: string
+
+              - name: text
+                label: Text
+                type: text
+
+              - name: primaryButton
+                label: Primary Button
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Button Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+              - name: secondaryButton
+                label: Secondary Button
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Button Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+
+          - name: guide
+            label: Event Information Guide
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: title
+                label: Heading
+                type: string
+
+              - name: items
+                label: Information Labels
+                type: string
+
+                list:
+                  min: 4
+                  max: 4
+
+
+      # ----------------------------------
+      # FAQ
+      # ----------------------------------
+
+      - name: faq
+        label: FAQ
+        type: file
+        path: src/_data/faq.json
+        format: json
+
+        operations:
+          create: false
+          rename: false
+          delete: false
+
+        fields:
+
+          - name: hero
+            label: Page Introduction
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: title
+                label: Main Heading
+                type: string
+
+              - name: text
+                label: Intro Text
+                type: text
+
+
+          - name: categories
+            label: FAQ Categories
+            type: object
+
+            list:
+              min: 5
+              max: 5
+              collapsible:
+                collapsed: true
+                summary: "{label}"
+
+            fields:
+
+              - name: id
+                label: Category ID
+                type: string
+                readonly: true
+                description: "Technical page anchor. Do not change."
+
+              - name: label
+                label: Category Name
+                type: string
+
+              - name: questions
+                label: Questions
+                type: object
+
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "{question}"
+
+                fields:
+
+                  - name: question
+                    label: Question
+                    type: string
+
+                  - name: answer
+                    label: Answer
+                    type: text
+
+                  - name: link
+                    label: Optional Related Link
+                    type: object
+
+                    fields:
+
+                      - name: label
+                        label: Link Text
+                        type: string
+
+                      - name: url
+                        label: Destination
+                        type: string
+                        readonly: true
+
+
+          - name: cta
+            label: Final Contact Section
+            type: object
+
+            fields:
+
+              - name: eyebrow
+                label: Small Heading
+                type: string
+
+              - name: title
+                label: Heading
+                type: string
+
+              - name: text
+                label: Text
+                type: text
+
+              - name: button
+                label: Contact Button
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Button Text
+                    type: string
+
+                  - name: url
+                    label: Destination
+                    type: string
+                    readonly: true
+
+
+
+  # ======================================
+  # SITE ADMINISTRATION
+  # ======================================
+
+  - name: site_administration
+    label: Site Administration
+    type: group
+
+    items:
+
+
+      # ----------------------------------
+      # SITE SETTINGS
+      # ----------------------------------
+
+      - name: site_settings
+        label: Site Settings
+        type: file
+        path: src/_data/site.json
+        format: json
+
+        operations:
+          create: false
+          rename: false
+          delete: false
+
+        fields:
+
+          - name: name
+            label: Organization Name
+            type: string
+            readonly: true
+
+
+          - name: legalName
+            label: Legal Name
+            type: string
+            readonly: true
+
+
+          - name: url
+            label: Website URL
+            type: string
+            readonly: true
+
+
+          - name: tagline
+            label: Site Tagline
+            type: string
+
+
+          - name: location
+            label: Location
+            type: string
+
+
+          - name: city
+            label: City
+            type: string
+            readonly: true
+
+
+          - name: state
+            label: State
+            type: string
+            readonly: true
+
+
+          - name: ein
+            label: EIN
+            type: string
+            readonly: true
+
+
+          - name: nonprofitStatus
+            label: Nonprofit Status
+            type: string
+            readonly: true
+
+
+          - name: phone
+            label: Phone Number
+            type: string
+
+
+          - name: phoneHref
+            label: Phone Link
+            type: string
+
+
+          - name: email
+            label: Email Address
+            type: string
+
+
+          - name: mailingAddress
+            label: Mailing Address
+            type: text
+
+
+          - name: donationUrl
+            label: PayPal Donation URL
+            type: string
+
+
+          - name: shelterBossUrl
+            label: ShelterBoss Adoptable Cats URL
+            type: string
+
+
+          - name: announcement
+            label: Announcement Bar
+            type: object
+
+            fields:
+
+              - name: enabled
+                label: Show Announcement
+                type: boolean
+
+              - name: text
+                label: Announcement Text
+                type: string
+
+              - name: linkLabel
+                label: Link Text
+                type: string
+
+              - name: url
+                label: Link Destination
+                type: string
+                readonly: true
+
+
+          - name: navigation
+            label: Main Navigation
+            type: object
+            readonly: true
+
+            list:
+              min: 7
+              max: 7
+              collapsible:
+                collapsed: true
+                summary: "{label}"
+
+            fields:
+
+              - name: label
+                type: string
+
+              - name: url
+                type: string
+
+              - name: children
+                type: object
+
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "{label}"
+
+                fields:
+
+                  - name: label
+                    type: string
+
+                  - name: url
+                    type: string
+
+
+          - name: footerNavigation
+            label: Footer Navigation
+            type: object
+            readonly: true
+
+            list:
+              min: 8
+              max: 8
               collapsible:
                 collapsed: true
                 summary: "{label}"
@@ -159,305 +3006,207 @@ content:
                 type: string
 
 
-      - name: footerNavigation
-        label: Footer Navigation
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{label}"
-        readonly: true
-
-        fields:
-
-          - name: label
-            type: string
-
-          - name: url
-            type: string
-
-
-      - name: donateButton
-        label: Header Donate Button
-        type: object
-
-        fields:
-
-          - name: label
-            type: string
-
-          - name: url
-            type: string
-            readonly: true
-
-
-      - name: social
-        label: Social Media
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{label}"
-
-        fields:
-
-          - name: label
-            label: Platform
-            type: string
-            readonly: true
-
-          - name: url
-            label: Profile URL
-            type: string
-
-
-  # ========================================
-  # EVENTS
-  # ========================================
-
-  - name: events
-    label: Events
-    type: file
-    path: src/_data/events.json
-    format: json
-
-    operations:
-      delete: false
-
-    fields:
-
-      - name: hero
-        label: Page Introduction
-        type: object
-
-        fields:
-
-          - name: eyebrow
-            label: Small Heading
-            type: string
-
-          - name: title
-            label: Main Heading
-            type: string
-
-          - name: text
-            label: Intro Text
-            type: text
-
-
-      - name: items
-        label: Upcoming Events
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{title}"
-
-        description: "Add confirmed events here. Delete an event after it is no longer needed."
-
-        fields:
-
-          - name: title
-            label: Event Name
-            type: string
-            required: true
-
-          - name: date
-            label: Date
-            type: string
-            description: "Use the date exactly as you want visitors to see it."
-
-          - name: time
-            label: Time
-            type: string
-
-          - name: location
-            label: Location
-            type: string
-
-          - name: description
-            label: Description
-            type: text
-
-          - name: url
-            label: Event Details URL
-            type: string
-
-          - name: linkLabel
-            label: Link Text
-            type: string
-
-          - name: external
-            label: External Link
-            type: boolean
-            description: "Turn this on if the event link goes to another website."
-
-
-      - name: empty
-        label: No Events Message
-        type: object
-
-        fields:
-
-          - name: eyebrow
-            type: string
-
-          - name: title
-            type: string
-
-          - name: text
-            type: text
-
-          - name: primaryButton
-            label: Primary Button
+          - name: donateButton
+            label: Header Donate Button
             type: object
 
             fields:
 
               - name: label
+                label: Button Text
                 type: string
 
               - name: url
+                label: Destination
                 type: string
+                readonly: true
 
-          - name: secondaryButton
-            label: Secondary Button
+
+          - name: social
+            label: Social Media
             type: object
 
-            fields:
-
-              - name: label
-                type: string
-
-              - name: url
-                type: string
-
-
-      - name: guide
-        label: Event Information Guide
-        type: object
-
-        fields:
-
-          - name: eyebrow
-            type: string
-
-          - name: title
-            type: string
-
-          - name: items
-            label: Information Labels
-            type: string
-            list: true
-
-
-  # ========================================
-  # FAQ
-  # ========================================
-
-  - name: faq
-    label: FAQ
-    type: file
-    path: src/_data/faq.json
-    format: json
-
-    operations:
-      delete: false
-
-    fields:
-
-      - name: hero
-        label: Page Introduction
-        type: object
-
-        fields:
-
-          - name: eyebrow
-            type: string
-
-          - name: title
-            type: string
-
-          - name: text
-            type: text
-
-
-      - name: categories
-        label: FAQ Categories
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{label}"
-
-        fields:
-
-          - name: id
-            label: Category ID
-            type: string
-            readonly: true
-            description: "Technical anchor used by the page. Do not change."
-
-          - name: label
-            label: Category Name
-            type: string
-
-          - name: questions
-            label: Questions
-            type: object
             list:
+              min: 2
+              max: 2
               collapsible:
                 collapsed: true
-                summary: "{question}"
-
-            fields:
-
-              - name: question
-                label: Question
-                type: string
-
-              - name: answer
-                label: Answer
-                type: text
-
-              - name: link
-                label: Optional Related Link
-                type: object
-
-                fields:
-
-                  - name: label
-                    label: Link Text
-                    type: string
-
-                  - name: url
-                    label: Link Destination
-                    type: string
-
-
-      - name: cta
-        label: Final Contact Section
-        type: object
-
-        fields:
-
-          - name: eyebrow
-            type: string
-
-          - name: title
-            type: string
-
-          - name: text
-            type: text
-
-          - name: button
-            label: Button
-            type: object
+                summary: "{label}"
 
             fields:
 
               - name: label
+                label: Platform
                 type: string
+                readonly: true
 
               - name: url
+                label: Profile URL
                 type: string
+
+
+      # ----------------------------------
+      # FORMS + JOTFORM
+      # ----------------------------------
+
+      - name: forms
+        label: Forms & Jotform
+        type: file
+        path: src/_data/forms.json
+        format: json
+
+        operations:
+          create: false
+          rename: false
+          delete: false
+
+        fields:
+
+          - name: adoption
+            label: Adoption Application
+            type: object
+
+            fields:
+
+              - name: name
+                label: Form Name
+                type: string
+                readonly: true
+
+              - name: embedUrl
+                label: Jotform Embed URL
+                type: string
+
+              - name: directUrl
+                label: Direct Jotform URL
+                type: string
+
+              - name: directLabel
+                label: Direct Link Text
+                type: string
+
+              - name: ariaLabel
+                label: Accessible Form Label
+                type: string
+
+
+          - name: foster
+            label: Foster Application
+            type: object
+
+            fields:
+
+              - name: name
+                label: Form Name
+                type: string
+                readonly: true
+
+              - name: embedUrl
+                label: Jotform Embed URL
+                type: string
+
+              - name: directUrl
+                label: Direct Jotform URL
+                type: string
+
+              - name: directLabel
+                label: Direct Link Text
+                type: string
+
+              - name: ariaLabel
+                label: Accessible Form Label
+                type: string
+
+
+          - name: volunteer
+            label: Volunteer Application
+            type: object
+
+            fields:
+
+              - name: name
+                label: Form Name
+                type: string
+                readonly: true
+
+              - name: embedUrl
+                label: Jotform Embed URL
+                type: string
+                description: "Currently blank until the official Volunteer Jotform is confirmed."
+
+              - name: directUrl
+                label: Direct Jotform URL
+                type: string
+
+              - name: directLabel
+                label: Direct Link Text
+                type: string
+
+              - name: ariaLabel
+                label: Accessible Form Label
+                type: string
+
+              - name: placeholderText
+                label: Placeholder Message
+                type: text
+
+
+          - name: surrender
+            label: Surrender Request
+            type: object
+
+            fields:
+
+              - name: name
+                label: Form Name
+                type: string
+                readonly: true
+
+              - name: embedUrl
+                label: Jotform Embed URL
+                type: string
+
+              - name: directUrl
+                label: Direct Jotform URL
+                type: string
+
+              - name: directLabel
+                label: Direct Link Text
+                type: string
+
+              - name: ariaLabel
+                label: Accessible Form Label
+                type: string
+
+
+          - name: contact
+            label: Contact Form
+            type: object
+
+            fields:
+
+              - name: name
+                label: Form Name
+                type: string
+                readonly: true
+
+              - name: embedUrl
+                label: Jotform Embed URL
+                type: string
+                description: "Currently blank until the official Contact Jotform is confirmed."
+
+              - name: directUrl
+                label: Direct Jotform URL
+                type: string
+
+              - name: directLabel
+                label: Direct Link Text
+                type: string
+
+              - name: ariaLabel
+                label: Accessible Form Label
+                type: string
+
+              - name: placeholderText
+                label: Placeholder Message
+                type: text
