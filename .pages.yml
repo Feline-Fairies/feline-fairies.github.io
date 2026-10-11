@@ -1,0 +1,463 @@
+media:
+  - name: site_images
+    label: Site Images
+    input: src/media
+    output: /media
+    extensions:
+      - webp
+      - png
+      - jpg
+      - jpeg
+    rename: safe
+
+
+content:
+
+  # ========================================
+  # GLOBAL SITE SETTINGS
+  # ========================================
+
+  - name: site_settings
+    label: Site Settings
+    type: file
+    path: src/_data/site.json
+    format: json
+
+    operations:
+      delete: false
+
+    fields:
+
+      - name: name
+        label: Organization Name
+        type: string
+        readonly: true
+
+      - name: legalName
+        label: Legal Name
+        type: string
+        readonly: true
+
+      - name: url
+        label: Website URL
+        type: string
+        readonly: true
+
+      - name: tagline
+        label: Site Tagline
+        type: string
+
+      - name: location
+        label: Location
+        type: string
+
+      - name: city
+        label: City
+        type: string
+        readonly: true
+
+      - name: state
+        label: State
+        type: string
+        readonly: true
+
+      - name: ein
+        label: EIN
+        type: string
+        readonly: true
+
+      - name: nonprofitStatus
+        label: Nonprofit Status
+        type: string
+        readonly: true
+
+      - name: phone
+        label: Phone Number
+        type: string
+        description: "Visible phone number, for example 719-332-7146."
+
+      - name: phoneHref
+        label: Phone Link
+        type: string
+        description: "Telephone link used by buttons. Example: tel:+17193327146"
+
+      - name: email
+        label: Email
+        type: string
+
+      - name: mailingAddress
+        label: Mailing Address
+        type: text
+        description: "Leave blank until a current mailing address is confirmed."
+
+      - name: donationUrl
+        label: PayPal Donation URL
+        type: string
+
+      - name: shelterBossUrl
+        label: ShelterBoss Adoptable Cats URL
+        type: string
+
+
+      # Announcement
+
+      - name: announcement
+        label: Announcement Bar
+        type: object
+
+        fields:
+
+          - name: enabled
+            label: Show Announcement
+            type: boolean
+
+          - name: text
+            label: Announcement Text
+            type: string
+
+          - name: linkLabel
+            label: Link Text
+            type: string
+
+          - name: url
+            label: Link Destination
+            type: string
+
+
+      # Main navigation is visible but protected for now.
+
+      - name: navigation
+        label: Main Navigation
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        readonly: true
+
+        fields:
+
+          - name: label
+            type: string
+
+          - name: url
+            type: string
+
+          - name: children
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{label}"
+
+            fields:
+
+              - name: label
+                type: string
+
+              - name: url
+                type: string
+
+
+      - name: footerNavigation
+        label: Footer Navigation
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        readonly: true
+
+        fields:
+
+          - name: label
+            type: string
+
+          - name: url
+            type: string
+
+
+      - name: donateButton
+        label: Header Donate Button
+        type: object
+
+        fields:
+
+          - name: label
+            type: string
+
+          - name: url
+            type: string
+            readonly: true
+
+
+      - name: social
+        label: Social Media
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+
+        fields:
+
+          - name: label
+            label: Platform
+            type: string
+            readonly: true
+
+          - name: url
+            label: Profile URL
+            type: string
+
+
+  # ========================================
+  # EVENTS
+  # ========================================
+
+  - name: events
+    label: Events
+    type: file
+    path: src/_data/events.json
+    format: json
+
+    operations:
+      delete: false
+
+    fields:
+
+      - name: hero
+        label: Page Introduction
+        type: object
+
+        fields:
+
+          - name: eyebrow
+            label: Small Heading
+            type: string
+
+          - name: title
+            label: Main Heading
+            type: string
+
+          - name: text
+            label: Intro Text
+            type: text
+
+
+      - name: items
+        label: Upcoming Events
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+
+        description: "Add confirmed events here. Delete an event after it is no longer needed."
+
+        fields:
+
+          - name: title
+            label: Event Name
+            type: string
+            required: true
+
+          - name: date
+            label: Date
+            type: string
+            description: "Use the date exactly as you want visitors to see it."
+
+          - name: time
+            label: Time
+            type: string
+
+          - name: location
+            label: Location
+            type: string
+
+          - name: description
+            label: Description
+            type: text
+
+          - name: url
+            label: Event Details URL
+            type: string
+
+          - name: linkLabel
+            label: Link Text
+            type: string
+
+          - name: external
+            label: External Link
+            type: boolean
+            description: "Turn this on if the event link goes to another website."
+
+
+      - name: empty
+        label: No Events Message
+        type: object
+
+        fields:
+
+          - name: eyebrow
+            type: string
+
+          - name: title
+            type: string
+
+          - name: text
+            type: text
+
+          - name: primaryButton
+            label: Primary Button
+            type: object
+
+            fields:
+
+              - name: label
+                type: string
+
+              - name: url
+                type: string
+
+          - name: secondaryButton
+            label: Secondary Button
+            type: object
+
+            fields:
+
+              - name: label
+                type: string
+
+              - name: url
+                type: string
+
+
+      - name: guide
+        label: Event Information Guide
+        type: object
+
+        fields:
+
+          - name: eyebrow
+            type: string
+
+          - name: title
+            type: string
+
+          - name: items
+            label: Information Labels
+            type: string
+            list: true
+
+
+  # ========================================
+  # FAQ
+  # ========================================
+
+  - name: faq
+    label: FAQ
+    type: file
+    path: src/_data/faq.json
+    format: json
+
+    operations:
+      delete: false
+
+    fields:
+
+      - name: hero
+        label: Page Introduction
+        type: object
+
+        fields:
+
+          - name: eyebrow
+            type: string
+
+          - name: title
+            type: string
+
+          - name: text
+            type: text
+
+
+      - name: categories
+        label: FAQ Categories
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+
+        fields:
+
+          - name: id
+            label: Category ID
+            type: string
+            readonly: true
+            description: "Technical anchor used by the page. Do not change."
+
+          - name: label
+            label: Category Name
+            type: string
+
+          - name: questions
+            label: Questions
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{question}"
+
+            fields:
+
+              - name: question
+                label: Question
+                type: string
+
+              - name: answer
+                label: Answer
+                type: text
+
+              - name: link
+                label: Optional Related Link
+                type: object
+
+                fields:
+
+                  - name: label
+                    label: Link Text
+                    type: string
+
+                  - name: url
+                    label: Link Destination
+                    type: string
+
+
+      - name: cta
+        label: Final Contact Section
+        type: object
+
+        fields:
+
+          - name: eyebrow
+            type: string
+
+          - name: title
+            type: string
+
+          - name: text
+            type: text
+
+          - name: button
+            label: Button
+            type: object
+
+            fields:
+
+              - name: label
+                type: string
+
+              - name: url
+                type: string
