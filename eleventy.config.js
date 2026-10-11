@@ -16,6 +16,12 @@ export default function (eleventyConfig) {
     "src/media": "media"
   });
 
+  eleventyConfig.addPassthroughCopy({
+  "src/favicon.ico": "favicon.ico",
+  "src/assets/favicon-32.png": "assets/favicon-32.png",
+  "src/assets/favicon-180.png": "assets/favicon-180.png"
+});
+
   return {
     dir: {
       input: "src",
