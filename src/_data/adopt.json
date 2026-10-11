@@ -15,7 +15,7 @@
       },
       {
         "label": "Apply to adopt",
-        "url": "/adopt/adoption_application/"
+        "url": "/adopt/adoption-application/"
       }
     ]
   },
@@ -50,7 +50,7 @@
     ],
     "button": {
       "label": "Start an Application",
-      "url": "/adopt/adoption_application/"
+      "url": "/adopt/adoption-application/"
     }
   },
 

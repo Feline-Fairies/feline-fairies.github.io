@@ -9,7 +9,7 @@
     },
     "secondaryButton": {
       "label": "Apply to Adopt",
-      "url": "/adopt/adoption_application/"
+      "url": "/adopt/adoption-application/"
     }
   },
 
@@ -60,7 +60,7 @@
     },
     "secondaryButton": {
       "label": "Start an Application",
-      "url": "/adopt/adoption_application/"
+      "url": "/adopt/adoption-application/"
     }
   }
 }

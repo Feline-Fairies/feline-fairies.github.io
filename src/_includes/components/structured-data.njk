@@ -1,0 +1,64 @@
+{% if page.url == "/" %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{ site.url }}/#organization",
+
+      "name": "{{ site.name }}",
+      "legalName": "{{ site.legalName }}",
+
+      "url": "{{ site.url }}/",
+
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ site.url }}/assets/images/feline-fairies-logo-web.webp"
+      },
+
+      "description": "Feline Fairies is a foster-based cat rescue in St. Augustine, Florida.",
+
+      "telephone": "{{ site.phoneHref | replace('tel:', '') }}",
+
+      "taxID": "{{ site.ein }}",
+
+      "nonprofitStatus": "https://schema.org/Nonprofit501c3",
+
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "{{ site.city }}",
+        "addressRegion": "{{ site.state }}",
+        "addressCountry": "US"
+      },
+
+      "areaServed": {
+        "@type": "City",
+        "name": "St. Augustine"
+      },
+
+      "sameAs": [
+        {% for social in site.social %}
+          "{{ social.url }}"{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": "{{ site.url }}/#website",
+
+      "url": "{{ site.url }}/",
+
+      "name": "{{ site.name }}",
+
+      "publisher": {
+        "@id": "{{ site.url }}/#organization"
+      }
+    }
+  ]
+}
+</script>
+
+{% endif %}
