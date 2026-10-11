@@ -245,6 +245,7 @@ content:
               - name: items
                 label: Adoption Gallery
                 type: object
+                description: "TO REPLACE A PHOTO: open the adoption below, remove the current photo, then click the empty photo field to choose or upload the replacement."
 
                 list:
                   collapsible:
@@ -254,28 +255,26 @@ content:
                 fields:
 
                   - name: image
-                    label: Adoption Image
+                    label: Current Adoption Photo
                     type: image
                     required: true
+                    description: "TO REPLACE THIS PHOTO: remove the current image first. Then click the empty image field and choose an existing image or upload the new photo. A square image works best."
 
                     options:
                       media: site_images
                       path: adoptions
+                      extensions:
+                        - webp
+                        - jpg
+                        - jpeg
+                        - png
+                      rename: safe
 
                   - name: alt
-                    label: Image Description
+                    label: Photo Description
                     type: string
                     required: true
-
-                  - name: width
-                    label: Image Width
-                    type: number
-                    description: "Current gallery graphics use 370."
-
-                  - name: height
-                    label: Image Height
-                    type: number
-                    description: "Current gallery graphics use 370."
+                    description: "Briefly describe the cat and adoption shown in the photo for accessibility."
 
 
       # ----------------------------------
@@ -464,7 +463,6 @@ content:
                 label: Small Heading
                 type: string
 
-
               - name: title
                 label: Main Heading
                 type: object
@@ -487,11 +485,9 @@ content:
                     label: Third Line
                     type: string
 
-
               - name: text
                 label: Hero Text
                 type: text
-
 
               - name: primaryButton
                 label: Primary Button
@@ -508,7 +504,6 @@ content:
                     type: string
                     readonly: true
 
-
               - name: secondaryButton
                 label: Secondary Button
                 type: object
@@ -523,7 +518,6 @@ content:
                     label: Destination
                     type: string
                     readonly: true
-
 
               - name: image
                 label: Hero Image Set
@@ -567,7 +561,6 @@ content:
                   - name: height
                     label: Source Height
                     type: number
-
 
               - name: badge
                 label: Hero Impact Badge
@@ -638,7 +631,6 @@ content:
                   min: 2
                   max: 2
 
-
               - name: button
                 label: Button
                 type: object
@@ -653,7 +645,6 @@ content:
                     label: Destination
                     type: string
                     readonly: true
-
 
               - name: image
                 label: Mission Image Set
@@ -833,7 +824,6 @@ content:
                     label: Step Text
                     type: text
 
-
               - name: button
                 label: Button
                 type: object
@@ -923,7 +913,6 @@ content:
                 label: Intro Text
                 type: text
 
-
               - name: image
                 label: About Image Set
                 type: object
@@ -974,7 +963,6 @@ content:
                   - name: height
                     label: Source Height
                     type: number
-
 
               - name: caption
                 label: Image Caption
@@ -1169,7 +1157,6 @@ content:
                     type: string
                     readonly: true
 
-
               - name: secondaryLinks
                 label: Secondary Links
                 type: object
@@ -1260,7 +1247,6 @@ content:
                     label: Step Text
                     type: text
 
-
               - name: button
                 label: Application Button
                 type: object
@@ -1294,6 +1280,7 @@ content:
               - name: items
                 label: Adoption Gallery
                 type: object
+                description: "TO REPLACE A PHOTO: open the adoption below, remove the current photo, then click the empty photo field to choose or upload the replacement."
 
                 list:
                   collapsible:
@@ -1303,26 +1290,36 @@ content:
                 fields:
 
                   - name: image
-                    label: Adoption Image
+                    label: Current Adoption Photo
                     type: image
                     required: true
+                    description: "TO REPLACE THIS PHOTO: remove the current image first. Then click the empty image field and choose an existing image or upload the new photo. A square image works best."
 
                     options:
                       media: site_images
                       path: adoptions
+                      extensions:
+                        - webp
+                        - jpg
+                        - jpeg
+                        - png
+                      rename: safe
 
                   - name: alt
-                    label: Image Description
+                    label: Photo Description
                     type: string
                     required: true
+                    description: "Briefly describe the cat and adoption shown in the photo for accessibility."
 
                   - name: width
                     label: Image Width
                     type: number
+                    description: "Current gallery graphics use 370."
 
                   - name: height
                     label: Image Height
                     type: number
+                    description: "Current gallery graphics use 370."
 
 
           - name: notes
@@ -1687,7 +1684,6 @@ content:
                 label: Intro Text
                 type: text
 
-
               - name: primaryButton
                 label: Apply Button
                 type: object
@@ -1703,7 +1699,6 @@ content:
                     type: string
                     readonly: true
 
-
               - name: secondaryLink
                 label: Secondary Link
                 type: object
@@ -1718,7 +1713,6 @@ content:
                     label: Destination
                     type: string
                     readonly: true
-
 
               - name: image
                 label: Foster Image Set
@@ -2076,7 +2070,6 @@ content:
                   min: 2
                   max: 2
 
-
               - name: image
                 label: Volunteer Image Set
                 type: object
@@ -2249,7 +2242,6 @@ content:
                     label: Step Text
                     type: text
 
-
               - name: fosterPrompt
                 label: Foster Cross-Link Text
                 type: string
@@ -2362,7 +2354,6 @@ content:
                 label: Intro Text
                 type: text
 
-
               - name: button
                 label: Donation Button
                 type: object
@@ -2372,7 +2363,6 @@ content:
                   - name: label
                     label: Button Text
                     type: string
-
 
               - name: image
                 label: Donation Image Set
@@ -2416,7 +2406,6 @@ content:
                   - name: height
                     label: Source Height
                     type: number
-
 
               - name: caption
                 label: Image Caption
@@ -2847,77 +2836,63 @@ content:
             type: string
             readonly: true
 
-
           - name: legalName
             label: Legal Name
             type: string
             readonly: true
-
 
           - name: url
             label: Website URL
             type: string
             readonly: true
 
-
           - name: tagline
             label: Site Tagline
             type: string
 
-
           - name: location
             label: Location
             type: string
-
 
           - name: city
             label: City
             type: string
             readonly: true
 
-
           - name: state
             label: State
             type: string
             readonly: true
-
 
           - name: ein
             label: EIN
             type: string
             readonly: true
 
-
           - name: nonprofitStatus
             label: Nonprofit Status
             type: string
             readonly: true
 
-
           - name: phone
             label: Phone Number
             type: string
-
 
           - name: phoneHref
             label: Phone Link
             type: string
 
-
           - name: email
             label: Email Address
             type: string
-
 
           - name: mailingAddress
             label: Mailing Address
             type: text
 
-
           - name: donationUrl
             label: PayPal Donation URL
             type: string
-
 
           - name: shelterBossUrl
             label: ShelterBoss Adoptable Cats URL
